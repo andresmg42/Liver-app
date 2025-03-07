@@ -1,10 +1,22 @@
+import useAuthStore from "../../stores/use-auth-store"
+
 
 
 const Home = () => {
+
+  const {userLooged}=useAuthStore()
+
+
+
+
+  
+
   return (
-    <div>
-       <img src="./logo.svg" alt="logo" />
-    </div>
+    <>
+    <h2>Perfil de Usuario</h2>
+    <p>!Bienvenido!{userLooged?.displayName}</p>
+   
+</>
   )
 }
 

@@ -1,17 +1,34 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { NavLink,useNavigate } from 'react-router';
+import useAuthStore from "../../stores/use-auth-store"
+import { useCallback } from 'react';
 
 const Header = () => {
+
+  const { logout, userLooged } = useAuthStore();
+  const navigate=useNavigate();
+
+
+  const handleLogout = useCallback(async () => {
+    try {
+      await logout();
+      navigate('/login')
+
+    } catch (error) {
+      console.error('Error Logout in handleLogout', error)
+
+    }
+  })
   return (
     <header className="bg-[#07054A] text-white py-4">
       <nav className="container mx-auto flex justify-between items-center">
 
-       
+
         <div className="text-2xl font-bold">
           <NavLink to="/">3D Medical Models</NavLink>
         </div>
 
-        
+
         <ul className="flex space-x-6">
           <li>
             <NavLink to="/" exact className="hover:text-gray-400" activeClassName="text-blue-500">
@@ -43,6 +60,11 @@ const Header = () => {
               Register
             </NavLink>
           </li>
+          {userLooged && (<li>
+            <button onClick={handleLogout} className="hover:text-gray-400">
+              Logout
+            </button>
+          </li>)}
         </ul>
 
       </nav>
