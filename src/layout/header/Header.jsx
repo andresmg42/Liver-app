@@ -52,17 +52,12 @@ const Header = () => {
           </li>
           <li>
             <NavLink to="/login" className="hover:text-gray-400" activeClassName="text-blue-500">
-              Login
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/register" className="hover:text-gray-400" activeClassName="text-blue-500">
-              Register
+              Sign In
             </NavLink>
           </li>
           {userLooged && (<li>
             <button onClick={handleLogout} className="hover:text-gray-400">
-              Logout
+              Sign Up
             </button>
           </li>)}
         </ul>
