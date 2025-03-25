@@ -4,7 +4,7 @@ const Prubas = () => {
   return (
     <div>
         <h1>Pruebas</h1>
-        <button>
+        <button className='bg-black hover:bg-blue-500'>
             Iniciar secion
         </button>
     </div>

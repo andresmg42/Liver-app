@@ -21,12 +21,12 @@ const NabBar = () => {
   })
   return (
     <div className="bg-[#07054A] text-white py-4">
-    <nav className="container mx-auto flex justify-between items-center h-16">
+    <nav className="container mx-auto flex justify-between items-center h-10">
       {/* Logo o nombre de la marca */}
       <div className="h-16 flex items-center">
         <NavLink to="/">
         
-        <img src="src/assets/header/logo_figma.svg" alt="logo" className='w-full h-18'/>
+        <img src="src/assets/header/logo_figma.svg" alt="logo" className='w-full h-12'/>
 
        
         
