@@ -8,14 +8,20 @@ import { LiverCancer3 } from '../models-3d/liver_cancer/desease/LiverCancer3'
 import { LiverCancer2 } from '../models-3d/liver_cancer/desease/LiverCancer2'
 import { HepatoCellularCancer } from '../models-3d/liver_cancer/desease/HepatoCellularCancer'
 import { Xrays } from '../models-3d/liver_cancer/treatment/Xrays'
-import HBvaccine from '../models-3d/liver_cancer/recomendations/HBvaccine'
+
 import LiverMeat from '../models-3d/liver_cancer/desease/LiverMeat'
 import StagingLiver from '../models-3d/liver_cancer/desease/staging/StagingLiver'
 import { Loader } from '@react-three/drei'
 import { Suspense } from 'react'
+import { LiverCancerFinal } from '../models-3d/liver_cancer/desease/LiverCancerFinal'
+import { Alcohol } from '../models-3d/liver_cancer/recomendations/Alcohol'
 
 
 const Pruebas = () => {
+
+  
+
+
   return (
     <Canvas>
       <StagingLiver/>
@@ -23,7 +29,14 @@ const Pruebas = () => {
       <ambientLight intensity={2} />
       <directionalLight position={[5, 5, 10]} intensity={4} />
       
-      <LiverMeat/>
+      {/* <LiverMeat/> */}
+      {/* <LiverCancerFinal scale={4}/> */}
+      
+
+      {/* <Fever scale={3}/> */}
+
+      {/* <Xrays scale={2}/> */}
+      <Alcohol scale={3}/>
 
 
 

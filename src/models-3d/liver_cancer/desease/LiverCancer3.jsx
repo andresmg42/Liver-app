@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function LiverCancer3(props) {
-  const { nodes, materials } = useGLTF('public/models/liver_cancer/desease/LiverCancerLuma.glb')
+  const { nodes, materials } = useGLTF('/models/liver_cancer/desease/LiverCancerLuma.glb')
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -16,4 +16,4 @@ export function LiverCancer3(props) {
   )
 }
 
-useGLTF.preload('public/models/liver_cancer/desease/LiverCancerLuma.glb')
+useGLTF.preload('/models/liver_cancer/desease/LiverCancerLuma.glb')
