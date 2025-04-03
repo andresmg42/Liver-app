@@ -39,13 +39,13 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-[126vh] mx-auto bg-gray-400 mt-10">
+      <div className="w-[126vh] mx-auto bg mt-10">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10">
           Look at Any 3D Liver Diseases
         </h1>
 
         {/* Grid changes from 1 column (mobile) to 3 columns (desktop) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-6 w-full place-items-center bg-gray-200 ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-6 w-full place-items-center ">
 
           {/* --- Card 1: Cancer Liver --- */}
           <div className="bg-black/50 w-full max-w-[300px] md:w-[45vh] md:h-[45vh] p-4 text-white rounded-lg flex flex-col items-center justify-between">
@@ -89,42 +89,40 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-[126vh] h-[70vh] mx-auto bg-gray-500 mt-10">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 ">
+      <div className="w-full max-w-6xl mx-auto mt-10 p-4 md:p-6 lg:p-8">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10">
           Available For
         </h1>
 
-        <div className="w-[126vh] h-[20vh] mx-auto relative bg-black/50 rounded-lg  px-2">
-          <div className="grid grid-cols-4 w-full h-full place-items-center gap-2">
-            <div className="w-full h-full  items-center flex justify-center">
-              <img src="operative-sistems/android.svg" alt="android" />
-              <h2 className="text-2xl text-white p-7 font-bold">Android</h2>
+        <div className="w-full max-w-6xl mx-auto relative bg-black/50 rounded-lg px-4 py-6 md:py-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 w-full place-items-center gap-4">
+            <div className="flex flex-col items-center text-center">
+              <img src="operative-sistems/android.svg" alt="android" className="w-12 h-12 md:w-16 md:h-16" />
+              <h2 className="text-lg md:text-xl lg:text-2xl text-white font-bold mt-2">Android</h2>
             </div>
-            <div className="w-full h-full  items-center flex justify-center">
-              <img src="/operative-sistems/windows.svg" alt="windows" />
-              <h2 className="text-2xl text-white p-7 font-bold">Windows</h2>
+            <div className="flex flex-col items-center text-center">
+              <img src="/operative-sistems/windows.svg" alt="windows" className="w-12 h-12 md:w-16 md:h-16" />
+              <h2 className="text-lg md:text-xl lg:text-2xl text-white font-bold mt-2">Windows</h2>
             </div>
-            <div className="w-full h-full  items-center flex justify-center">
-              <img src="/operative-sistems/apple.svg" alt="apple" />
-              <h2 className="text-2xl text-white p-7 font-bold">MacOs</h2>
+            <div className="flex flex-col items-center text-center">
+              <img src="/operative-sistems/apple.svg" alt="apple" className="w-12 h-12 md:w-16 md:h-16" />
+              <h2 className="text-lg md:text-xl lg:text-2xl text-white font-bold mt-2">MacOS</h2>
             </div>
-            <div className="w-full h-full  items-center flex justify-center">
-              <img src="/operative-sistems/ipad.svg" alt="windows" />
-              <h2 className="text-2xl text-white p-7 font-bold">Ipad</h2>
+            <div className="flex flex-col items-center text-center">
+              <img src="/operative-sistems/ipad.svg" alt="iPad" className="w-12 h-12 md:w-16 md:h-16" />
+              <h2 className="text-lg md:text-xl lg:text-2xl text-white font-bold mt-2">iPad</h2>
             </div>
-
           </div>
-
         </div>
 
-        <h1 className="text-4xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 mt-10">
-          Chose Your Plan!
+        <h1 className="text-3xl md:text-4xl font-bold text-center mt-10">
+          Choose Your Plan!
         </h1>
-        <h2 className="text-sm md:text-xl lg:text-xl font-bold text-center mb-6 md:mb-10 mt-10">
-          Try out our 3 day risk free trial.No Payment Details required.
+        <h2 className="text-sm md:text-lg lg:text-xl font-bold text-center mt-4">
+          Try out our 3-day risk-free trial. No payment details required.
         </h2>
 
-        <button className="bg-white hover:bg-[#797777] text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition text-sm md:text-base lg:text-lg xl:text-xl md:py-3 md:px-6 lg:py-4 lg:px-8 flex items-center space-x-2 mx-auto">
+        <button className="bg-white hover:bg-gray-600 text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition flex items-center space-x-2 mx-auto mt-6 focus:ring-2 focus:ring-gray-400 focus:outline-none">
           <span>Try It For Free</span>
           <img
             src="src/assets/header/flecha.svg"
@@ -132,9 +130,6 @@ const Home = () => {
             className="w-4 h-4 md:w-6 md:h-6"
           />
         </button>
-
-
-
       </div>
 
 
