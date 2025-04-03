@@ -1,17 +1,17 @@
 import useAuthStore from "../../stores/use-auth-store"
 import { useNavigate } from "react-router"
-import { useCallback,useEffect,useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import api from "../../api/user.api.js"
 
 
 const Login = () => {
 
-    const [email,setEmail]=useState({email:null})
+    const [email, setEmail] = useState({ email: null })
 
-    const { loginGoogleWithPopUp, loginFacebookWithPopup, userLooged, loginWithEmail,sendSignInLink,loginGithubWithPopup} = useAuthStore();
+    const { loginGoogleWithPopUp, loginFacebookWithPopup, userLooged, loginWithEmail, sendSignInLink, loginGithubWithPopup } = useAuthStore();
     const navigate = useNavigate();
 
-    
+
 
     const handleGoogleLogin = async () => {
         try {
@@ -30,7 +30,7 @@ const Login = () => {
 
             navigate('/')
 
-           
+
 
         } catch (error) {
             console.error('Error in handleLogin:', error)
@@ -40,18 +40,18 @@ const Login = () => {
 
     const handleFacebookLogin = async () => {
         try {
-            
+
 
 
             const data = await loginFacebookWithPopup()
 
             if (data != undefined) {
 
-                
 
-                const {displayName,email}=data?.user
 
-                const res_axios= await api.post('users/',{displayName,email})
+                const { displayName, email } = data?.user
+
+                const res_axios = await api.post('users/', { displayName, email })
 
                 console.log(res_axios.data)
             }
@@ -60,46 +60,46 @@ const Login = () => {
 
         } catch (error) {
             console.error('Error in handleLogin:', error)
-            
+
         }
     }
 
-    const handleGithubLogin= async()=>{
+    const handleGithubLogin = async () => {
         try {
-            const data= await loginGithubWithPopup()
-            if(data!=undefined){
-                const {displayName,email}=data?.user
+            const data = await loginGithubWithPopup()
+            if (data != undefined) {
+                const { displayName, email } = data?.user
 
-                const res_axios=await api.post('users/',{displayName,email})
+                const res_axios = await api.post('users/', { displayName, email })
 
                 console.log(res_axios.data)
             }
             navigate('/')
         } catch (error) {
 
-            console.error('Error in handleGithubLoginWithPopup',error)
-            
+            console.error('Error in handleGithubLoginWithPopup', error)
+
         }
     }
 
-    const handleEmailLogin= ()=>{
-        try{
+    const handleEmailLogin = () => {
+        try {
 
-           if (email.email){
-            sendSignInLink(email.email)
-            console.log(email.email)
-           }else{
-            alert('you must type a valid Email!')
-           }
-            
+            if (email.email) {
+                sendSignInLink(email.email)
+                console.log(email.email)
+            } else {
+                alert('you must type a valid Email!')
+            }
+
         }
-        catch(error){
-            console.log('Error in handleEmailLogin',error)
+        catch (error) {
+            console.log('Error in handleEmailLogin', error)
         }
     }
 
-    const handleChange= (e)=>{
-        setEmail({email:e.target.value})
+    const handleChange = (e) => {
+        setEmail({ email: e.target.value })
     }
 
 
@@ -111,71 +111,75 @@ const Login = () => {
 
         <div className="flex items-center justify-center min-h-screen">
 
-<div className="w-[400px] h-[400px] mx-auto bg-black/50 p-8 rounded-lg shadow-md">
-        <h2 className="text-lg font-semibold text-gray-700 text-center mb-4 text-white">
-            Continúa con
-        </h2>
-    
-        <div className="flex flex-col gap-3">
-            <button
-                type="button"
-                title="Iniciar sesión con Google"
-                onClick={handleGoogleLogin}
-                className="flex items-center justify-center px-6 py-2 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all duration-200"
-            >
-                <img src="src/assets/google.svg" alt="Google" className="w-5 h-5 mr-2" />
-                Google
-            </button>
-    
-            <button
-                type="button"
-                title="Iniciar sesión con Facebook"
-                onClick={handleFacebookLogin}
-                className="flex items-center justify-center px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200"
-            >
-                <img src="src/assets/facebook.svg" alt="Facebook" className="w-5 h-5 mr-2" />
-                Facebook
-            </button>
-    
-            <button
-                type="button"
-                title="Iniciar sesión con GitHub"
-                onClick={handleGithubLogin}
-                className="flex items-center justify-center px-6 py-2 bg-gray-800 text-white font-medium rounded-md hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 transition-all duration-200"
-            >
-                <img src="src/assets/github-mark-white.svg" alt="GitHub" className="w-5 h-5 mr-2" />
-                GitHub
-            </button>
-    
-            <button
-                type="button"
-                title="Iniciar sesión con Email"
-                onClick={handleEmailLogin}
-                className="flex items-center justify-center px-6 py-2 bg-gray-500 text-white font-medium rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-all duration-200"
-            >
-                <img src="src/assets/email.svg" alt="Email" className="w-5 h-5 mr-2" />
-                Email
-            </button>
-        </div>
-    
-        <div className="mt-4">
-            <input
-                type="email"
-                name="email"
-                value={email.email}
-                placeholder="Introduce tu correo"
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-        </div>
-    </div>
+            <video autoPlay loop muted playsInline className="fixed top-0 left-0  w-full h-full object-cover -z-10">
+                <source src='videos/login.mp4' type="video/mp4" />
+            </video>
+
+            <div className="w-[400px] h-[400px] mx-auto bg-white/15 p-8 rounded-lg shadow-md">
+                <h2 className="text-lg font-semibold text-gray-700 text-center mb-4 text-white">
+                    Sign In
+                </h2>
+
+                <div className="flex flex-col gap-3">
+                    <button
+                        type="button"
+                        title="Iniciar sesión con Google"
+                        onClick={handleGoogleLogin}
+                        className="flex items-center justify-center px-6 py-2 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all duration-200"
+                    >
+                        <img src="src/assets/google.svg" alt="Google" className="w-5 h-5 mr-2" />
+                        Google
+                    </button>
+
+                    <button
+                        type="button"
+                        title="Iniciar sesión con Facebook"
+                        onClick={handleFacebookLogin}
+                        className="flex items-center justify-center px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200"
+                    >
+                        <img src="src/assets/facebook.svg" alt="Facebook" className="w-5 h-5 mr-2" />
+                        Facebook
+                    </button>
+
+                    <button
+                        type="button"
+                        title="Iniciar sesión con GitHub"
+                        onClick={handleGithubLogin}
+                        className="flex items-center justify-center px-6 py-2 bg-gray-800 text-white font-medium rounded-md hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 transition-all duration-200"
+                    >
+                        <img src="src/assets/github-mark-white.svg" alt="GitHub" className="w-5 h-5 mr-2" />
+                        GitHub
+                    </button>
+
+                    <button
+                        type="button"
+                        title="Iniciar sesión con Email"
+                        onClick={handleEmailLogin}
+                        className="flex items-center justify-center px-6 py-2 bg-gray-500 text-white font-medium rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-all duration-200"
+                    >
+                        <img src="src/assets/email.svg" alt="Email" className="w-5 h-5 mr-2" />
+                        Email
+                    </button>
+                </div>
+
+                <div className="mt-4">
+                    <input
+                        type="email"
+                        name="email"
+                        value={email.email}
+                        placeholder="Introduce tu correo"
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                </div>
+            </div>
 
 
         </div>
-        
-        
-    
-        
+
+
+
+
     )
 }
 

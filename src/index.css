@@ -8,5 +8,9 @@ body {
     color: white; /* Opcional: cambia el color del texto */
     margin: 0; /* Elimina márgenes predeterminados */
     font-family: 'Arial', sans-serif; /* Ajusta la tipografía */
+    height: 100%;
+    padding:0;
+    
+
   }
   

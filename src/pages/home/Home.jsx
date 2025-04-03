@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import Pruebas from "../Pruebas"
 import CancerLiverCard from "../../models-3d/liver_cancer/desease/cards/desease/CancerLiverCard"
 import { NavLink } from "react-router"
+import Header from "../../layout/header/Header"
 
 
 const Home = () => {
@@ -19,8 +20,14 @@ const Home = () => {
 
 
   return (
+    <>
+    <Header/>
     <div>
-      <div className="w-full md:h-[49vh] h-[50vh] bg-[#797777] mx-auto ">
+    <video autoPlay loop muted playsInline className="fixed top-0 left-0  w-full h-full object-cover -z-10">
+                <source src='videos/login.mp4' type="video/mp4" />
+            </video>
+
+      <div className="w-full md:h-[49vh] h-[50vh]  mx-auto ">
 
         <div className="w-[40vh] md:w-[90vh] lg:w-[120vh] h-[35vh] md:h-[60vh]  mx-auto   mt-20 my-20 rounded-md absolute top-[67vh] md:top-[85vh] left-1/2  transform -translate-x-1/2 z-10 shadow-lg ">
 
@@ -48,7 +55,7 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 w-full place-items-center">
 
           {/* Tarjeta 1: Cancer Liver */}
-          <div className="bg-black/50 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+          <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
             <div className="w-full h-[300px]">
               <CancerLiverCard/>
             </div>
@@ -59,7 +66,7 @@ const Home = () => {
           </div>
 
           {/* Tarjeta 2: Cirrotic Liver */}
-          <div className="bg-black/50 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+          <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
             <div className="w-full h-[300px]">
               <CancerLiverCard/>
             </div>
@@ -70,7 +77,7 @@ const Home = () => {
           </div>
 
           {/* Tarjeta 3: Hepatitis B Liver */}
-          <div className="bg-black/50 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+          <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
             <div className="w-full h-[300px]">
               <CancerLiverCard/>
             </div>
@@ -89,7 +96,7 @@ const Home = () => {
           Available For
         </h1>
 
-        <div className="w-full max-w-6xl mx-auto relative bg-black/50 rounded-lg px-4 py-6 md:py-8">
+        <div className="w-full max-w-6xl mx-auto relative bg-white/15 rounded-lg px-4 py-6 md:py-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 w-full place-items-center gap-4">
             <div className="flex flex-col items-center text-center">
               <img src="operative-sistems/android.svg" alt="android" className="w-12 h-12 md:w-16 md:h-16" />
@@ -131,6 +138,7 @@ const Home = () => {
 
 
     </div>
+    </>
 
   )
 }

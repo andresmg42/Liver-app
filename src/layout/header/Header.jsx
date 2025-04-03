@@ -4,14 +4,14 @@ const Header = () => {
     return (
         <div className="w-full flex items-center justify-center relative overflow-hidden">
             
-            <img
+            {/* <img
                 src="src/assets/header/background-header-removebg-preview.png"
                 alt="header background"
                 className="absolute inset-0 h-[80vh] md:h-[90vh] lg:h-[100vh] w-full object-cover z-0"
-            />
+            /> */}
 
            
-            <header id="hero" className="w-full h-[80vh] md:h-[90vh] lg:h-[100vh] bg-black/50 text-white flex items-center justify-center z-10">
+            <header id="hero" className="w-full h-[80vh] md:h-[90vh] lg:h-[100vh]  text-white flex items-center justify-center z-10">
                 <div className="text-center px-4">
                    
                     <img
