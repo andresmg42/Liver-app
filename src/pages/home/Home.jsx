@@ -90,22 +90,50 @@ const Home = () => {
       </div>
 
       <div className="w-[126vh] h-[70vh] mx-auto bg-gray-500 mt-10">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10">
-          Look at Any 3D Liver Diseases
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 ">
+          Available For
         </h1>
 
         <div className="w-[126vh] h-[20vh] mx-auto relative bg-black/50 rounded-lg  px-2">
-        <div className="grid grid-cols-4 w-full h-full place-items-center gap-2">
-          <div className="w-full h-full bg-white items-center flex justify-center">
-            <img src="/operative-sistems/windows.svg" alt="windows" />
+          <div className="grid grid-cols-4 w-full h-full place-items-center gap-2">
+            <div className="w-full h-full  items-center flex justify-center">
+              <img src="operative-sistems/android.svg" alt="android" />
+              <h2 className="text-2xl text-white p-7 font-bold">Android</h2>
+            </div>
+            <div className="w-full h-full  items-center flex justify-center">
+              <img src="/operative-sistems/windows.svg" alt="windows" />
+              <h2 className="text-2xl text-white p-7 font-bold">Windows</h2>
+            </div>
+            <div className="w-full h-full  items-center flex justify-center">
+              <img src="/operative-sistems/apple.svg" alt="apple" />
+              <h2 className="text-2xl text-white p-7 font-bold">MacOs</h2>
+            </div>
+            <div className="w-full h-full  items-center flex justify-center">
+              <img src="/operative-sistems/ipad.svg" alt="windows" />
+              <h2 className="text-2xl text-white p-7 font-bold">Ipad</h2>
+            </div>
+
           </div>
-          <div className="w-full h-full bg-white">hola</div>
-          <div className="w-full h-full bg-white">hola</div>
-          <div className="w-full h-full bg-white">hola</div>
 
         </div>
-          
-        </div>
+
+        <h1 className="text-4xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 mt-10">
+          Chose Your Plan!
+        </h1>
+        <h2 className="text-sm md:text-xl lg:text-xl font-bold text-center mb-6 md:mb-10 mt-10">
+          Try out our 3 day risk free trial.No Payment Details required.
+        </h2>
+
+        <button className="bg-white hover:bg-[#797777] text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition text-sm md:text-base lg:text-lg xl:text-xl md:py-3 md:px-6 lg:py-4 lg:px-8 flex items-center space-x-2 mx-auto">
+          <span>Try It For Free</span>
+          <img
+            src="src/assets/header/flecha.svg"
+            alt="arrow"
+            className="w-4 h-4 md:w-6 md:h-6"
+          />
+        </button>
+
+
 
       </div>
 
