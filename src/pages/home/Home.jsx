@@ -39,57 +39,52 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-[126vh] mx-auto bg mt-10">
+      <div className="max-w-6xl w-full mx-auto bg mt-10  px-0">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10">
           Look at Any 3D Liver Diseases
         </h1>
 
-        {/* Grid changes from 1 column (mobile) to 3 columns (desktop) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-6 w-full place-items-center ">
+        {/* Grid responsivo: 1 columna (móvil) → 2 columnas (tablet) → 3 columnas (desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 w-full place-items-center">
 
-          {/* --- Card 1: Cancer Liver --- */}
-          <div className="bg-black/50 w-full max-w-[300px] md:w-[45vh] md:h-[45vh] p-4 text-white rounded-lg flex flex-col items-center justify-between">
-            <CancerLiverCard className="w-full h-auto" />
-            <h1 className="font-bold text-lg md:text-xl text-center mt-2">Cancer Liver</h1>
+          {/* Tarjeta 1: Cancer Liver */}
+          <div className="bg-black/50 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+            <div className="w-full h-[300px]">
+              <CancerLiverCard/>
+            </div>
+            <h1 className="font-bold text-xl md:text-2xl text-center ">Cancer Liver</h1>
             <NavLink className="mt-4">
-              <img
-                src="/flecha-targetas.svg"
-                alt="card arrow"
-                className="w-16 h-16 md:w-20 md:h-20"
-              />
+              <img src="/flecha-targetas.svg" alt="card arrow" className="w-18 h-18 md:w-18 md:h-18" />
             </NavLink>
           </div>
 
-          {/* --- Card 2: Cirrotic Liver --- */}
-          <div className="bg-black/50 w-full max-w-[300px] md:w-[45vh] md:h-[45vh] p-4 text-white rounded-lg flex flex-col items-center justify-between">
-            <CancerLiverCard className="w-full h-auto" />
-            <h1 className="font-bold text-lg md:text-xl text-center mt-2">Cirrotic Liver</h1>
+          {/* Tarjeta 2: Cirrotic Liver */}
+          <div className="bg-black/50 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+            <div className="w-full h-[300px]">
+              <CancerLiverCard/>
+            </div>
+            <h1 className="font-bold text-xl md:text-2xl text-center ">Cirrotic Liver</h1>
             <NavLink className="mt-4">
-              <img
-                src="/flecha-targetas.svg"
-                alt="card arrow"
-                className="w-16 h-16 md:w-20 md:h-20"
-              />
+              <img src="/flecha-targetas.svg" alt="card arrow" className="w-18 h-18 md:w-18 md:h-18"/>
             </NavLink>
           </div>
 
-          {/* --- Card 3: Hepatitis B Liver --- */}
-          <div className="bg-black/50 w-full max-w-[300px] md:w-[45vh] md:h-[45vh] p-4 text-white rounded-lg flex flex-col items-center justify-between">
-            <CancerLiverCard className="w-full h-auto" />
-            <h1 className="font-bold text-lg md:text-xl text-center mt-2">Hepatitis B Liver</h1>
+          {/* Tarjeta 3: Hepatitis B Liver */}
+          <div className="bg-black/50 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+            <div className="w-full h-[300px]">
+              <CancerLiverCard/>
+            </div>
+            <h1 className="font-bold text-xl md:text-2xl text-center ">Hepatitis B Liver</h1>
             <NavLink className="mt-4">
-              <img
-                src="/flecha-targetas.svg"
-                alt="card arrow"
-                className="w-16 h-16 md:w-20 md:h-20"
-              />
+              <img src="/flecha-targetas.svg" alt="card arrow" className="w-18 h-18 md:w-18 md:h-18" />
             </NavLink>
           </div>
 
         </div>
       </div>
 
-      <div className="w-full max-w-6xl mx-auto mt-10 p-4 md:p-6 lg:p-8">
+
+      <div className="w-full max-w-6xl mx-auto mt-10 py-20">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10">
           Available For
         </h1>
