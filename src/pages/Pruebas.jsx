@@ -10,7 +10,7 @@ import { HepatoCellularCancer } from '../models-3d/liver_cancer/desease/HepatoCe
 import { Xrays } from '../models-3d/liver_cancer/treatment/Xrays'
 
 import LiverMeat from '../models-3d/liver_cancer/desease/LiverMeat'
-import StagingLiver from '../models-3d/liver_cancer/desease/staging/StagingLiver'
+import StagingLiver from '../models-3d/liver_cancer/desease/staging/cancer/StagingLiver'
 import { Loader } from '@react-three/drei'
 import { Suspense } from 'react'
 import { LiverCancerFinal } from '../models-3d/liver_cancer/desease/LiverCancerFinal'

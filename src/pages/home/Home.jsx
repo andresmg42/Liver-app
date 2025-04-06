@@ -1,7 +1,7 @@
 import useAuthStore from "../../stores/use-auth-store"
 import { useEffect } from "react"
 import Pruebas from "../Pruebas"
-import CancerLiverCard from "../../models-3d/liver_cancer/desease/cards/desease/CancerLiverCard"
+import CancerLiverCard from "../../models-3d/liver_cancer/desease/cards/desease/cancer/CancerLiverCard"
 import { NavLink } from "react-router"
 import Header from "../../layout/header/Header"
 
@@ -133,10 +133,6 @@ const Home = () => {
           />
         </button>
       </div>
-
-
-
-
     </div>
     </>
 

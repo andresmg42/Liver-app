@@ -20,7 +20,7 @@ const NabBar = () => {
     }
   })
   return (
-    <div className="bg-[#07054A] text-white py-4">
+    <div className="bg-[#07054A] text-white py-4 fixed top-0 left-0 w-full z-50 shadow">
     <nav className="container mx-auto flex justify-between items-center h-10">
       {/* Logo o nombre de la marca */}
       <div className="h-16 flex items-center">
