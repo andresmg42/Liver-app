@@ -124,7 +124,7 @@ const Home = () => {
           Try out our 3-day risk-free trial. No payment details required.
         </h2>
 
-        <button className="bg-white hover:bg-gray-600 text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition flex items-center space-x-2 mx-auto mt-6 focus:ring-2 focus:ring-gray-400 focus:outline-none">
+        <button className="bg-white hover:bg-[#797777] text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition flex items-center space-x-2 mx-auto mt-6 focus:ring-2 focus:ring-gray-400 focus:outline-none">
           <span>Try It For Free</span>
           <img
             src="src/assets/header/flecha.svg"

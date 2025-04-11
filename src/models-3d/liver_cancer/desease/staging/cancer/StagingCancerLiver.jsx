@@ -7,7 +7,7 @@ const StagingCancerLiver = () => {
       
       files={'/models/liver_cancer/desease/hdri/hospital_room_2_4k.hdr'} 
       
-      // preset='apartment'
+      
       
       background/>
   )

@@ -20,7 +20,7 @@ const NabBar = () => {
     }
   })
   return (
-    <div className="bg-[#07054A] text-white py-4 fixed top-0 left-0 w-full z-50 shadow">
+    <div className="bg-[#797777] text-white py-4 fixed top-0 left-0 w-full z-50 shadow">
     <nav className="container mx-auto flex justify-between items-center h-10">
       {/* Logo o nombre de la marca */}
       <div className="h-16 flex items-center">
@@ -67,7 +67,7 @@ const NabBar = () => {
           <NavLink
             to="/"
             exact
-            className="hover:text-gray-400 block md:inline-block py-2 md:py-0"
+            className="hover:text-black block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             Home
@@ -76,7 +76,7 @@ const NabBar = () => {
         <li>
           <NavLink
             to="/enfermedades"
-            className="hover:text-gray-400 block md:inline-block py-2 md:py-0"
+            className="hover:text-black block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             Deseases
@@ -85,7 +85,7 @@ const NabBar = () => {
         <li>
           <NavLink
             to="/quiz"
-            className="hover:text-gray-400 block md:inline-block py-2 md:py-0"
+            className="hover:text-black block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             Quiz
@@ -94,7 +94,7 @@ const NabBar = () => {
         <li>
           <NavLink
             to="/about"
-            className="hover:text-gray-400 block md:inline-block py-2 md:py-0"
+            className="hover:text-black block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             About Us
@@ -103,7 +103,7 @@ const NabBar = () => {
         <li>
           <NavLink
             to="/login"
-            className="hover:text-gray-400 block md:inline-block py-2 md:py-0"
+            className="hover:text-black block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             Sign In
@@ -113,7 +113,7 @@ const NabBar = () => {
           <li>
             <button
               onClick={handleLogout}
-              className="hover:text-gray-400 block md:inline-block py-2 md:py-0"
+              className="hover:text-black block md:inline-block py-2 md:py-0"
             >
               Sign Up
             </button>
