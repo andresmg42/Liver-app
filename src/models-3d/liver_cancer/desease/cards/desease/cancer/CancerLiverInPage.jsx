@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
 import { LiverCancerFinal } from '../../../LiverCancerFinal'
 import StagingCancerLiver from '../../../staging/cancer/StagingCancerLiver'
+import Recipient from '../../../resipients/Resipient'
 
 
 const CancerLiverInPage = () => {
@@ -13,6 +14,7 @@ const CancerLiverInPage = () => {
     <ambientLight intensity={2} />
     <directionalLight position={[5, 5, 10]} intensity={4} />
     <LiverCancerFinal scale={5}/>
+    <Recipient/>
 
   </Canvas>
   )
