@@ -7,6 +7,7 @@ import Recipient from '../../../resipients/Resipient'
 import { SoftShadows } from '@react-three/drei'
 import { Float } from '@react-three/drei'
 import Description from '../../../texts/cancer/Description'
+import DescriptionHtml from '../../../texts/cancer/DescriptionHtml'
 const CancerLiverInPage = () => {
 
   const description=`
@@ -36,11 +37,17 @@ this type of cancer.`
     <Canvas  camera={{ position: [0, 0, 2.5] }} shadows={true}>
     {/* <StagingCancerLiver/> */}
   
-    <Description title={'Cancer'} position={[-2.5, 1.4, 0]}/>
+    {/* <Description title={'Cancer'} position={[-2.5, 1.4, 0]}/>
     <Description title={description} position={[-2.3, 0.6, 0]}/>
 
     <Description title={'Causes'} position={[2.5, 1.4, 0]}/>
-    <Description title={causes} position={[2.7, 0.6, 0]}/>
+    <Description title={causes} position={[2.7, 0.6, 0]}/> */}
+
+    {/* <DescriptionHtml paragraph={description} position={[-2.3, 0.3, 0]} title={'Liver Cancer'}/>
+    
+    <DescriptionHtml paragraph={causes} position={[2.7, 0.3, 0]} title={'Causes'}/> */}
+
+
 
     <OrbitControls enableZoom={false} />
     <ambientLight intensity={4} />
