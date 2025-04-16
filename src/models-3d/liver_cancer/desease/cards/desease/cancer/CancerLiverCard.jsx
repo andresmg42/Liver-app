@@ -1,7 +1,7 @@
 import React from 'react'
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
-import { LiverCancerFinal } from '../../../LiverCancerFinal'
+import { LiverCancerFinal } from '../../../cancer/LiverCancerFinal'
 
 
 const CancerLiverCard = () => {

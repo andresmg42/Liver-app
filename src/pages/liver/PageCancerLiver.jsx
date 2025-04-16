@@ -4,9 +4,11 @@ import CancerLiverInPage from '../../models-3d/liver_cancer/desease/cards/deseas
 
 const PageCancerLiver = () => {
   return (
-    
+    <div className='bg-zinc-700 w-full h-[100vh]'>
+      <CancerLiverInPage />
+    </div>
         
-        <CancerLiverInPage />
+        
         
   )
 }
