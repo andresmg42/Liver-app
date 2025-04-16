@@ -127,7 +127,7 @@ const Login = () => {
                         onClick={handleGoogleLogin}
                         className="flex items-center justify-center px-6 py-2 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all duration-200"
                     >
-                        <img src="src/assets/google.svg" alt="Google" className="w-5 h-5 mr-2" />
+                        <img src="session/google.svg" alt="Google" className="w-5 h-5 mr-2" />
                         Google
                     </button>
 
@@ -137,7 +137,7 @@ const Login = () => {
                         onClick={handleFacebookLogin}
                         className="flex items-center justify-center px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200"
                     >
-                        <img src="src/assets/facebook.svg" alt="Facebook" className="w-5 h-5 mr-2" />
+                        <img src="session/facebook.svg" alt="Facebook" className="w-5 h-5 mr-2" />
                         Facebook
                     </button>
 
@@ -147,7 +147,7 @@ const Login = () => {
                         onClick={handleGithubLogin}
                         className="flex items-center justify-center px-6 py-2 bg-gray-800 text-white font-medium rounded-md hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 transition-all duration-200"
                     >
-                        <img src="src/assets/github-mark-white.svg" alt="GitHub" className="w-5 h-5 mr-2" />
+                        <img src="session/github-mark-white.svg" alt="GitHub" className="w-5 h-5 mr-2" />
                         GitHub
                     </button>
 
@@ -157,7 +157,7 @@ const Login = () => {
                         onClick={handleEmailLogin}
                         className="flex items-center justify-center px-6 py-2 bg-gray-500 text-white font-medium rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-all duration-200"
                     >
-                        <img src="src/assets/email.svg" alt="Email" className="w-5 h-5 mr-2" />
+                        <img src="session/email.svg" alt="Email" className="w-5 h-5 mr-2" />
                         Email
                     </button>
                 </div>
