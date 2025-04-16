@@ -27,11 +27,11 @@ const Home = () => {
                 <source src='videos/login.mp4' type="video/mp4" />
             </video>
 
-      <div className="w-full md:h-[49vh] h-[50vh]  mx-auto ">
+      
 
-        <div className="w-[40vh] md:w-[90vh] lg:w-[120vh] h-[35vh] md:h-[60vh]  mx-auto   mt-20 my-20 rounded-md absolute top-[67vh] md:top-[85vh] left-1/2  transform -translate-x-1/2 z-10 shadow-lg ">
+        <div className="h-[75vh] ">
 
-          <div className="w-full aboslute  bg-black/50">
+          <div className="w-full  bg-black/50">
             <h1 className="text-xl md:tex-2l font-bold text-center" > View Screen Mode: 3D Human Liver</h1>
           </div>
 
@@ -43,10 +43,10 @@ const Home = () => {
 
 
 
-        </div>
+        
       </div>
 
-      <div className="max-w-6xl w-full mx-auto bg mt-10  px-0">
+      <div className="max-w-6xl w-full mx-auto   mt-20  px-0">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10">
           Look at Any 3D Liver Diseases
         </h1>
@@ -60,7 +60,7 @@ const Home = () => {
               <CancerLiverCard/>
             </div>
             <h1 className="font-bold text-xl md:text-2xl text-center ">Cancer Liver</h1>
-            <NavLink className="mt-4">
+            <NavLink className="mt-4" to={'/cancerLiver'}>
               <img src="/flecha-targetas.svg" alt="card arrow" className="w-18 h-18 md:w-18 md:h-18" />
             </NavLink>
           </div>
@@ -91,7 +91,7 @@ const Home = () => {
       </div>
 
 
-      <div className="w-full max-w-6xl mx-auto mt-10 py-20">
+      <div className="w-full max-w-6xl mx-auto my-20">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10">
           Available For
         </h1>

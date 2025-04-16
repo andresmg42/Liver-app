@@ -6,6 +6,7 @@ import Profile from './pages/home/Profile'
 import Login from './pages/sesion/Login'
 import Prubas from './pages/home/Prubas'
 import PageCancerLiver from './pages/liver/PageCancerLiver'
+import ScrollToTop from './help/ScrollToTop'
 
 
 
@@ -15,7 +16,9 @@ function App() {
   return (
     <BrowserRouter>
       <Layout>
+      <ScrollToTop/>
         <Routes>
+          
           <Route index path='/' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/profile' element={<Profile/>}/>
