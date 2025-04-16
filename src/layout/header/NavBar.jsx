@@ -26,7 +26,7 @@ const NabBar = () => {
       <div className="h-16 flex items-center">
         <NavLink to="/">
         
-        <img src="src/assets/header/logo_figma.svg" alt="logo" className='w-full h-12'/>
+        <img src="/header/logo_figma.svg" alt="logo" className='w-full h-12'/>
 
        
         

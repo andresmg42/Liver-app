@@ -127,7 +127,7 @@ const Home = () => {
         <button className="bg-white hover:bg-[#797777] text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition flex items-center space-x-2 mx-auto mt-6 focus:ring-2 focus:ring-gray-400 focus:outline-none">
           <span>Try It For Free</span>
           <img
-            src="src/assets/header/flecha.svg"
+            src="/header/flecha.svg"
             alt="arrow"
             className="w-4 h-4 md:w-6 md:h-6"
           />
