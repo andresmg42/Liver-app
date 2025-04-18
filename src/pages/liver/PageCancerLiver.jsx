@@ -12,7 +12,7 @@ const PageCancerLiver = () => {
                 <source src='videos/login.mp4' type="video/mp4" />
             </video>
 
-<div className="bg-black/50 p-4 rounded-xl shadow-xl w-[40vh] h-[70vh]  
+<div className="bg-black/50 p-4 rounded-xl shadow-xl w-[40vh] h-[50vh]  
 flex-col justify-center items-center z-20 absolute top-[20vh] left-[35vh]">
     <h1 className="text-white text-md center">Liver Cancer</h1>
     <p className="text-white text-sm text-left">
@@ -30,7 +30,7 @@ can lead to liver failure.
 
     </div>
 
-    <div className="bg-white/15 p-4 rounded-xl shadow-xl w-[40vh] h-[70vh]  
+    <div className="bg-white/15 p-4 rounded-xl shadow-xl w-[40vh] h-[50vh]  
 flex-col justify-center items-center z-20 absolute top-[20vh] right-[35vh]">
     <h1 className="text-white text-md center">Causes</h1>
     <p className="text-white text-sm text-left">
