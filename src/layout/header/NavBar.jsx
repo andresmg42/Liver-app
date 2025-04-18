@@ -67,7 +67,7 @@ const NabBar = () => {
           <NavLink
             to="/"
             exact
-            className="hover:text-black block md:inline-block py-2 md:py-0"
+            className="hover:text-[#797777] block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             Home
@@ -76,7 +76,7 @@ const NabBar = () => {
         <li>
           <NavLink
             to="/enfermedades"
-            className="hover:text-black block md:inline-block py-2 md:py-0"
+            className="hover:text-[#797777] block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             Deseases
@@ -85,7 +85,7 @@ const NabBar = () => {
         <li>
           <NavLink
             to="/quiz"
-            className="hover:text-black block md:inline-block py-2 md:py-0"
+            className="hover:text-[#797777] block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             Quiz
@@ -94,7 +94,7 @@ const NabBar = () => {
         <li>
           <NavLink
             to="/about"
-            className="hover:text-black block md:inline-block py-2 md:py-0"
+            className="hover:text-[#797777] block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             About Us
@@ -103,7 +103,7 @@ const NabBar = () => {
         <li>
           <NavLink
             to="/login"
-            className="hover:text-black block md:inline-block py-2 md:py-0"
+            className="hover:text-[#797777] block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
           >
             Sign In
@@ -113,7 +113,7 @@ const NabBar = () => {
           <li>
             <button
               onClick={handleLogout}
-              className="hover:text-black block md:inline-block py-2 md:py-0"
+              className="hover:text-[#797777] block md:inline-block py-2 md:py-0"
             >
               Sign Up
             </button>
