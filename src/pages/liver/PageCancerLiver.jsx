@@ -8,8 +8,12 @@ const PageCancerLiver = () => {
   return (
     <div className='w-full h-[100vh]'>
 
-<div className="bg-black/50 p-4 rounded-xl shadow-xl w-[40vh] h-[50vh]  
-flex-col justify-center items-center z-20 absolute top-[30vh] left-[35vh]">
+<video autoPlay loop muted playsInline className="fixed top-0 left-0  w-full h-full object-cover -z-10">
+                <source src='videos/login.mp4' type="video/mp4" />
+            </video>
+
+<div className="bg-black/50 p-4 rounded-xl shadow-xl w-[40vh] h-[70vh]  
+flex-col justify-center items-center z-20 absolute top-[20vh] left-[35vh]">
     <h1 className="text-white text-md center">Liver Cancer</h1>
     <p className="text-white text-sm text-left">
     Liver cancer is an abnormal growth of cells 
@@ -26,8 +30,8 @@ can lead to liver failure.
 
     </div>
 
-    <div className="bg-white/15 p-4 rounded-xl shadow-xl w-[40vh] h-[50vh]  
-flex-col justify-center items-center z-20 absolute top-[30vh] right-[35vh]">
+    <div className="bg-white/15 p-4 rounded-xl shadow-xl w-[40vh] h-[70vh]  
+flex-col justify-center items-center z-20 absolute top-[20vh] right-[35vh]">
     <h1 className="text-white text-md center">Causes</h1>
     <p className="text-white text-sm text-left">
     Causes of liver cancer include primarily 
@@ -45,9 +49,7 @@ this type of cancer.
     </div>
 
 
-      <video autoPlay loop muted playsInline className="fixed top-0 left-0  w-full h-full object-cover -z-10">
-                <source src='videos/login.mp4' type="video/mp4" />
-            </video>
+      
 
             <div className=' w-full h-full z-10'>
             <CancerLiverInPage />

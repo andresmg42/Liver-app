@@ -1,6 +1,6 @@
 import useAuthStore from "../../stores/use-auth-store"
 import { useEffect } from "react"
-import Pruebas from "../Pruebas"
+import WindowLiverHome from "../WindowLiverHome"
 import CancerLiverCard from "../../models-3d/liver_cancer/desease/cards/desease/cancer/CancerLiverCard"
 import { NavLink } from "react-router"
 import Header from "../../layout/header/Header"
@@ -37,7 +37,7 @@ const Home = () => {
 
 
           <div className="w-full h-full">
-            <Pruebas />
+            <WindowLiverHome />
           </div>
 
 
@@ -52,7 +52,7 @@ const Home = () => {
         </h1>
 
         {/* Grid responsivo: 1 columna (móvil) → 2 columnas (tablet) → 3 columnas (desktop) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 w-full place-items-center">
+        <div className="grid grid-cols-1  w-full place-items-center">
 
           {/* Tarjeta 1: Cancer Liver */}
           <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
@@ -65,8 +65,8 @@ const Home = () => {
             </NavLink>
           </div>
 
-          {/* Tarjeta 2: Cirrotic Liver */}
-          <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+          
+          {/* <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
             <div className="w-full h-[300px]">
               <CancerLiverCard/>
             </div>
@@ -74,10 +74,10 @@ const Home = () => {
             <NavLink className="mt-4">
               <img src="/flecha-targetas.svg" alt="card arrow" className="w-18 h-18 md:w-18 md:h-18"/>
             </NavLink>
-          </div>
+          </div> */}
 
-          {/* Tarjeta 3: Hepatitis B Liver */}
-          <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+          
+          {/* <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
             <div className="w-full h-[300px]">
               <CancerLiverCard/>
             </div>
@@ -85,7 +85,7 @@ const Home = () => {
             <NavLink className="mt-4">
               <img src="/flecha-targetas.svg" alt="card arrow" className="w-18 h-18 md:w-18 md:h-18" />
             </NavLink>
-          </div>
+          </div> */}
 
         </div>
       </div>

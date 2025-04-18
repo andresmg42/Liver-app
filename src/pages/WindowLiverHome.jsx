@@ -12,8 +12,10 @@ import StagingLiver from '../models-3d/liver_cancer/desease/staging/cancer/Stagi
 
 import { Alcohol } from '../models-3d/liver_cancer/recomendations/Alcohol'
 
+import { LiverHome } from '../models-3d/liver_cancer/desease/cancer/LiverHome'
 
-const Pruebas = () => {
+
+const WindowLiverHome = () => {
 
   
 
@@ -32,7 +34,7 @@ const Pruebas = () => {
       {/* <Fever scale={3}/> */}
 
       {/* <Xrays scale={2}/> */}
-      <Alcohol scale={3}/>
+      <LiverHome scale={2}/>
 
 
 
@@ -42,4 +44,4 @@ const Pruebas = () => {
   )
 }
 
-export default Pruebas
+export default WindowLiverHome
