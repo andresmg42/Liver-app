@@ -29,7 +29,7 @@ const Home = () => {
 
       
 
-        <div className="h-[75vh] ">
+        <div className="h-[75vh] w-[150vh]">
 
           <div className="w-full  bg-black/50">
             <h1 className="text-xl md:tex-2l font-bold text-center" > View Screen Mode: 3D Human Liver</h1>
