@@ -34,7 +34,7 @@ const WindowLiverHome = () => {
       {/* <Fever scale={3}/> */}
 
       {/* <Xrays scale={2}/> */}
-      <LiverHome scale={2}/>
+      <LiverHome scale={1.7}/>
 
 
 
