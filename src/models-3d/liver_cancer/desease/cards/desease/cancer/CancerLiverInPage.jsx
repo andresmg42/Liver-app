@@ -59,9 +59,9 @@ this type of cancer.`
 
 
      <Float
-     speed={4} // Animation speed, defaults to 1
-     rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
-     floatIntensity={0.3} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+     speed={4} 
+     rotationIntensity={0.5} 
+     floatIntensity={0.3} 
      floatingRange={[1,3]}
      >
      

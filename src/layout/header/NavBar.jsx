@@ -61,7 +61,7 @@ const NabBar = () => {
       <ul
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:flex md:space-x-6 absolute md:relative bg-[#07054A] md:bg-transparent w-full md:w-auto left-0 md:left-auto top-16 md:top-0 p-4 md:p-0 z-10`}
+        } md:flex md:space-x-6 absolute md:relative bg-black/50 md:bg-transparent w-full md:w-auto left-0 md:left-auto top-16 md:top-0 p-4 md:p-0 z-10`}
       >
         <li>
           <NavLink

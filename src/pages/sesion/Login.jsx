@@ -15,18 +15,16 @@ const Login = () => {
 
     const handleGoogleLogin = async () => {
         try {
+            
             const data = await loginGoogleWithPopUp()
 
             console.log(data)
 
-            // const {displayName,email}=data?.user
+            const {displayName,email}=data?.user
 
-            // const res_axios= await api.post('users/',{displayName,email})
+            const res_axios= await api.post('users/',{displayName,email})
 
-            // console.log(res_axios.data)
-
-
-
+            console.log(res_axios.data)
 
             navigate('/')
 
