@@ -8,6 +8,7 @@ import { SoftShadows } from '@react-three/drei'
 import { Float } from '@react-three/drei'
 import Description from '../../../texts/cancer/Description'
 import DescriptionHtml from '../../../texts/cancer/DescriptionHtml'
+import CancerImages from '../../../cancer/cancer-images/CancerImages'
 const CancerLiverInPage = () => {
 
   const description=`
@@ -47,13 +48,13 @@ this type of cancer.`
     
     <DescriptionHtml paragraph={causes} position={[2.7, 0.3, 0]} title={'Causes'}/> */}
 
-
+    <CancerImages path={'cancer-images/liver-tumor.jpg'} position={[-2.5, 0.5, 0]}/>
 
     <OrbitControls enableZoom={false} />
     <ambientLight intensity={4} />
     <directionalLight position={[0, 5, 5]} 
     intensity={3}  
-    // camera={{ position: [0, 1, 2] }} 
+    
     castShadow={true}
      />
 
