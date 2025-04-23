@@ -26,22 +26,26 @@ const Header = () => {
                         Anatomy Diseases Platform
                     </h1>
 
-                    <div className="flex space-x-20 justify-center mt-20">
-                        
-                        <button className="bg-white hover:bg-[#797777] text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition text-sm md:text-base lg:text-lg xl:text-xl md:py-3 md:px-6 lg:py-4 lg:px-8 flex items-center space-x-2">
-                            <span>Try It For Free</span>
-                            <img
-                                src="/header/flecha.svg"
-                                alt="arrow"
-                                className="w-4 h-4 md:w-6 md:h-6" 
-                            />
-                        </button>
-
-                        
-                        <button className="bg-white hover:bg-[#797777] text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition text-sm md:text-base lg:text-lg xl:text-xl md:py-3 md:px-6 lg:py-4 lg:px-8 w-[25vh]">
-                            Contact Us
-                        </button>
-                    </div>
+                    <div className="flex space-x-4 md:space-x-20 justify-center mt-20">
+  <button className="bg-white hover:bg-[#797777] text-black rounded-lg font-semibold transition flex items-center space-x-2
+    text-sm py-2 px-4
+    md:text-base md:py-3 md:px-6
+    lg:text-lg lg:py-3 lg:px-8">
+    <span>Try It For Free</span>
+    <img
+      src="/header/flecha.svg"
+      alt="arrow"
+      className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" 
+    />
+  </button>
+  
+  <button className="bg-white hover:bg-[#797777] text-black rounded-lg font-semibold transition
+    text-sm py-2 px-4
+    md:text-base md:py-3 md:px-6
+    lg:text-lg lg:py-3 lg:px-8">
+    Contact Us
+  </button>
+</div>
 
 
 
