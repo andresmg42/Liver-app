@@ -35,7 +35,7 @@ const Home = () => {
   </video>
 
   {/* 3D Viewer Section */}
-  <div className="md:w-[153vh] w-full h-[50vh] md:h-screen max-h-[75vh]  flex flex-col mx-auto">
+  <div className="md:w-[153vh] w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col mx-auto ">
     <div className="w-full bg-black/50">
       <h1 className="text-xl md:text-2xl font-bold text-center text-white">
         View Screen Mode: 3D Human Liver
