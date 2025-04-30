@@ -31,7 +31,7 @@ const PageCancerLiver = () => {
     <div className="flex flex-col items-center gap-8 max-w-lg mx-auto px-4">
       
       {/* Liver Cancer Card */}
-      <div className="bg-black/50 p-5 rounded-xl shadow-xl w-full">
+      <div className="bg-white/15 p-5 rounded-xl shadow-xl w-full">
         <h2 className="text-white text-xl font-semibold text-center mb-3">Liver Cancer</h2>
         <p className="text-white text-sm md:text-base">
           Liver cancer is an abnormal growth of cells in the liver that forms a tumor. 
@@ -58,10 +58,11 @@ const PageCancerLiver = () => {
     </div>
 
     {/* Cancer Liver In Page Component */}
-    <div className="w-full  h-[50vh] md:h-screen mt-10">
+    
+  </div>
+  <div className="w-full  h-[50vh] md:h-screen mt-10">
       <CancerLiverInPage />
     </div>
-  </div>
 </div>
         
         
