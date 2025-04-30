@@ -3,10 +3,9 @@ import React from "react";
 const Header = () => {
   return (
     <div className="w-full flex items-center justify-center  relative overflow-hidden">
-      
       <header
         id="hero"
-        className="w-full min-h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] xl:h-[100vh] text-white z-10 "
+        className="w-full min-h-[60vh] sm:h-[70vh] md:h-[80vh]  text-white z-10  "
       >
         <div className="text-center px-4  h-full mt-10 ">
           <img
@@ -43,6 +42,24 @@ const Header = () => {
             >
               Contact Us
             </button>
+          </div>
+
+          {/* down row */}
+          <div className="animate-bounce mx-auto flex items-center justify-center  md:mt-20 mt-10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-blue-600"
+              fill="white"
+              viewBox="0 0 24 24"
+              stroke="white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </div>
         </div>
       </header>
