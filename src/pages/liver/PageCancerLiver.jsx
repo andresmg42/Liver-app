@@ -3,6 +3,7 @@ import CancerLiverInPage from "../../models-3d/liver_cancer/desease/cards/deseas
 import { useState } from "react";
 import cards from "./pageCancerLiverContent";
 
+
 const PageCancerLiver = () => {
   const [viewImage, setViewImage] = useState(false);
 
@@ -169,6 +170,8 @@ const PageCancerLiver = () => {
           </svg>
         </button>
       </div>
+
+      
 
       {/* Cancer Liver In Page Component */}
       <div className="w-full  h-[50vh] md:h-screen mt-10">

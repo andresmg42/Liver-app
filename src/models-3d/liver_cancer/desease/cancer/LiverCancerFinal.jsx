@@ -4,8 +4,11 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 
 
+
 export function LiverCancerFinal(props) {
   const { nodes, materials } = useGLTF('/models/liver_cancer/desease/cancer-liver.glb')
+
+  
 
   const cancerLiverRef=useRef();
     useFrame((satate,delta)=>{
@@ -13,8 +16,9 @@ export function LiverCancerFinal(props) {
     })
 
   return (
-    <group {...props} dispose={null} ref={cancerLiverRef}>
+    <group  {...props} dispose={null} ref={cancerLiverRef} >
       <mesh
+        
         castShadow
         receiveShadow
         geometry={nodes.CancerLiver.geometry}

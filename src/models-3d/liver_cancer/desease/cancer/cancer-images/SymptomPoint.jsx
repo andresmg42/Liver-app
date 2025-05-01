@@ -7,7 +7,7 @@ const SymptomPoint = ({ position, title }) => {
   return (
     <Html center position={position} distancFactor={2}>
       <div className="flex items-center justify-center p-2 gap-2">
-        <div className="w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/15 flex items-center justify-center">
+        <div className="w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -26,7 +26,7 @@ const SymptomPoint = ({ position, title }) => {
           </svg>
         </div>
 
-        <div className="w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/15 flex items-center justify-center">
+        <div className="w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -44,7 +44,7 @@ const SymptomPoint = ({ position, title }) => {
           </svg>
         </div>
 
-        <div className="w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/15 flex items-center justify-center">
+        <div className="w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"

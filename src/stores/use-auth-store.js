@@ -120,7 +120,18 @@ const useAuthStore = create((set) => {
         console.error("Error loggin out:", error)
       }
     },
+
+    
   }
 })
+
+export const useEventStore=create((set,get)=>({
+  click:false,
+  setClick:()=>{
+    set({click:!get().click})
+    console.log(!get().click)
+
+  },
+}))
 
 export default useAuthStore

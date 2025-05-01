@@ -1,28 +1,26 @@
-import { Html } from '@react-three/drei'
+import { Html, Tetrahedron } from '@react-three/drei'
 import React from 'react'
 import { Text3D } from '@react-three/drei'
 import { Center } from '@react-three/drei'
+import { useRef } from 'react'
+import { useFrame } from '@react-three/fiber'
+import { useThree } from '@react-three/fiber'
 
 const CancerImages = ({position,title}) => {
+
+  const textRef=useRef();
+  const {camera}= useThree()
+
+  useFrame(()=>{
+    if (textRef.current){
+      textRef.current.quaternion.copy(camera.quaternion);
+    }
+  })
   return (
-    // <Html
-    
-    // center
-    // position={position}
-    // distancFactor={2}
-    
-
-    
-
-    // >
-    //     <div className='w-[50vh] h-[50vh]'>
-    //         <img src={path} alt="" />
-    //     </div>
-        
-    // </Html>
-
+  
     <Center position={position}>
   <Text3D
+    ref={textRef}
     font="fonts/Bebas Neue_Regular.json"
     bevelEnabled
     bevelThickness={0.02}
