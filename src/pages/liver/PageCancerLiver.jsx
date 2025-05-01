@@ -32,7 +32,7 @@ const PageCancerLiver = () => {
       </video>
 
       {/* Main Content Container */}
-      <div className="container mx-auto  pt-8 relative z-10">
+      <div className="w-full mx-auto mt-10  pt-8 relative z-10">
         {/* Page Header */}
         <header className="mb-8 text-center">
           <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold">
@@ -41,13 +41,13 @@ const PageCancerLiver = () => {
         </header>
 
         {/* Single Column Cards Container */}
-        <div className="flex flex-col items-center gap-8 max-w-lg mx-auto px-4 relative">
+        <div className=" items-center  gap-8 md:w-[80vh] md:h-[50vh] h-[50vh] mx-auto px-4 relative ">
           {/* Liver Cancer Card */}
           <div className="bg-white/15 p-5 rounded-xl shadow-xl w-full">
-            <h2 className="text-white text-xl font-semibold text-center mb-3">
+            <h2 className="text-white text-2xl font-semibold text-center mb-3">
               {cards[index].titulo}
             </h2>
-            <p className="text-white text-sm md:text-base">
+            <p className="text-white text-sm md:text-xl">
               {cards[index].descripcion}
             </p>
             {cards[index].imagen && (
@@ -76,7 +76,7 @@ const PageCancerLiver = () => {
               <img
                 src={cards[index].imagen}
                 alt={cards[index].titulo}
-                className="rounded-md mb-4 w-full h-80 object-cover"
+                className="rounded-md mb-4 w-full h-100 object-cover"
               />
             )}
           </div>
@@ -84,8 +84,8 @@ const PageCancerLiver = () => {
           {/* Botón Anterior (izquierda) */}
           <button
             onClick={back}
-            className="hidden md:block relative  mt-4
-            md:absolute md:-left-10 md:top-1/2 md:-translate-y-1/2
+            className="hidden md:block relative  
+            md:absolute md:-left-10 md:top-[12vh] md:-translate-y-1/2
             bg-white/15 shadow-md p-2 rounded-full hover:bg-gray-100"
           >
             <svg
@@ -107,7 +107,7 @@ const PageCancerLiver = () => {
           {/* Botón Siguiente (derecha) */}
           <button
             onClick={next}
-            className="hidden md:block relative  md:absolute md:-right-10 md:top-1/2 md:-translate-y-1/2 bg-white/15  shadow-md p-2 rounded-full hover:bg-gray-100"
+            className="hidden md:block relative  md:absolute md:-right-10 md:top-[12vh] md:-translate-y-1/2 bg-white/15  shadow-md p-2 rounded-full hover:bg-gray-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

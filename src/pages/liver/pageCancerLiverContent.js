@@ -69,6 +69,24 @@ const cards=[
         imagen:"https://d2cbg94ubxgsnp.cloudfront.net/Pictures/2000xAny/8/5/4/133854_shutterstock_660259354.jpg"
 
      },
+
+     { id: 3, titulo: "Genetic Factors", 
+        descripcion: `
+        Genetic factors can play a significant role in the development of liver cancer 
+        by increasing an individual's susceptibility to cellular damage and abnormal growth.
+        Inherited mutations in certain genes—such as those involved in cell cycle regulation,
+        DNA repair, or tumor suppression—can disrupt normal liver cell function and 
+        promote cancer development. Conditions like hemochromatosis, which causes iron 
+        overload in the liver, and certain metabolic disorders are examples of inherited diseases
+        that raise the risk of hepatocellular carcinoma. When combined with environmental 
+        factors like alcohol use or viral infections, these genetic predispositions can 
+        significantly accelerate the progression to liver cancer.
+        `,
+        imagen:"https://static.elsevier.es/multimedia/16652681/00000027000000S1/v3_202303011411/S1665268121003513/v3_202303011411/en/main.assets/gr1.jpeg"
+
+     },
+
+
         
   ];
 
