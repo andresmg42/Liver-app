@@ -36,19 +36,9 @@ diseases can contribute to the development of
 this type of cancer.`
   return (
     <Canvas  camera={{ position: [0, 0, 2.5] }} shadows={true}>
-    {/* <StagingCancerLiver/> */}
-  
-    {/* <Description title={'Cancer'} position={[-2.5, 1.4, 0]}/>
-    <Description title={description} position={[-2.3, 0.6, 0]}/>
 
-    <Description title={'Causes'} position={[2.5, 1.4, 0]}/>
-    <Description title={causes} position={[2.7, 0.6, 0]}/> */}
 
-    {/* <DescriptionHtml paragraph={description} position={[-2.3, 0.3, 0]} title={'Liver Cancer'}/>
-    
-    <DescriptionHtml paragraph={causes} position={[2.7, 0.3, 0]} title={'Causes'}/> */}
-
-    <CancerImages path={'cancer-images/liver-tumor.jpg'} position={[-2.5, 0.5, 0]}/>
+    <CancerImages title={'LIVER CANCER'} position={[0, 1.7, 0]}/>
 
     <OrbitControls enableZoom={false} />
     <ambientLight intensity={4} />

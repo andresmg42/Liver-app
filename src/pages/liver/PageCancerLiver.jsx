@@ -35,33 +35,33 @@ const PageCancerLiver = () => {
       <div className="w-full mx-auto mt-10  pt-8 relative z-10">
         {/* Page Header */}
         <header className="mb-8 text-center">
-          <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold">
+          <h1 className="text-[#ff6035] text-2xl md:text-3xl lg:text-4xl font-bold">
             Liver Cancer Information
           </h1>
         </header>
 
         {/* Single Column Cards Container */}
-        <div className=" items-center  gap-8 md:w-[80vh] md:h-[50vh] h-[50vh] mx-auto px-4 relative ">
+        <div className=" items-center  gap-8 md:w-[80vh] md:h-[50vh] h-[60vh] mx-auto px-4 relative ">
           {/* Liver Cancer Card */}
           <div className="bg-white/15 p-5 rounded-xl shadow-xl w-full">
-            <h2 className="text-white text-2xl font-semibold text-center mb-3">
+            <h2 className="text-[#ff6035] text-2xl font-semibold text-center mb-3">
               {cards[index].titulo}
             </h2>
-            <p className="text-white text-sm md:text-xl">
+            <p className="text-[#ff6035] text-sm md:text-xl">
               {cards[index].descripcion}
             </p>
             {cards[index].imagen && (
               <button
-                className="animate-bounce mt-10  flex flex-col items-center mx-auto"
+                className="animate-bounce mt-10  flex flex-col items-center mx-auto  text-[#ff6035]"
                 onClick={() => setViewImage(!viewImage)}
               >
                 view
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="white"
+                  fill="#ff6035"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
-                  stroke="currentColor"
+                  stroke="#ff6035"
                   class="size-6"
                 >
                   <path
@@ -85,15 +85,15 @@ const PageCancerLiver = () => {
           <button
             onClick={back}
             className="hidden md:block relative  
-            md:absolute md:-left-10 md:top-[12vh] md:-translate-y-1/2
+            md:absolute md:-left-10 md:top-[20vh] md:-translate-y-1/2
             bg-white/15 shadow-md p-2 rounded-full hover:bg-gray-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="white"
+              fill="#ff6035"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              stroke="currentColor"
+              stroke="#ff6035"
               class="size-6"
             >
               <path
@@ -107,14 +107,14 @@ const PageCancerLiver = () => {
           {/* Botón Siguiente (derecha) */}
           <button
             onClick={next}
-            className="hidden md:block relative  md:absolute md:-right-10 md:top-[12vh] md:-translate-y-1/2 bg-white/15  shadow-md p-2 rounded-full hover:bg-gray-100"
+            className="hidden md:block relative  md:absolute md:-right-10 md:top-[20vh] md:-translate-y-1/2 bg-white/15  shadow-md p-2 rounded-full hover:bg-gray-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="white"
+              fill="#ff6035"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              stroke="currentColor"
+              stroke="#ff6035"
               class="size-6"
             >
               <path
