@@ -1,122 +1,154 @@
-import useAuthStore from "../../stores/use-auth-store"
-import { useEffect } from "react"
-import WindowLiverHome from "../WindowLiverHome"
-import CancerLiverCard from "../../models-3d/liver_cancer/desease/cards/desease/cancer/CancerLiverCard"
-import { NavLink } from "react-router"
-import Header from "../../layout/header/Header"
-
+import useAuthStore from "../../stores/use-auth-store";
+import { useEffect } from "react";
+import WindowLiverHome from "../WindowLiverHome";
+import CancerLiverCard from "../../models-3d/liver_cancer/desease/cards/desease/cancer/CancerLiverCard";
+import { NavLink } from "react-router";
+import Header from "../../layout/header/Header";
 
 const Home = () => {
-
-  const { userLooged, verifyAndSignInWithLink } = useAuthStore()
+  const { userLooged, verifyAndSignInWithLink } = useAuthStore();
 
   useEffect(() => {
-    verifyAndSignInWithLink()
-  }, [])
-
-
-
-
-
+    verifyAndSignInWithLink();
+  }, []);
 
   return (
     <>
-    <Header/>
-    <div className="min-h-screen w-full relative">
-  {/* Background Video */}
-  <video 
-    autoPlay 
-    loop 
-    muted 
-    playsInline 
-    className="fixed top-0 left-0 w-full h-full object-cover -z-10"
-  >
-    <source src='videos/login.mp4' type="video/mp4" />
-  </video>
+      <Header />
+      <div className="min-h-screen w-full relative">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="fixed top-0 left-0 w-full h-full object-cover -z-10"
+        >
+          <source src="videos/login.mp4" type="video/mp4" />
+        </video>
 
-  {/* 3D Viewer Section */}
-  <div className="md:w-[153vh] w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col mx-auto ">
-    <div className="w-full bg-black/50">
-      <h1 className="text-xl md:text-2xl font-bold text-center text-white">
-        View Screen Mode: 3D Human Liver
-      </h1>
-    </div>
+        {/* 3D Viewer Section */}
+        <div className="md:w-[153vh] w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col mx-auto ">
+          <div className="w-full bg-black/50">
+            <h1 className="text-xl md:text-2xl font-bold text-center text-white">
+              View Screen Mode: 3D Human Liver
+            </h1>
+          </div>
 
-    <div className="w-full flex md:h-full h-[50vh] ">
-      <WindowLiverHome />
-    </div>
-  </div>
-
-  {/* Liver Diseases Section */}
-  <div className="w-full max-w-6xl mx-auto px-4 mt-12 md:mt-20">
-    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 text-white">
-      Look at Any 3D Liver Diseases
-    </h1>
-
-    {/* Single disease card centered on all screens */}
-    <div className="flex justify-center w-full">
-      <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
-        <div className="w-full h-[300px]">
-          <CancerLiverCard />
+          <div className="w-full flex md:h-full h-[50vh] ">
+            <WindowLiverHome />
+          </div>
         </div>
-        <h1 className="font-bold text-xl md:text-2xl text-center mt-4">Cancer Liver</h1>
-        <NavLink className="mt-4" to={'/cancerLiver'}>
-          <img src="/flecha-targetas.svg" alt="card arrow" className="w-12 h-12" />
-        </NavLink>
+
+        {/* Liver Diseases Section */}
+        <div className="w-full max-w-6xl mx-auto px-4 mt-12 md:mt-20">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 text-white">
+            Look at Any 3D Liver Diseases
+          </h1>
+
+          {/* Single disease card centered on all screens */}
+          <div className="flex justify-center w-full">
+            <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+              <div className="w-full h-[300px]">
+                <CancerLiverCard />
+              </div>
+              <h1 className="font-bold text-xl md:text-2xl text-center mt-4">
+                Cancer Liver
+              </h1>
+              <NavLink className="mt-4 mb-4" to={"/cancerLiver"}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-circle-chevron-right-icon lucide-circle-chevron-right"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m10 8 4 4-4 4" />
+                </svg>
+              </NavLink>
+            </div>
+          </div>
+        </div>
+
+        {/* Available For Section */}
+        <div className="w-full max-w-6xl mx-auto px-4 my-12 md:my-20">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 text-white">
+            Available For
+          </h1>
+
+          <div className="w-full mx-auto relative bg-white/15 rounded-lg px-4 py-6 md:py-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 w-full place-items-center gap-4 md:gap-6">
+              <div className="flex flex-col items-center text-center">
+                <img
+                  src="operative-sistems/android.svg"
+                  alt="android"
+                  className="w-12 h-12 md:w-16 md:h-16"
+                />
+                <h2 className="text-lg md:text-xl text-white font-bold mt-2">
+                  Android
+                </h2>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <img
+                  src="/operative-sistems/windows.svg"
+                  alt="windows"
+                  className="w-12 h-12 md:w-16 md:h-16"
+                />
+                <h2 className="text-lg md:text-xl text-white font-bold mt-2">
+                  Windows
+                </h2>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <img
+                  src="/operative-sistems/apple.svg"
+                  alt="apple"
+                  className="w-12 h-12 md:w-16 md:h-16"
+                />
+                <h2 className="text-lg md:text-xl text-white font-bold mt-2">
+                  MacOS
+                </h2>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <img
+                  src="/operative-sistems/ipad.svg"
+                  alt="iPad"
+                  className="w-12 h-12 md:w-16 md:h-16"
+                />
+                <h2 className="text-lg md:text-xl text-white font-bold mt-2">
+                  iPad
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="mt-12 md:mt-16 text-white">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
+              Choose Your Plan!
+            </h1>
+            <h2 className="text-sm md:text-lg font-bold text-center mt-4">
+              Try out our 3-day risk-free trial. No payment details required.
+            </h2>
+
+            <button className="bg-white hover:bg-gray-200 text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition flex items-center space-x-2 mx-auto mt-6 focus:ring-2 focus:ring-gray-400 focus:outline-none">
+              <span>Try It For Free</span>
+              <img
+                src="/header/flecha.svg"
+                alt="arrow"
+                className="w-4 h-4 md:w-5 md:h-5"
+              />
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-  {/* Available For Section */}
-  <div className="w-full max-w-6xl mx-auto px-4 my-12 md:my-20">
-    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 text-white">
-      Available For
-    </h1>
-
-    <div className="w-full mx-auto relative bg-white/15 rounded-lg px-4 py-6 md:py-8">
-      <div className="grid grid-cols-2 sm:grid-cols-4 w-full place-items-center gap-4 md:gap-6">
-        <div className="flex flex-col items-center text-center">
-          <img src="operative-sistems/android.svg" alt="android" className="w-12 h-12 md:w-16 md:h-16" />
-          <h2 className="text-lg md:text-xl text-white font-bold mt-2">Android</h2>
-        </div>
-        <div className="flex flex-col items-center text-center">
-          <img src="/operative-sistems/windows.svg" alt="windows" className="w-12 h-12 md:w-16 md:h-16" />
-          <h2 className="text-lg md:text-xl text-white font-bold mt-2">Windows</h2>
-        </div>
-        <div className="flex flex-col items-center text-center">
-          <img src="/operative-sistems/apple.svg" alt="apple" className="w-12 h-12 md:w-16 md:h-16" />
-          <h2 className="text-lg md:text-xl text-white font-bold mt-2">MacOS</h2>
-        </div>
-        <div className="flex flex-col items-center text-center">
-          <img src="/operative-sistems/ipad.svg" alt="iPad" className="w-12 h-12 md:w-16 md:h-16" />
-          <h2 className="text-lg md:text-xl text-white font-bold mt-2">iPad</h2>
-        </div>
-      </div>
-    </div>
-
-    {/* CTA Section */}
-    <div className="mt-12 md:mt-16 text-white">
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
-        Choose Your Plan!
-      </h1>
-      <h2 className="text-sm md:text-lg font-bold text-center mt-4">
-        Try out our 3-day risk-free trial. No payment details required.
-      </h2>
-
-      <button className="bg-white hover:bg-gray-200 text-black py-2 px-6 rounded-lg text-base md:text-lg font-semibold transition flex items-center space-x-2 mx-auto mt-6 focus:ring-2 focus:ring-gray-400 focus:outline-none">
-        <span>Try It For Free</span>
-        <img
-          src="/header/flecha.svg"
-          alt="arrow"
-          className="w-4 h-4 md:w-5 md:h-5"
-        />
-      </button>
-    </div>
-  </div>
-</div>
     </>
+  );
+};
 
-  )
-}
-
-export default Home
+export default Home;
