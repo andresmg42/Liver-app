@@ -4,8 +4,8 @@ import { OrbitControls } from "@react-three/drei"
 import { LiverCancerFinal } from '../../../cancer/LiverCancerFinal'
 import Recipient from '../../../resipients/Resipient'
 import { Float } from '@react-three/drei'
-import CancerImages from '../../../cancer/cancer-images/CancerImages'
-import SymptomPoint from '../../../cancer/cancer-images/symptomPoint'
+import CancerText3D from '../../../cancer/cancer-images/CancerText3D'
+import CancerButtons from '../../../cancer/cancer-images/cancerButtons'
 import RotateHtml from '../../../cancer/cancer-images/RotateHtml'
 import { useEventStore } from '../../../../../../stores/use-auth-store'
 
@@ -15,13 +15,13 @@ const CancerLiverInPage = () => {
     <Canvas  camera={{ position: [0, 0, 2.5] }} shadows={true} onPointerDown={setClick} onPointerUp={setClick}>
 
 
-    <CancerImages title={'LIVER CANCER'} position={[0, 1.5, 0]}/>
+    <CancerText3D title={'LIVER CANCER'} position={[0, 1.5, 0]}/>
     
     <RotateHtml  position={[0,0,0]}/>
 
     {/* acces points */}
 
-    <SymptomPoint position={[0, -1.5, 0]} />
+    <CancerButtons position={[0, -1.5, 0]} />
 
     <OrbitControls enableZoom={false} />
     <ambientLight intensity={4} />

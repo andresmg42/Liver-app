@@ -1,13 +1,13 @@
 import { Html } from "@react-three/drei";
 import React from "react";
-import { Text3D } from "@react-three/drei";
-import { Center } from "@react-three/drei";
+import { useEventStore } from "../../../../../stores/use-auth-store";
 
-const SymptomPoint = ({ position, title }) => {
+const CancerButtons = ({ position, title }) => {
+  const {click}=useEventStore()
   return (
     <Html center position={position} distancFactor={2}>
       <div className="flex items-center justify-center p-2 gap-2">
-        <div className="w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center">
+        <div className={`${click ?'hidden':'block'} w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -26,7 +26,7 @@ const SymptomPoint = ({ position, title }) => {
           </svg>
         </div>
 
-        <div className="w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center">
+        <div className={`${click ?'hidden':'block'} w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -44,7 +44,7 @@ const SymptomPoint = ({ position, title }) => {
           </svg>
         </div>
 
-        <div className="w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center">
+        <div className={`${click ?'hidden':'block'} w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -69,4 +69,4 @@ const SymptomPoint = ({ position, title }) => {
   );
 };
 
-export default SymptomPoint;
+export default CancerButtons;

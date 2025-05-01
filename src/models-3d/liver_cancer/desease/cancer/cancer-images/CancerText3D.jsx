@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useThree } from '@react-three/fiber'
 
-const CancerImages = ({position,title}) => {
+const CancerText3D = ({position,title}) => {
 
   const textRef=useRef();
   const {camera}= useThree()
@@ -37,4 +37,4 @@ const CancerImages = ({position,title}) => {
   )
 }
 
-export default CancerImages
+export default CancerText3D
