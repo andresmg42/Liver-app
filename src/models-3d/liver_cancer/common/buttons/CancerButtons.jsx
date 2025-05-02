@@ -1,13 +1,66 @@
 import { Html } from "@react-three/drei";
 import React from "react";
 import { useEventStore } from "../../../../stores/use-auth-store";
+import { useNavigate } from "react-router";
 
-const CancerButtons = ({ position,color }) => {
-  const {click}=useEventStore()
+
+const CancerButtons = ({ position, color }) => {
+  const navigate = useNavigate();
+  const { click, setClick } = useEventStore();
+
+  const handleClickSymptoms = (e) => {
+    e.stopPropagation();
+    navigate("/symptoms");
+  };
+
+  const handleClickCancer = (e) => {
+    e.stopPropagation();
+    navigate('/cancer')
+  };
+
+  const handleClickRecomendations = () => {};
+
+  const handleClickTreatment = () => {};
+
   return (
-    <Html center position={position} distancFactor={2}>
+    <Html
+      center
+      position={position}
+      distancFactor={2}
+      style={{ pointerEvents: "auto" }}
+    >
       <div className="flex items-center justify-center p-2 gap-2">
-        <div className={`${click ?'hidden':'block'} w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}>
+
+      <div
+          onClick={handleClickCancer}
+          onPointerDown={() => setClick()}
+          onPointerUp={() => setClick()}
+          className={`${
+            click ? "hidden" : "block"
+          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}
+        >
+          <svg viewBox="0 0 32 32" 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill={`${color}`}
+          width="40"
+          height="40"
+          >
+            <title />
+            <g id="liver">
+              <path d="M27.49,5H11.28A14.06,14.06,0,0,1,20,17.94c0,.24,0,.49,0,.75l1.37-1.38a2.21,2.21,0,0,1,.88-.53l1.61-.52a4.2,4.2,0,0,0,2.68-2.66,2.2,2.2,0,0,1,1.13-1.28L29,11.68A3.51,3.51,0,0,0,27.49,5Z" />
+              <path d="M7.78,5.08a.61.61,0,0,0-.27,0A7.57,7.57,0,0,0,1,12.54v9.79A4.67,4.67,0,0,0,5.67,27h.81a6.85,6.85,0,0,0,5.85-3.24,2.15,2.15,0,0,1,1.51-1A7.52,7.52,0,0,0,18,20.62l.58-.58a1,1,0,0,0,.29-.59A13.54,13.54,0,0,0,19,17.94,13,13,0,0,0,7.78,5.08Z" />
+            </g>
+          </svg>
+        </div>
+
+        <div
+          onClick={handleClickSymptoms}
+          className={`${
+            click ? "hidden" : "block"
+          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}
+          onPointerDown={() => setClick()}
+          onPointerUp={() => setClick()}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -26,7 +79,14 @@ const CancerButtons = ({ position,color }) => {
           </svg>
         </div>
 
-        <div className={`${click ?'hidden':'block'} w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}>
+        <div
+          onClick={handleClickTreatment}
+          onPointerDown={() => setClick()}
+          onPointerUp={() => setClick()}
+          className={`${
+            click ? "hidden" : "block"
+          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -44,7 +104,14 @@ const CancerButtons = ({ position,color }) => {
           </svg>
         </div>
 
-        <div className={`${click ?'hidden':'block'} w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}>
+        <div
+          onClick={handleClickRecomendations}
+          onPointerDown={() => setClick()}
+          onPointerUp={() => setClick()}
+          className={`${
+            click ? "hidden" : "block"
+          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"

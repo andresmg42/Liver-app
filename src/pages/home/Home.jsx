@@ -56,7 +56,7 @@ const Home = () => {
               <h1 className="font-bold text-xl md:text-2xl text-center mt-4">
                 Cancer Liver
               </h1>
-              <NavLink className="mt-4 mb-4" to={"/cancerLiver"}>
+              <NavLink className="mt-4 mb-4" to={"/cancer"}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
