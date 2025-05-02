@@ -6,6 +6,7 @@ import Login from "./pages/sesion/Login";
 import Prubas from "./pages/home/Prubas";
 import ScrollToTop from "./help/ScrollToTop";
 import GenericPage from "./GenericPage";
+import StagerExperiment from "./models-3d/liver_cancer/common/pages/experiment/StagerExperiment";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/prubas" element={<Prubas />} />
           <Route path="/cancer" element={<GenericPage page="cancer" />} />
           <Route path="/symptoms" element={<GenericPage page="symptoms" />} />
+          <Route path="/stagerexp" element={<StagerExperiment />} />
         </Routes>
       </Layout>
     </BrowserRouter>
