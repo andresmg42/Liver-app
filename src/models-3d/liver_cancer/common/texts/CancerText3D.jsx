@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useThree } from '@react-three/fiber'
 
-const CancerText3D = ({position,title}) => {
+const CancerText3D = ({position,title,color}) => {
 
   const textRef=useRef();
   const {camera}= useThree()
@@ -30,7 +30,7 @@ const CancerText3D = ({position,title}) => {
     size={0.3}
   >
     {title}
-    <meshStandardMaterial color="red" />
+    <meshStandardMaterial color={color} />
   </Text3D>
 </Center>
 

@@ -1,9 +1,10 @@
 import useAuthStore from "../../stores/use-auth-store";
 import { useEffect } from "react";
 import WindowLiverHome from "../WindowLiverHome";
-import CancerLiverCard from "../../models-3d/liver_cancer/desease/cards/desease/cancer/CancerLiverCard";
 import { NavLink } from "react-router";
 import Header from "../../layout/header/Header";
+import ModelCard from "../../models-3d/liver_cancer/common/ModelCard";
+import { LiverCancerFinal } from "../../models-3d/liver_cancer/desease/cancer/LiverCancerFinal";
 
 const Home = () => {
   const { userLooged, verifyAndSignInWithLink } = useAuthStore();
@@ -50,7 +51,7 @@ const Home = () => {
           <div className="flex justify-center w-full">
             <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
               <div className="w-full h-[300px]">
-                <CancerLiverCard />
+                <ModelCard model={<LiverCancerFinal scale={5} home={true}/>} />
               </div>
               <h1 className="font-bold text-xl md:text-2xl text-center mt-4">
                 Cancer Liver

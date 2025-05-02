@@ -1,6 +1,8 @@
-import CancerLiverInPage from "../../../models-3d/liver_cancer/desease/cards/desease/cancer/CancerLiverInPage";
 import { useState } from "react";
 import cards from "./pageCancerLiverContent";
+import ModelCancerInPage from '../../../models-3d/liver_cancer/common/ModelCancerInPage'
+import CancerText3D from "../../../models-3d/liver_cancer/common/texts/CancerText3D";
+import { LiverCancerFinal } from "../../../models-3d/liver_cancer/desease/cancer/LiverCancerFinal";
 
 const PageCancerLiver = () => {
   const [viewImage, setViewImage] = useState(false);
@@ -198,7 +200,10 @@ const PageCancerLiver = () => {
 
       {/* Cancer Liver In Page Component */}
       <div className="w-full  h-[50vh] md:h-screen ">
-        <CancerLiverInPage />
+        <ModelCancerInPage
+        text={<CancerText3D title={"LIVER CANCER"} position={[0, 1.5, 0]} color='red' />}
+        model={<LiverCancerFinal scale={2} home={false}/>}
+        />
       </div>
     </div>
   );

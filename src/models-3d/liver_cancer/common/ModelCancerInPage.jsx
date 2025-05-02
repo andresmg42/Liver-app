@@ -1,16 +1,15 @@
 import React, { useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Float, OrbitControls, useKeyboardControls } from "@react-three/drei";
-import { LiverCancerFinal } from "../../../cancer/LiverCancerFinal";
-import Recipient from "../../../resipients/Resipient";
-import CancerText3D from "../../../texts/cancer/CancerText3D";
-import CancerButtons from "../../../cancer/cancer-images/cancerButtons";
-import RotateHtml from "../../../cancer/cancer-images/RotateHtml";
-import { useEventStore } from "../../../../../../stores/use-auth-store";
+import Recipient from "../desease/resipients/Resipient";
+
+import CancerButtons from "../simptoms/cancer/cancer-images/cancerButtons";
+import RotateHtml from "../desease/cancer/cancer-images/RotateHtml";
+import { useEventStore } from "../../../stores/use-auth-store";
 import { KeyboardControls } from "@react-three/drei";
 
 
-const CancerLiverInPage = () => {
+const ModelCard = (props) => {
 
   
 
@@ -42,7 +41,8 @@ const CancerLiverInPage = () => {
            speed={3}
           //  floatingRange={[0.5,1]}  
           >
-          <CancerText3D title={"LIVER CANCER"} position={[0, 1.5, 0]} />
+          {/* <CancerText3D title={"LIVER CANCER"} position={[0, 1.5, 0]} /> */}
+          {props.text}
           </Float>
 
           <RotateHtml position={[0, 0, 0]} />
@@ -59,7 +59,8 @@ const CancerLiverInPage = () => {
             castShadow={true}
           />
 
-          <LiverCancerFinal scale={2} home={false}/>
+          {/* <LiverCancerFinal scale={2} home={false}/> */}
+          {props.model}
 
           
           <Recipient />
@@ -70,4 +71,4 @@ const CancerLiverInPage = () => {
   );
 };
 
-export default CancerLiverInPage;
+export default ModelCard;
