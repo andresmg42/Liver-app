@@ -1,51 +1,72 @@
-import React from 'react'
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
-import { LiverCancerFinal } from '../../../cancer/LiverCancerFinal'
-import Recipient from '../../../resipients/Resipient'
-import { Float } from '@react-three/drei'
-import CancerText3D from '../../../cancer/cancer-images/CancerText3D'
-import CancerButtons from '../../../cancer/cancer-images/cancerButtons'
-import RotateHtml from '../../../cancer/cancer-images/RotateHtml'
-import { useEventStore } from '../../../../../../stores/use-auth-store'
+import React, { useMemo } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Float, OrbitControls, useKeyboardControls } from "@react-three/drei";
+import { LiverCancerFinal } from "../../../cancer/LiverCancerFinal";
+import Recipient from "../../../resipients/Resipient";
+import CancerText3D from "../../../texts/cancer/CancerText3D";
+import CancerButtons from "../../../cancer/cancer-images/cancerButtons";
+import RotateHtml from "../../../cancer/cancer-images/RotateHtml";
+import { useEventStore } from "../../../../../../stores/use-auth-store";
+import { KeyboardControls } from "@react-three/drei";
+
 
 const CancerLiverInPage = () => {
-  const {setClick}=useEventStore();
+
+  
+
+  const map = useMemo(
+    () => [
+      { name: "up", keys: ["ArrowUp", "KeyW"] },
+      { name: "down", keys: ["ArrowDown", "KeyS"] },
+      { name: "left", keys: ["ArrowLeft", "KeyA"] },
+      { name: "right", keys: ["ArrowRight", "KeyD"] },
+    ],
+    []
+  );
+
+
+  const { setClick } = useEventStore();
+
+  
   return (
-    <Canvas  camera={{ position: [0, 0, 2.5] }} shadows={true} onPointerDown={setClick} onPointerUp={setClick}>
+    <KeyboardControls map={map}>
+      
+        <Canvas
+          camera={{ position: [0,0,2.5] }}
+          shadows={true}
+          onPointerDown={setClick}
+          onPointerUp={setClick}
+        >
 
+          <Float
+           speed={2} 
+          >
+          <CancerText3D title={"LIVER CANCER"} position={[0, 1.5, 0]} />
+          </Float>
 
-    <CancerText3D title={'LIVER CANCER'} position={[0, 1.5, 0]}/>
-    
-    <RotateHtml  position={[0,0,0]}/>
+          <RotateHtml position={[0, 0, 0]} />
 
-    {/* acces points */}
+          
 
-    <CancerButtons position={[0, -1.5, 0]} />
+          <CancerButtons position={[0, -1.5, 0]} />
 
-    <OrbitControls enableZoom={false} />
-    <ambientLight intensity={4} />
-    <directionalLight position={[0, 5, 5]} 
-    intensity={3}  
-    
-    castShadow={true}
-     />
+          <OrbitControls enableZoom={false} target={[0,0,0]} />
+          <ambientLight intensity={4} />
+          <directionalLight
+            position={[0, 5, 5]}
+            intensity={3}
+            castShadow={true}
+          />
 
+          <LiverCancerFinal scale={2} home={false}/>
 
-     {/* <Float
-     speed={4} 
-     rotationIntensity={0.5} 
-     floatIntensity={0.3} 
-     floatingRange={[1,3]}
-     > */}
-     
-     <LiverCancerFinal scale={2}/>
+          
+          <Recipient />
+          
+        </Canvas>
+      
+    </KeyboardControls>
+  );
+};
 
-     {/* </Float> */}
-    <Recipient/>
-
-  </Canvas>
-  )
-}
-
-export default CancerLiverInPage
+export default CancerLiverInPage;

@@ -11,7 +11,7 @@ const CancerLiverCard = () => {
     <OrbitControls enableZoom={false} />
     <ambientLight intensity={2} />
     <directionalLight position={[5, 5, 10]} intensity={4} />
-    <LiverCancerFinal scale={5}/>
+    <LiverCancerFinal scale={5} home={true}/>
 
   </Canvas>
   )

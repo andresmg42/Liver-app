@@ -1,4 +1,4 @@
-import { Html, Tetrahedron } from '@react-three/drei'
+
 import React from 'react'
 import { Text3D } from '@react-three/drei'
 import { Center } from '@react-three/drei'
