@@ -23,6 +23,7 @@ const cards=[
               toxins produced by fungi in foods stored under improper
               conditions. In addition, genetic factors and some metabolic
               diseases can contribute to the development of this type of cancer.`,
+      video:"https://www.youtube.com/embed/14Q9nj0gIhw?si=LxRNG-Zn5_3BMccM",
     },
     { id: 3, titulo: "Hepatitis B", 
         descripcion: `
@@ -51,7 +52,7 @@ const cards=[
         commonly hepatocellular carcinoma. The risk is especially high in 
         individuals with long-term alcohol abuse and existing liver disease.
         `,
-        imagen:"https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_portada__small/public/media/0f/cirrosis.jpg.webp"
+        imagen:"https://www.murrasaca.com/images/CirrhosisSurgery.jpg"
 
      },
 

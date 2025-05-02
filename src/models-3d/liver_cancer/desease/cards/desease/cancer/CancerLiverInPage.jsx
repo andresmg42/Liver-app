@@ -39,7 +39,8 @@ const CancerLiverInPage = () => {
         >
 
           <Float
-           speed={2} 
+           speed={3}
+          //  floatingRange={[0.5,1]}  
           >
           <CancerText3D title={"LIVER CANCER"} position={[0, 1.5, 0]} />
           </Float>

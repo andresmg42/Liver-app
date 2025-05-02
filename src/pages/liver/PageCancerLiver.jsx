@@ -1,22 +1,23 @@
-
 import CancerLiverInPage from "../../models-3d/liver_cancer/desease/cards/desease/cancer/CancerLiverInPage";
 import { useState } from "react";
 import cards from "./pageCancerLiverContent";
 
-
 const PageCancerLiver = () => {
   const [viewImage, setViewImage] = useState(false);
+  const [ViewVideo, setViewVideo] = useState(false);
 
   const [index, setIndex] = useState(0);
 
   const next = () => {
     setIndex((prev) => (prev + 1) % cards.length); // vuelve al inicio al llegar al final
     setViewImage(false);
+    setViewVideo(false);
   };
 
   const back = () => {
     setIndex((prev) => (prev - 1 + cards.length) % cards.length);
     setViewImage(false);
+    setViewVideo(false);
   };
 
   return (
@@ -33,7 +34,7 @@ const PageCancerLiver = () => {
       </video>
 
       {/* Main Content Container */}
-      <div className="w-full mx-auto mt-10  pt-8 relative z-10">
+      <div className="w-full mx-auto mt-10 h-screen pt-8 relative z-10 ">
         {/* Page Header */}
         <header className="mb-8 text-center">
           <h1 className="text-[#ff6035] text-2xl md:text-3xl lg:text-4xl font-bold">
@@ -51,34 +52,58 @@ const PageCancerLiver = () => {
             <p className="text-[#ff6035] text-sm md:text-xl">
               {cards[index].descripcion}
             </p>
-            {cards[index].imagen && (
-              <button
-                className="animate-bounce mt-10  flex flex-col items-center mx-auto  text-[#ff6035]"
-                onClick={() => setViewImage(!viewImage)}
-              >
-                view
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="#ff6035"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="#ff6035"
-                  class="size-6"
+            {(cards[index].imagen ||
+              cards[index].video) && (
+                <button
+                  className="animate-bounce mt-10  flex flex-col items-center mx-auto  text-[#ff6035]"
+                  onClick={() => {
+                    if (cards[index].imagen) {
+                      setViewImage(!viewImage);
+        
+                    } else {
+                      setViewVideo(!ViewVideo);
+                    }
+                  }}
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </button>
-            )}
+                  view
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#ff6035"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </button>
+              )}
             {viewImage && (
               <img
                 src={cards[index].imagen}
                 alt={cards[index].titulo}
                 className="rounded-md mb-4 w-full h-100 object-cover"
               />
+            )}
+
+            {ViewVideo && (
+              <div className="flex items-center justify-center">
+                <iframe
+                width="560"
+                height="315"
+                src={cards[index].video}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              </div>
+              
             )}
           </div>
 
@@ -171,10 +196,8 @@ const PageCancerLiver = () => {
         </button>
       </div>
 
-      
-
       {/* Cancer Liver In Page Component */}
-      <div className="w-full  h-[50vh] md:h-screen mt-10">
+      <div className="w-full  h-[50vh] md:h-screen ">
         <CancerLiverInPage />
       </div>
     </div>
