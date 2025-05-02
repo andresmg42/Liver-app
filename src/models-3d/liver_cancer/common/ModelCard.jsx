@@ -4,7 +4,7 @@ import { OrbitControls } from "@react-three/drei"
 
 
 
-const CancerLiverCard = (props) => {
+const ModelCard = (props) => {
   return (
     <Canvas>
     
@@ -18,4 +18,4 @@ const CancerLiverCard = (props) => {
   )
 }
 
-export default CancerLiverCard
+export default ModelCard

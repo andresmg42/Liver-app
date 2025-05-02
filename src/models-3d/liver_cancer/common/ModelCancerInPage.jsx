@@ -1,15 +1,15 @@
 import React, { useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Float, OrbitControls, useKeyboardControls } from "@react-three/drei";
+import { Float, OrbitControls } from "@react-three/drei";
 import Recipient from "../desease/resipients/Resipient";
 
-import CancerButtons from "../simptoms/cancer/cancer-images/cancerButtons";
-import RotateHtml from "../desease/cancer/cancer-images/RotateHtml";
+import CancerButtons from '../common/buttons/CancerButtons'
+import RotateHtml from '../common/buttons/RotateHtml';
 import { useEventStore } from "../../../stores/use-auth-store";
 import { KeyboardControls } from "@react-three/drei";
 
 
-const ModelCard = (props) => {
+const ModelCancerInPage = (props) => {
 
   
 
@@ -45,11 +45,11 @@ const ModelCard = (props) => {
           {props.text}
           </Float>
 
-          <RotateHtml position={[0, 0, 0]} />
+          <RotateHtml position={[0, 0, 0]} color={props.color} />
 
           
 
-          <CancerButtons position={[0, -1.5, 0]} />
+          <CancerButtons position={[0, -1.5, 0]} color={props.color} />
 
           <OrbitControls enableZoom={false} target={[0,0,0]} />
           <ambientLight intensity={4} />
@@ -71,4 +71,4 @@ const ModelCard = (props) => {
   );
 };
 
-export default ModelCard;
+export default ModelCancerInPage;

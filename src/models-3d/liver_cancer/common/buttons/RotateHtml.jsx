@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Box } from "lucide-react";
 import { Html } from "@react-three/drei";
-import { useEventStore } from "../../../../../stores/use-auth-store";
+import { useEventStore } from "../../../../stores/use-auth-store";
 
-const RotateHtml = ({ position }) => {
+const RotateHtml = ({ position,color }) => {
   const { click } = useEventStore();
   const [overButton, setOverButton] = useState(false);
+ 
 
   return (
     <Html center position={position} distancFactor={2}>
@@ -16,7 +17,7 @@ const RotateHtml = ({ position }) => {
             setOverButton(false);
           }}
         >
-          <h3 className="text-[#ff6035]">push w,A,S,D to move 3D model</h3>
+          <h3 style={{color}}>push w,A,S,D to move 3D model</h3>
         </div>
       ) : (
         <div
@@ -25,7 +26,7 @@ const RotateHtml = ({ position }) => {
           } flex items-center justify-center w-20 h-20 rounded-full bg-black/15 shadow-md animate-spin-slow`}
           onPointerEnter={() => setOverButton(true)}
         >
-          <Box className="w-8 h-8 text-[#ff6035]" />
+          <Box className="w-8 h-8" style={{color}} />
         </div>
       )}
     </Html>

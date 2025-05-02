@@ -203,6 +203,7 @@ const PageCancerLiver = () => {
         <ModelCancerInPage
         text={<CancerText3D title={"LIVER CANCER"} position={[0, 1.5, 0]} color='red' />}
         model={<LiverCancerFinal scale={2} home={false}/>}
+        color='#ff6035'
         />
       </div>
     </div>

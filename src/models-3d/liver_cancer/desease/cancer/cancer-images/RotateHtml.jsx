@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Box } from "lucide-react";
 import { Html } from "@react-three/drei";
 import { useEventStore } from "../../../../../stores/use-auth-store";
-
 const RotateHtml = ({ position }) => {
   const { click } = useEventStore();
   const [overButton, setOverButton] = useState(false);

@@ -203,6 +203,7 @@ const PageSymptomsFever = () => {
         <ModelCancerInPage 
         text={<CancerText3D title={"FEVER"} position={[0, 1.5, 0]} color='green' />}
         model={<Fever home={false} scale={1.8}/>}
+        color='green'
         />
       </div>
     </div>

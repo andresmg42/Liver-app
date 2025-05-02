@@ -1,8 +1,8 @@
 import { Html } from "@react-three/drei";
 import React from "react";
-import { useEventStore } from "../../../../../stores/use-auth-store";
+import { useEventStore } from "../../../../stores/use-auth-store";
 
-const CancerButtons = ({ position, title,color }) => {
+const CancerButtons = ({ position,color }) => {
   const {click}=useEventStore()
   return (
     <Html center position={position} distancFactor={2}>
@@ -14,7 +14,7 @@ const CancerButtons = ({ position, title,color }) => {
             height="40"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#ff6035"
+            stroke={`${color}`}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -33,7 +33,7 @@ const CancerButtons = ({ position, title,color }) => {
             height="40"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#ff6035"
+            stroke={`${color}`}
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -51,7 +51,7 @@ const CancerButtons = ({ position, title,color }) => {
             height="40"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#ff6035"
+            stroke={`${color}`}
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
