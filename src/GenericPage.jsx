@@ -4,6 +4,8 @@ import CancerText3D from './models-3d/liver_cancer/common/texts/CancerText3D'
 import { LiverCancerFinal } from './models-3d/liver_cancer/desease/cancer/LiverCancerFinal'
 import PageModel from './models-3d/liver_cancer/common/pages/PageModel'
 import { Fever } from './models-3d/liver_cancer/simptoms/cancer/Fever'
+import cardssymptoms from './pages/liver/symptoms/symptomsContent'
+import cardscancer from './pages/liver/desease/pageCancerLiverContent'
 const GenericPage = (props) => {
     if(props.page=='cancer'){
         return <PageModel
@@ -18,9 +20,12 @@ const GenericPage = (props) => {
             }
             model={<LiverCancerFinal scale={2} home={false} />}
             color="#ff6035"
+            
           />
         }
         color="#ff6035"
+        cards={cardscancer}
+        title='Cancer Liver Information'
       />
     }else if(props.page=='symptoms'){
         return <PageModel
@@ -35,8 +40,11 @@ const GenericPage = (props) => {
             }
             model={<Fever scale={2} home={false} />}
             color="green"
+            
           />
         }
+        cards={cardssymptoms}
+        title='Symptoms Cancer Liver Information'
         color="green"
       />
     }

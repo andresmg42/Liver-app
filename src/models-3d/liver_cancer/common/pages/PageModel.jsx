@@ -1,8 +1,8 @@
 import { useState } from "react";
-import cards from "../../../../pages/liver/desease/pageCancerLiverContent";
 
 
-const PageModel = ({color,modelpage}) => {
+
+const PageModel = ({color,modelpage,title,cards}) => {
   const [viewImage, setViewImage] = useState(false);
   const [ViewVideo, setViewVideo] = useState(false);
 
@@ -38,7 +38,7 @@ const PageModel = ({color,modelpage}) => {
         {/* Page Header */}
         <header className="mb-8 text-center">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{color}}>
-            Liver Cancer Information
+           {title}
           </h1>
         </header>
 
