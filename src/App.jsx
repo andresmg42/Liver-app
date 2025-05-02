@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Layout from './layout/Layout'
-import Footer from './layout/footer/Footer'
 import Home from './pages/home/Home'
 import Profile from './pages/home/Profile'
 import Login from './pages/sesion/Login'
 import Prubas from './pages/home/Prubas'
-import PageCancerLiver from './pages/liver/PageCancerLiver'
+import PageCancerLiver from './pages/liver/desease/PageCancerLiver'
 import ScrollToTop from './help/ScrollToTop'
+import PageSymptomsFever from './pages/liver/symptoms/PageSymptomsFever'
 
 
 
@@ -24,6 +24,7 @@ function App() {
           <Route path='/profile' element={<Profile/>}/>
           <Route path='/prubas' element={<Prubas/>}/>
           <Route path='/cancerLiver' element={<PageCancerLiver/>}/>
+          <Route path='/symptoms' element={<PageSymptomsFever/>}/>
         </Routes>
       </Layout>
     </BrowserRouter>

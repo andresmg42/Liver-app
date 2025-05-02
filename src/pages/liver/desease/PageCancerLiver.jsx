@@ -1,4 +1,4 @@
-import CancerLiverInPage from "../../models-3d/liver_cancer/desease/cards/desease/cancer/CancerLiverInPage";
+import CancerLiverInPage from "../../../models-3d/liver_cancer/desease/cards/desease/cancer/CancerLiverInPage";
 import { useState } from "react";
 import cards from "./pageCancerLiverContent";
 
