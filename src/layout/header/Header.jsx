@@ -1,12 +1,8 @@
 import React from "react";
 
-
 const Header = () => {
-
-  
-
   return (
-    <div className="w-full flex items-center justify-center  relative overflow-hidden">
+    <div className="w-full flex items-center justify-center  relative overflow-hidden  ">
       <header
         id="hero"
         className="w-full min-h-[60vh] sm:h-[70vh] md:h-[80vh]  text-white z-10  "
@@ -49,19 +45,19 @@ const Header = () => {
           </div>
 
           {/* down row */}
-          <div className="animate-bounce mx-auto flex items-center justify-center  md:mt-20 mt-10">
+          <div className="animate-bounce mx-auto flex items-center justify-center   md:mt-[5vh]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10 text-blue-600"
-              fill="white"
+              fill="none"
               viewBox="0 0 24 24"
-              stroke="white"
+              stroke-width="2"
+              stroke="currentColor"
+              class="size-8"
             >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
               />
             </svg>
           </div>
