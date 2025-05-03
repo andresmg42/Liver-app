@@ -2,7 +2,7 @@ import { Html } from "@react-three/drei";
 import React from "react";
 import { useState } from "react";
 
-const HtmlInterfaz = ({color,modelpage,title,cards,position}) => {
+const HtmlInterfaz = ({color,cards,position}) => {
   const [viewImage, setViewImage] = useState(false);
     const [ViewVideo, setViewVideo] = useState(false);
   
