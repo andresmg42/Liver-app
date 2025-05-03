@@ -29,7 +29,7 @@ const CancerButtons = ({ position, color }) => {
       distancFactor={2}
       style={{ pointerEvents: "auto" }}
     >
-      <div className="flex items-center justify-center p-2 gap-2">
+      <div className="flex flex-col items-center justify-center p-2 gap-2">
 
       <div
           onClick={handleClickCancer}

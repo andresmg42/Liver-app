@@ -9,16 +9,12 @@ import { useEventStore } from "../../../../../stores/use-auth-store";
 import { KeyboardControls } from "@react-three/drei";
 import { LiverCancerFinal } from "../../../desease/cancer/LiverCancerFinal";
 import CancerText3D from "../../texts/CancerText3D";
-import StagingCancerLiver from '../../../desease/staging/cancer/StagingCancerLiver'
+import StagingCancerLiver from "../../../desease/staging/cancer/StagingCancerLiver";
 import HtmlInterfaz from "./HtmlInterfaz";
 import ModelCancerInPage from "../../ModelCancerInPage";
-import cardscancer from '../../../../../pages/liver/desease/pageCancerLiverContent'
-
+import cardscancer from "../../../../../pages/liver/desease/pageCancerLiverContent";
 
 const StagerExperiment = () => {
-
-  
-
   const map = useMemo(
     () => [
       { name: "up", keys: ["ArrowUp", "KeyW"] },
@@ -29,59 +25,56 @@ const StagerExperiment = () => {
     []
   );
 
-
   const { setClick } = useEventStore();
 
-  
   return (
-    <KeyboardControls map={map}>
-      
+    <div className="fixed top-0 left-0 w-full h-full object-cover  Z-0">
+      <KeyboardControls map={map}>
         <Canvas
-          camera={{ position: [0,0,2.5] }}
+          camera={{ position: [0, 0, 2.5] }}
           shadows={true}
           onPointerDown={setClick}
           onPointerUp={setClick}
         >
+          <HtmlInterfaz
+            modelpage={
+              <ModelCancerInPage
+                text={
+                  <CancerText3D
+                    title={"LIVER CANCER"}
+                    position={[0, 1.5, 0]}
+                    color="red"
+                  />
+                }
+                model={<LiverCancerFinal scale={2} home={false} />}
+                color="#ff6035"
+              />
+            }
+            color="#ff6035"
+            cards={cardscancer}
+            title="Cancer Liver Information"
+            position={[-2.5, -0.5, 0]}
+          />
 
-        <HtmlInterfaz  modelpage={
-          <ModelCancerInPage
-          text={
+          <StagingCancerLiver />
+
+          <Float
+            speed={3}
+            //  floatingRange={[0.5,1]}
+          >
             <CancerText3D
               title={"LIVER CANCER"}
               position={[0, 1.5, 0]}
               color="red"
             />
-          }
-          model={<LiverCancerFinal scale={2} home={false} />}
-          color="#ff6035"
-          
-        />
-        
-        }
-        color="#ff6035"
-        cards={cardscancer}
-        title='Cancer Liver Information'
-        position={[0,0,0]}
-        
-        />
-
-        <StagingCancerLiver/>
-
-          <Float
-           speed={3}
-          //  floatingRange={[0.5,1]}  
-          >
-          <CancerText3D title={"LIVER CANCER"} position={[0, 1.5, 0]} color='red' />
-          {/* {props.text} */}
+            {/* {props.text} */}
           </Float>
 
-          <RotateHtml position={[0, 0, 0]} color={'red'} />
+          <RotateHtml position={[0, 0, 0]} color={"#ff6035"} />
 
-          
+          <CancerButtons position={[2,0.2,0]} color={"#ff6035"} />
 
-          <CancerButtons position={[0, -1.5, 0]} color={'red'} />
-
-          <OrbitControls enableZoom={false} target={[0,0,0]} />
+          <OrbitControls enableZoom={false} target={[0, 0, 0]} />
           <ambientLight intensity={4} />
           <directionalLight
             position={[0, 5, 5]}
@@ -89,15 +82,13 @@ const StagerExperiment = () => {
             castShadow={true}
           />
 
-          <LiverCancerFinal scale={2} home={false}/> 
+          <LiverCancerFinal scale={2} home={false} />
           {/* {props.model} */}
 
-          
           <Recipient />
-          
         </Canvas>
-      
-    </KeyboardControls>
+      </KeyboardControls>
+    </div>
   );
 };
 

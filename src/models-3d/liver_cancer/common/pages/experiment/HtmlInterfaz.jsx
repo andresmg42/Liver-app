@@ -24,30 +24,25 @@ const HtmlInterfaz = ({color,modelpage,title,cards,position}) => {
     <Html
       center
       position={position}
-      distancFactor={2}
+      
+    //   distanceFactor={1}
       style={{ pointerEvents: "auto" }}
     >
 
-<div className="w-full min-h-screen relative overflow-hidden">
+
       
 
       {/* Main Content Container */}
       <div className="w-full mx-auto mt-10 h-screen pt-8 relative z-10 ">
-        {/* Page Header */}
-        <header className="mb-8 text-center">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{color}}>
-           {title}
-          </h1>
-        </header>
 
         {/* Single Column Cards Container */}
-        <div className=" items-center  gap-8 md:w-[80vh] md:h-[50vh] h-[60vh] mx-auto px-4 relative ">
+        <div className=" items-center  gap-8 md:w-[60vh] md:h-[50vh] h-[60vh] mx-auto px-4 relative">
           {/* Liver Cancer Card */}
-          <div className="bg-white/15 p-5 rounded-xl shadow-xl w-full">
+          <div className="bg-black/15 p-5 rounded-xl shadow-xl w-full max-h-[70vh] overflow-y-auto">
             <h2 className="text-2xl font-semibold text-center mb-3" style={{color}}>
               {cards[index].titulo}
             </h2>
-            <p className="text-sm md:text-xl" style={{color}}>
+            <p className="text-sm md:text-base font-semibold" style={{color}}>
               {cards[index].descripcion}
             </p>
             {(cards[index].imagen ||
@@ -150,7 +145,7 @@ const HtmlInterfaz = ({color,modelpage,title,cards,position}) => {
             </svg>
           </button>
         </div>
-      </div>
+      
 
       {/* Buttons for small screens (bottom, side by side) */}
       <div className="flex justify-center gap-4 mt-4 md:hidden">
