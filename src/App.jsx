@@ -7,7 +7,7 @@ import Prubas from "./pages/home/Prubas";
 import ScrollToTop from "./help/ScrollToTop";
 import GenericPage from "./GenericPage";
 import StagerExperiment from "./models-3d/liver_cancer/common/pages/experiment/StagerExperiment";
-
+import GenericPageE from "./models-3d/liver_cancer/common/pages/experiment/GenericPageE";
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +21,7 @@ function App() {
           <Route path="/cancer" element={<GenericPage page="cancer" />} />
           <Route path="/symptoms" element={<GenericPage page="symptoms" />} />
           <Route path="/stagerexp" element={<StagerExperiment />} />
+          <Route path="/generic" element={<GenericPageE page='cancer'/>} />
         </Routes>
       </Layout>
     </BrowserRouter>

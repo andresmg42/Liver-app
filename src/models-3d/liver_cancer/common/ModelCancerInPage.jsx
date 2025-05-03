@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Float, OrbitControls } from "@react-three/drei";
-import Recipient from "../desease/resipients/Resipient";
+import Recipient from "./resipients/Resipient";
 
 import CancerButtons from '../common/buttons/CancerButtons'
 import RotateHtml from '../common/buttons/RotateHtml';

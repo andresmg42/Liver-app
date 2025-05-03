@@ -7,14 +7,9 @@ import CancerButtons from "../../buttons/CancerButtons";
 import RotateHtml from "../../buttons/RotateHtml";
 import { useEventStore } from "../../../../../stores/use-auth-store";
 import { KeyboardControls } from "@react-three/drei";
-import { LiverCancerFinal } from "../../../desease/cancer/LiverCancerFinal";
-import CancerText3D from "../../texts/CancerText3D";
-import StagingCancerLiver from "../../../desease/staging/cancer/StagingCancerLiver";
-import HtmlInterfaz from "./HtmlInterfaz";
-import ModelCancerInPage from "../../ModelCancerInPage";
-import cardscancer from "../../../../../pages/liver/desease/pageCancerLiverContent";
 
-const StagerExperiment = () => {
+
+const StagerExperiment = (props) => {
   const map = useMemo(
     () => [
       { name: "up", keys: ["ArrowUp", "KeyW"] },
@@ -36,7 +31,7 @@ const StagerExperiment = () => {
           onPointerDown={setClick}
           onPointerUp={setClick}
         >
-          <HtmlInterfaz
+          {/* <HtmlInterfaz
             modelpage={
               <ModelCancerInPage
                 text={
@@ -54,25 +49,27 @@ const StagerExperiment = () => {
             cards={cardscancer}
             title="Cancer Liver Information"
             position={[-2.5, -0.5, 0]}
-          />
+          /> */}
+          {props.htmlinterfaz}
 
-          <StagingCancerLiver />
+          {/* <StagingCancerLiver /> */}
+          {props.staging}
 
           <Float
             speed={3}
             //  floatingRange={[0.5,1]}
           >
-            <CancerText3D
+            {/* <CancerText3D
               title={"LIVER CANCER"}
               position={[0, 1.5, 0]}
               color="red"
-            />
-            {/* {props.text} */}
+            /> */}
+            {props.text}
           </Float>
 
-          <RotateHtml position={[0, 0, 0]} color={"#ff6035"} />
+          <RotateHtml position={[0, 0, 0]} color={props.color} />
 
-          <CancerButtons position={[2,0.2,0]} color={"#ff6035"} />
+          <CancerButtons position={[2,0.2,0]} color={props.color} />
 
           <OrbitControls enableZoom={false} target={[0, 0, 0]} />
           <ambientLight intensity={4} />
@@ -82,8 +79,8 @@ const StagerExperiment = () => {
             castShadow={true}
           />
 
-          <LiverCancerFinal scale={2} home={false} />
-          {/* {props.model} */}
+          {/* <LiverCancerFinal scale={2} home={false} /> */}
+          {props.model}
 
           <Recipient />
         </Canvas>
