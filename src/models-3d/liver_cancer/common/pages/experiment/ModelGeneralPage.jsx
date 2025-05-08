@@ -21,8 +21,8 @@ const StagerExperiment = (props) => {
         <Canvas
           camera={{ position: [0, 0, 2.5] }}
           shadows={true}
-          onPointerDown={setClick}
-          onPointerUp={setClick}
+          onPointerDown={()=>{setClick(true)}}
+          onPointerUp={()=>{setClick(false)}}
         >
           
           {props.htmlinterfaz}

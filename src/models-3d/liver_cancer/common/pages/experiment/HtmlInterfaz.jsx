@@ -33,7 +33,7 @@ const HtmlInterfaz = ({ color, cards, position }) => {
   // position={[0, 0.5, 0]}//tablet
 
   const pos = useMemo(() => {
-    console.log(viewport.width);
+    
     if (viewport.width < 2) return [0, 0.28, 0];
     if (viewport.width < 3 && viewport.width > 2) return [0, 0, 0];
     return position;
@@ -53,8 +53,8 @@ const HtmlInterfaz = ({ color, cards, position }) => {
       >
         {/* Liver Cancer Card */}
         <div
-          onPointerDown={() => setClick()}
-          onPointerUp={() => setClick()}
+          onPointerDown={(e)=>e.stopPropagation()}
+          onPointerUp={(e)=>e.stopPropagation()}
           className={`bg-black/50 p-5 rounded-xl shadow-xl w-full transition-all duration-500 ${
             viewImage || ViewVideo ? "max-h-[70vh]" : "h-[30vh] md:h-[50vh]"
           } overflow-y-auto`}
@@ -123,8 +123,8 @@ const HtmlInterfaz = ({ color, cards, position }) => {
 
         {/* Botón Anterior (izquierda) */}
         <button
-        onPointerDown={() => setClick()}
-        onPointerUp={() => setClick()}
+        onPointerDown={(e)=>e.stopPropagation()}
+        onPointerUp={(e)=>e.stopPropagation()}
           onClick={back}
           className=" relative  
             md:absolute md:-left-10 md:top-[20vh] md:-translate-y-1/2
@@ -148,8 +148,8 @@ const HtmlInterfaz = ({ color, cards, position }) => {
 
         {/* Botón Siguiente (derecha) */}
         <button
-        onPointerDown={() => setClick()}
-        onPointerUp={() => setClick()}
+        onPointerDown={(e)=>e.stopPropagation()}
+        onPointerUp={(e)=>e.stopPropagation()}
           onClick={next}
           className=" relative  md:absolute md:-right-10 md:top-[20vh] md:-translate-y-1/2 bg-black/50  shadow-md p-2 rounded-full hover:bg-black"
         >

@@ -127,8 +127,8 @@ const useAuthStore = create((set) => {
 
 export const useEventStore=create((set,get)=>({
   click:false,
-  setClick:()=>{
-    set({click:!get().click})
+  setClick:(bool)=>{
+    set({click:bool})
     
 
   },

@@ -29,12 +29,14 @@ const CancerButtons = ({ position, color }) => {
       distancFactor={2}
       style={{ pointerEvents: "auto" }}
     >
-      <div className="flex flex-col items-center justify-center p-2 gap-2">
+      <div className="flex flex-col items-center justify-center p-2 gap-2"
+      onPointerDown={(e)=>e.stopPropagation()}
+      onPointerUp={(e)=>e.stopPropagation()}
+      >
 
       <div
           onClick={handleClickCancer}
-          onPointerDown={() => setClick()}
-          onPointerUp={() => setClick()}
+          
           className={`${
             click ? "hidden" : "block"
           } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
@@ -58,8 +60,7 @@ const CancerButtons = ({ position, color }) => {
           className={`${
             click ? "hidden" : "block"
           } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
-          onPointerDown={() => setClick()}
-          onPointerUp={() => setClick()}
+          
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,8 +82,6 @@ const CancerButtons = ({ position, color }) => {
 
         <div
           onClick={handleClickTreatment}
-          onPointerDown={() => setClick()}
-          onPointerUp={() => setClick()}
           className={`${
             click ? "hidden" : "block"
           } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
@@ -106,8 +105,6 @@ const CancerButtons = ({ position, color }) => {
 
         <div
           onClick={handleClickRecomendations}
-          onPointerDown={() => setClick()}
-          onPointerUp={() => setClick()}
           className={`${
             click ? "hidden" : "block"
           } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
