@@ -17,7 +17,8 @@ const GenericPageE = (props) => {
            
             color="white"
             cards={cardscancer}
-            position={[-2.5, -0.5, 0]}
+            position={[-2.4, -0.3, 0]} 
+            
           />
         }
 
@@ -40,7 +41,7 @@ const GenericPageE = (props) => {
            
             color="#56c937"
             cards={cardsymptoms}
-            position={[-2.5, -0.5, 0]}
+            position={[-2.4, -0.3, 0]} 
           />
         }
 
@@ -52,7 +53,7 @@ const GenericPageE = (props) => {
             color="green"
           />}
 
-        model={<Fever scale={2} home={false} />}
+        model={<Fever  home={false} />}
 
         color={'#56c937'}
         />
