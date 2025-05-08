@@ -116,7 +116,7 @@ const HtmlInterfaz = ({color,cards,position}) => {
             onClick={back}
             className="hidden md:block relative  
             md:absolute md:-left-10 md:top-[20vh] md:-translate-y-1/2
-            bg-white/15 shadow-md p-2 rounded-full hover:bg-[#797777]"
+            bg-black/50 shadow-md p-2 rounded-full hover:bg-black"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@ const HtmlInterfaz = ({color,cards,position}) => {
           {/* Botón Siguiente (derecha) */}
           <button
             onClick={next}
-            className="hidden md:block relative  md:absolute md:-right-10 md:top-[20vh] md:-translate-y-1/2 bg-white/15  shadow-md p-2 rounded-full hover:bg-[#797777]"
+            className="hidden md:block relative  md:absolute md:-right-10 md:top-[20vh] md:-translate-y-1/2 bg-black/50  shadow-md p-2 rounded-full hover:bg-black"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -161,7 +161,7 @@ const HtmlInterfaz = ({color,cards,position}) => {
       <div className="flex justify-center gap-4 mt-4 md:hidden">
         <button
           onClick={back}
-          className="bg-white/15 shadow-md p-2 rounded-full hover:bg-[#797777]"
+          className="bg-black/50 shadow-md p-2 rounded-full hover:bg-black"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +181,7 @@ const HtmlInterfaz = ({color,cards,position}) => {
 
         <button
           onClick={next}
-          className="bg-white/15 shadow-md p-2 rounded-full hover:bg-[#797777]"
+          className="bg-black/50 shadow-md p-2 rounded-full hover:bg-black"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
