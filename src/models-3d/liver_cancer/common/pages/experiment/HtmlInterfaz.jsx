@@ -38,7 +38,7 @@ const HtmlInterfaz = ({color,cards,position}) => {
       
 
       {/* Main Content Container */}
-      <div className="w-full mx-auto mt-10 h-screen pt-8 relative z-10 ">
+      <div className="w-full mx-auto mt-10 h-screen pt-8 relative z-10 w-[10vh] ">
 
         {/* Single Column Cards Container */}
         <div className={`${

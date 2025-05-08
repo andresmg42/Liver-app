@@ -29,7 +29,7 @@ const GenericPageE = (props) => {
             color="black"
           />}
 
-        model={<LiverCancerFinal scale={2} home={false} />}
+        model={<LiverCancerFinal   home={false} />}
 
         color={'white'}
         />

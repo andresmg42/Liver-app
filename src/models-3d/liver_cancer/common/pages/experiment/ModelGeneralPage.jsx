@@ -6,6 +6,7 @@ import Recipient from "../../resipients/Resipient";
 import CancerButtons from "../../buttons/CancerButtons";
 import RotateHtml from "../../buttons/RotateHtml";
 import { useEventStore } from "../../../../../stores/use-auth-store";
+import ResponsiveModel from "./ResponsiveModel";
 
 
 
@@ -49,10 +50,16 @@ const StagerExperiment = (props) => {
             castShadow={true}
           />
 
-          
-          {props.model}
+          <ResponsiveModel originalScale={3}>
+            <>
+            {props.model}
+            <Recipient />
+            </>
 
-          <Recipient />
+          </ResponsiveModel>
+          {/* {props.model} */}
+
+         
         </Canvas>
      
     </div>
