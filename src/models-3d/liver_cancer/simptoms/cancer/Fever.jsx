@@ -1,43 +1,48 @@
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
-import { useKeyboardControls } from "@react-three/drei";
-import { useEffect } from 'react';
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useEffect } from "react";
 
 export function Fever(props) {
-  const { nodes, materials } = useGLTF('/models/liver_cancer/symptomps/fever.glb')
-  const termometerRef=useRef();
+  const { nodes, materials } = useGLTF(
+    "/models/liver_cancer/symptomps/fever.glb"
+  );
+  const termometerRef = useRef();
 
-  if(props.home){
-    useFrame((state,delta)=>{
-      termometerRef.current.rotation.y+=1*delta;
-    });
-
-  }else{
-
-    const [sub,get] = useKeyboardControls();
-    useEffect(() => {
+  const handleKey = (e) => {
     
 
-      sub((press) => {
-        if (press.up) {
-          termometerRef.current.rotation.x -= 0.05;
-        }
-  
-        if (press.down) {
-          termometerRef.current.rotation.x += 0.05;
-        }
-  
-        if (press.left) {
-          termometerRef.current.rotation.y -= 0.05;
-        }
-  
-        if (press.right) {
-          termometerRef.current.rotation.y += 0.05;
-        }
-      });
-    }, [sub]);
+    switch (e.key) {
+      case "w":
+        termometerRef.current.rotation.x -= 0.05;
+        break;
 
+      case "s":
+        termometerRef.current.rotation.x += 0.05;
+        break;
+
+      case "a":
+        termometerRef.current.rotation.y -= 0.05;
+        break;
+
+      case "d":
+        termometerRef.current.rotation.y += 0.05;
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  if (props.home) {
+    useFrame((state, delta) => {
+      termometerRef.current.rotation.y += 1 * delta;
+    });
+  } else {
+    useEffect(() => {
+      window.addEventListener("keydown", handleKey);
+      return () => window.removeEventListener("keydown", handleKey);
+    }, []);
   }
 
   return (
@@ -91,7 +96,7 @@ export function Fever(props) {
         material={materials.DisplayMaterial}
       />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/models/liver_cancer/symptomps/fever.glb')
+useGLTF.preload("/models/liver_cancer/symptomps/fever.glb");
