@@ -37,7 +37,7 @@ const CancerButtons = ({ position, color }) => {
           onPointerUp={() => setClick()}
           className={`${
             click ? "hidden" : "block"
-          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}
+          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
         >
           <svg viewBox="0 0 32 32" 
           xmlns="http://www.w3.org/2000/svg" 
@@ -57,7 +57,7 @@ const CancerButtons = ({ position, color }) => {
           onClick={handleClickSymptoms}
           className={`${
             click ? "hidden" : "block"
-          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}
+          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
           onPointerDown={() => setClick()}
           onPointerUp={() => setClick()}
         >
@@ -85,7 +85,7 @@ const CancerButtons = ({ position, color }) => {
           onPointerUp={() => setClick()}
           className={`${
             click ? "hidden" : "block"
-          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}
+          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@ const CancerButtons = ({ position, color }) => {
           onPointerUp={() => setClick()}
           className={`${
             click ? "hidden" : "block"
-          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black/50 bg-black/15 flex items-center justify-center`}
+          } w-[10vh] h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

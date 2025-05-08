@@ -1,9 +1,14 @@
 import { Html } from "@react-three/drei";
 import React from "react";
 import { useState } from "react";
+import { useEventStore } from "../../../../../stores/use-auth-store";
 
 const HtmlInterfaz = ({color,cards,position}) => {
+
+  const {click,setClick}=useEventStore()
+
   const [viewImage, setViewImage] = useState(false);
+
     const [ViewVideo, setViewVideo] = useState(false);
   
     const [index, setIndex] = useState(0);
@@ -36,13 +41,18 @@ const HtmlInterfaz = ({color,cards,position}) => {
       <div className="w-full mx-auto mt-10 h-screen pt-8 relative z-10 ">
 
         {/* Single Column Cards Container */}
-        <div className=" items-center  gap-8 md:w-[60vh] md:h-[50vh] h-[60vh] mx-auto px-4 relative">
+        <div className={`${
+            click? "hidden" : "block" }
+            items-center  gap-8 md:w-[60vh] md:h-[50vh] h-[60vh] mx-auto px-4 relative`}
+          onPointerDown={() => setClick()}
+          onPointerUp={() => setClick()}
+            >
           {/* Liver Cancer Card */}
-          <div className="bg-black/15 p-5 rounded-xl shadow-xl w-full max-h-[70vh] overflow-y-auto">
+          <div className="bg-black/50 p-5 rounded-xl shadow-xl w-full max-h-[70vh] overflow-y-auto">
             <h2 className="text-2xl font-semibold text-center mb-3" style={{color}}>
               {cards[index].titulo}
             </h2>
-            <p className="text-sm md:text-base font-semibold" style={{color}}>
+            <p className="text-sm md:text-xl  font-bold" style={{color}}>
               {cards[index].descripcion}
             </p>
             {(cards[index].imagen ||

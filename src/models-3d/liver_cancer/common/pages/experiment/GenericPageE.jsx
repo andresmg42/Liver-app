@@ -15,7 +15,7 @@ const GenericPageE = (props) => {
         htmlinterfaz={
             <HtmlInterfaz
            
-            color="#ff6035"
+            color="white"
             cards={cardscancer}
             position={[-2.5, -0.5, 0]}
           />
@@ -26,12 +26,12 @@ const GenericPageE = (props) => {
         text={<CancerText3D
             title={"LIVER CANCER"}
             position={[0, 1.5, 0]}
-            color="red"
+            color="black"
           />}
 
         model={<LiverCancerFinal scale={2} home={false} />}
 
-        color={'#ff6035'}
+        color={'white'}
         />
     }else if(props.page=='symptoms'){
         return <ModelGeneralPage
