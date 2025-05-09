@@ -36,18 +36,16 @@ const CancerButtons = ({ position, color }) => {
     <Html
       center
       position={pos}
-      distancFactor={2}
+      
       style={{ pointerEvents: "auto" }}
     >
       <div
-        className="flex  lg:flex-col  items-center justify-center p-2 gap-2"
-        onPointerDown={(e) => e.stopPropagation()}
+        className="flex  lg:flex-col  items-center justify-center p-2 gap-2 "
         onPointerUp={(e) => e.stopPropagation()}
+        onPointerDown={(e) => e.stopPropagation()}
       >
         <div
           onClick={handleClickCancer}
-          onPointerDown={(e) => e.stopPropagation()}
-          onPointerUp={(e) => e.stopPropagation()}
           className={`${
             click ? "hidden" : "block"
           } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center h-[8vh] w-[8vh] justify-center`}
@@ -69,8 +67,6 @@ const CancerButtons = ({ position, color }) => {
 
         <div
           onClick={handleClickSymptoms}
-          onPointerDown={(e) => e.stopPropagation()}
-          onPointerUp={(e) => e.stopPropagation()}
           className={`${
             click ? "hidden" : "block"
           } md:w-[10vh] md:h-[10vh]  h-[8vh] w-[8vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
@@ -95,8 +91,6 @@ const CancerButtons = ({ position, color }) => {
 
         <div
           onClick={handleClickTreatment}
-          onPointerDown={(e) => e.stopPropagation()}
-          onPointerUp={(e) => e.stopPropagation()}
           className={`${
             click ? "hidden" : "block"
           } md:w-[10vh] md:h-[10vh]  h-[8vh] w-[8vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
@@ -120,8 +114,6 @@ const CancerButtons = ({ position, color }) => {
 
         <div
           onClick={handleClickRecomendations}
-          onPointerDown={(e) => e.stopPropagation()}
-          onPointerUp={(e) => e.stopPropagation()}
           className={`${
             click ? "hidden" : "block"
           } md:w-[10vh] md:h-[10vh]  h-[8vh] w-[8vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}

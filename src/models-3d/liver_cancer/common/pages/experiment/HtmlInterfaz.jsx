@@ -45,11 +45,12 @@ const HtmlInterfaz = ({ color, cards, position }) => {
       position={pos}
       //   distanceFactor={1}
       style={{ pointerEvents: "auto" }}
+      
     >
       {/* Single Column Cards Container */}
       <div
         className={`${click ? "hidden" : "block"} 
-            items-center  gap-8 md:w-[50vh] md:h-[70vh] h-[70vh] w-[45vh]  mx-auto px-4 relative  `}
+            items-center  gap-8 md:w-[50vh] md:h-[70vh] h-[70vh] w-[45vh]  mx-auto px-4 relative`}
       >
         {/* Liver Cancer Card */}
         <div
