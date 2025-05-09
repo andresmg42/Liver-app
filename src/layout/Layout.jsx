@@ -9,7 +9,7 @@ const Layout = ({children}) => {
     <div className='layout'>
         <NabBar/>
         
-        <main className='layout-content pt-10'>
+        <main className='layout-content pt-14'>
         {children}
         </main>
         <Footer/>

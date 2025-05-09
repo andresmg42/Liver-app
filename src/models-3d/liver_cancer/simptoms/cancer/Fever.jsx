@@ -1,14 +1,49 @@
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
-
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useEffect } from "react";
 
 export function Fever(props) {
-  const { nodes, materials } = useGLTF('/models/liver_cancer/symptomps/fever.glb')
-  const termometerRef=useRef();
-  useFrame((satate,delta)=>{
-    termometerRef.current.rotation.y+=1*delta;
-  })
+  const { nodes, materials } = useGLTF(
+    "/models/liver_cancer/symptomps/fever.glb"
+  );
+  const termometerRef = useRef();
+
+  const handleKey = (e) => {
+    
+
+    switch (e.key) {
+      case "w":
+        termometerRef.current.rotation.x -= 0.05;
+        break;
+
+      case "s":
+        termometerRef.current.rotation.x += 0.05;
+        break;
+
+      case "a":
+        termometerRef.current.rotation.y -= 0.05;
+        break;
+
+      case "d":
+        termometerRef.current.rotation.y += 0.05;
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  if (props.home) {
+    useFrame((state, delta) => {
+      termometerRef.current.rotation.y += 1 * delta;
+    });
+  } else {
+    useEffect(() => {
+      window.addEventListener("keydown", handleKey);
+      return () => window.removeEventListener("keydown", handleKey);
+    }, []);
+  }
 
   return (
     <group {...props} dispose={null} ref={termometerRef}>
@@ -61,7 +96,7 @@ export function Fever(props) {
         material={materials.DisplayMaterial}
       />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/models/liver_cancer/symptomps/fever.glb')
+useGLTF.preload("/models/liver_cancer/symptomps/fever.glb");
