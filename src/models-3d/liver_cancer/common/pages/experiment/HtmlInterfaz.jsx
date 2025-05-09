@@ -128,7 +128,7 @@ const HtmlInterfaz = ({ color, cards, position }) => {
           onClick={back}
           className=" relative  
             md:absolute md:-left-10 md:top-[20vh] md:-translate-y-1/2
-            bg-black/50 shadow-md p-2 rounded-full hover:bg-black mt-5"
+            bg-black/50 shadow-md p-2 rounded-full hover:bg-black mt-5 mr-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@ const HtmlInterfaz = ({ color, cards, position }) => {
         onPointerDown={(e)=>e.stopPropagation()}
         onPointerUp={(e)=>e.stopPropagation()}
           onClick={next}
-          className=" relative  md:absolute md:-right-10 md:top-[20vh] md:-translate-y-1/2 bg-black/50  shadow-md p-2 rounded-full hover:bg-black"
+          className=" relative  md:absolute md:-right-10 md:top-[20vh] md:-translate-y-1/2 bg-black/50  shadow-md p-2 rounded-full hover:bg-black ml-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
