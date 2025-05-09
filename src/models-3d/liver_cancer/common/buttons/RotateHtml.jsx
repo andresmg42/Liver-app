@@ -4,7 +4,7 @@ import { Html } from "@react-three/drei";
 import { useEventStore } from "../../../../stores/use-auth-store";
 
 const RotateHtml = ({ position,color }) => {
-  const { click } = useEventStore();
+  const { click,clickview } = useEventStore();
   const [overButton, setOverButton] = useState(false);
  
 
@@ -23,7 +23,7 @@ const RotateHtml = ({ position,color }) => {
         <div
           className={`${
             click ? "hidden" : "block"
-          } flex items-center justify-center w-20 h-20 rounded-full bg-black/15 shadow-md animate-spin-slow`}
+          } flex items-center justify-center w-20 h-20 rounded-full bg-black/15 shadow-md animate-spin-slow ${clickview? "hidden md:flex":"flex"}`}
           onPointerEnter={() => setOverButton(true)}
         >
           <Box className="w-8 h-8" style={{color}} />

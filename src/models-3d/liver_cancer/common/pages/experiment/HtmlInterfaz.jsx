@@ -6,7 +6,7 @@ import { useThree } from "@react-three/fiber";
 import { useMemo } from "react";
 
 const HtmlInterfaz = ({ color, cards, position }) => {
-  const { click, setClick } = useEventStore();
+  const { click, setClick,setClickView,clickview } = useEventStore();
 
   const [viewImage, setViewImage] = useState(false);
 
@@ -79,7 +79,12 @@ const HtmlInterfaz = ({ color, cards, position }) => {
                 } else {
                   setViewVideo(!ViewVideo);
                 }
-              }}
+                setClickView(!clickview)
+              }
+            
+            
+            
+            }
             >
               view
               <svg

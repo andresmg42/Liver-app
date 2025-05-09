@@ -7,7 +7,7 @@ import { useThree } from "@react-three/fiber";
 
 const CancerButtons = ({ position, color }) => {
   const navigate = useNavigate();
-  const { click, setClick } = useEventStore();
+  const { click, setClick,clickview } = useEventStore();
 
   const handleClickSymptoms = (e) => {
     e.stopPropagation();
@@ -40,15 +40,15 @@ const CancerButtons = ({ position, color }) => {
       style={{ pointerEvents: "auto" }}
     >
       <div
-        className="flex  lg:flex-col  items-center justify-center p-2 gap-2 "
+        className={`  lg:flex-col  items-center justify-center p-2 gap-2 ${clickview? "hidden md:flex":"flex"}`}
         onPointerUp={(e) => e.stopPropagation()}
         onPointerDown={(e) => e.stopPropagation()}
       >
         <div
           onClick={handleClickCancer}
           className={`${
-            click ? "hidden" : "block"
-          } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center h-[8vh] w-[8vh] justify-center`}
+            click? "hidden" : "block"
+          } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center h-[8vh] w-[8vh] justify-center `}
         >
           <svg
             viewBox="0 0 32 32"

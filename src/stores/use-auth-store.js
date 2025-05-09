@@ -127,11 +127,13 @@ const useAuthStore = create((set) => {
 
 export const useEventStore=create((set,get)=>({
   click:false,
+  clickview:false,
   setClick:(bool)=>{
     set({click:bool})
     
 
   },
+  setClickView:(bool)=>{set({clickview:bool})}
 }))
 
 export default useAuthStore
