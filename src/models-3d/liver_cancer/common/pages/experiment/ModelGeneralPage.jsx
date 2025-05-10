@@ -9,6 +9,9 @@ import { useEventStore } from "../../../../../stores/use-auth-store";
 import ResponsiveModel from "./ResponsiveModel";
 import CancerButton from './float-buttons/CancerButton'
 import DescriptionButton from "./float-buttons/descriptionButton";
+import SymptomsButton from "./float-buttons/SymptomsButton";
+import TratmentButton from "./float-buttons/TratmentButton";
+import RecomendationsButton from "./float-buttons/RecomendationsButton";
 
 
 const StagerExperiment = (props) => {
@@ -35,13 +38,17 @@ const StagerExperiment = (props) => {
             speed={3}
             
           >
-            <CancerButton position={[-1.6,0,0]}/>
-
-            <DescriptionButton position={[1.5,0,0]}/>
+            
             {props.text}
           </Float>
 
-          <RotateHtml position={[0, -1, 0]} color={props.color} />
+          <CancerButton position={[-2.2,-1,0]}/>
+            <DescriptionButton position={[-2.2,1,0]}/>
+            <SymptomsButton position={[2.2,1,0]}/>
+            <TratmentButton position={[2.2,-1,0]}/>
+            <RecomendationsButton position={[-2.2,-1,0]}/>
+
+          <RotateHtml position={[0,0,0]} color={props.color} />
 
           {/* <CancerButtons position={[2,0.2,0]} color={props.color} /> */}
 

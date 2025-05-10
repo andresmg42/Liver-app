@@ -138,4 +138,15 @@ export const useEventStore=create((set,get)=>({
   setClickCancer:(bool)=>{set({clickcancer:bool})},
 }))
 
+export const usePageEventStore=create((set,get)=>({
+  pagecancer:true,
+  pagesymptos:true,
+  pagetreatment:true,
+  pagerecomendations:true,
+  setPageCancer:(bool)=>set({pagecancer:bool}),
+  setPagesymptoms:(bool)=>set({pagesyptoms:bool}),
+  setPageTreatment:(bool)=>set({pagetreatment:bool}),
+  setPageRecomendations:(bool)=>set({pagerecomendations:bool}),
+}))
+
 export default useAuthStore
