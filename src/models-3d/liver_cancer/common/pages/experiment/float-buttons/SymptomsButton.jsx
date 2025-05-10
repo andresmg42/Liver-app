@@ -46,7 +46,7 @@ const SymptomsButton = ({ position, color }) => {
             height="40"
             viewBox="0 0 24 24"
             fill="none"
-            stroke={`white`}
+            stroke={`${color}`}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

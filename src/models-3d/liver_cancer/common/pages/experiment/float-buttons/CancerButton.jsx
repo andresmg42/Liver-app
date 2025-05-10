@@ -38,7 +38,7 @@ const CancerButton = ({ position, color }) => {
           <svg
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
-            fill={`${"white"}`}
+            fill={`${color}`}
             width="40"
             height="40"
           >

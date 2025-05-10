@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Float, OrbitControls } from "@react-three/drei";
 import Recipient from "../../resipients/Resipient";
 
-import CancerButtons from "../../buttons/CancerButtons";
+
 import RotateHtml from "../../buttons/RotateHtml";
 import { useEventStore } from "../../../../../stores/use-auth-store";
 import ResponsiveModel from "./ResponsiveModel";
@@ -14,7 +14,7 @@ import TratmentButton from "./float-buttons/TratmentButton";
 import RecomendationsButton from "./float-buttons/RecomendationsButton";
 
 
-const StagerExperiment = (props) => {
+const ModelGeneralPage = (props) => {
  
 
   const { setClick } = useEventStore();
@@ -29,8 +29,6 @@ const StagerExperiment = (props) => {
           onPointerUp={()=>{setClick(false)}}
         >
           
-          {/* {props.htmlinterfaz} */}
-
           
           {props.staging}
 
@@ -38,15 +36,17 @@ const StagerExperiment = (props) => {
             speed={3}
             
           >
+            <CancerButton position={[-2.2,0,0]} color={props.color}/>
+            <DescriptionButton position={[0,1,0]} color={props.color}/>
+            <SymptomsButton position={[2.2,0,0]} color={props.color}/>
+            <TratmentButton position={[2.2,-1,0]} color={props.color}/>
+            <RecomendationsButton position={[-2.2,-1,0]} color={props.color}/>
             
             {props.text}
           </Float>
 
-          <CancerButton position={[-2.2,-1,0]}/>
-            <DescriptionButton position={[-2.2,1,0]}/>
-            <SymptomsButton position={[2.2,1,0]}/>
-            <TratmentButton position={[2.2,-1,0]}/>
-            <RecomendationsButton position={[-2.2,-1,0]}/>
+            
+          
 
           <RotateHtml position={[0,0,0]} color={props.color} />
 
@@ -69,7 +69,7 @@ const StagerExperiment = (props) => {
             </>
 
           </ResponsiveModel>
-          {/* {props.model} */}
+          
 
          
         </Canvas>
@@ -78,4 +78,4 @@ const StagerExperiment = (props) => {
   );
 };
 
-export default StagerExperiment;
+export default ModelGeneralPage;

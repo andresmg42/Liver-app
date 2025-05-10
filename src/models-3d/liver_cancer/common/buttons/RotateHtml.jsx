@@ -17,7 +17,7 @@ const RotateHtml = ({ position,color }) => {
             setOverButton(false);
           }}
         >
-          <h3 style={{color:"black"}}>push w,A,S,D to move 3D model</h3>
+          <h3 style={{color}}>push w,A,S,D to move 3D model</h3>
         </div>
       ) : (
         <div
