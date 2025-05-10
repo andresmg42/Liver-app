@@ -25,7 +25,7 @@ const StagerExperiment = (props) => {
           onPointerUp={()=>{setClick(false)}}
         >
           
-          {props.htmlinterfaz}
+          {/* {props.htmlinterfaz} */}
 
           
           {props.staging}
