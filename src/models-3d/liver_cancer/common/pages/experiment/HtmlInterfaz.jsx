@@ -6,7 +6,7 @@ import { useThree } from "@react-three/fiber";
 import { useMemo } from "react";
 
 const HtmlInterfaz = ({ color, cards }) => {
-  const { click, setClick, setClickView, clickview } = useEventStore();
+  const { click, setClick, setClickView, clickview,setClickCancer } = useEventStore();
 
   const [viewImage, setViewImage] = useState(false);
 
@@ -15,7 +15,7 @@ const HtmlInterfaz = ({ color, cards }) => {
   const [index, setIndex] = useState(0);
 
   const next = () => {
-    setIndex((prev) => (prev + 1) % cards.length); // vuelve al inicio al llegar al final
+    setIndex((prev) => (prev + 1) % cards.length); 
     setViewImage(false);
     setViewVideo(false);
   };
@@ -32,12 +32,30 @@ const HtmlInterfaz = ({ color, cards }) => {
             items-center  gap-8 md:w-[70vh]  w-[45vh]  mx-auto px-4 relative  z-10`}
     >
       <div
-        // onPointerDown={(e)=>e.stopPropagation()}
-        // onPointerUp={(e)=>e.stopPropagation()}
         className={`bg-black/50 p-5 rounded-xl shadow-xl w-full transition-all duration-500 ${
           viewImage || ViewVideo ? "max-h-[70vh]" : "h-[30vh] md:h-[50vh]"
         } overflow-y-auto `}
       >
+        <div className=" flex justify-end w-full mb-3">
+          <button onClick={()=>setClickCancer(false)}  >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+
         <div className=" flex justify-between gap-2 items-center mb-3">
           <button onClick={back} className="animate-bounce-left">
             <svg
@@ -137,8 +155,6 @@ const HtmlInterfaz = ({ color, cards }) => {
           </div>
         )}
       </div>
-
-      
     </div>
   );
 };

@@ -48,7 +48,7 @@ const CancerButtons = ({ position, color }) => {
           onClick={handleClickCancer}
           className={`${
             click? "hidden" : "block"
-          } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center h-[8vh] w-[8vh] justify-center `}
+          } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center h-[8vh] w-[8vh] justify-center animate-spin-slow `}
         >
           <svg
             viewBox="0 0 32 32"
@@ -69,7 +69,7 @@ const CancerButtons = ({ position, color }) => {
           onClick={handleClickSymptoms}
           className={`${
             click ? "hidden" : "block"
-          } md:w-[10vh] md:h-[10vh]  h-[8vh] w-[8vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
+          } md:w-[10vh] md:h-[10vh]  h-[8vh] w-[8vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center animate-spin-slow`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ const CancerButtons = ({ position, color }) => {
           onClick={handleClickTreatment}
           className={`${
             click ? "hidden" : "block"
-          } md:w-[10vh] md:h-[10vh]  h-[8vh] w-[8vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
+          } md:w-[10vh] md:h-[10vh]  h-[8vh] w-[8vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center animate-spin-slow`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@ const CancerButtons = ({ position, color }) => {
           onClick={handleClickRecomendations}
           className={`${
             click ? "hidden" : "block"
-          } md:w-[10vh] md:h-[10vh]  h-[8vh] w-[8vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center`}
+          } md:w-[10vh] md:h-[10vh]  h-[8vh] w-[8vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center justify-center animate-spin-slow`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

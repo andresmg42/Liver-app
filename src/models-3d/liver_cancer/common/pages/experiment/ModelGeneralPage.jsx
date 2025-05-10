@@ -7,7 +7,8 @@ import CancerButtons from "../../buttons/CancerButtons";
 import RotateHtml from "../../buttons/RotateHtml";
 import { useEventStore } from "../../../../../stores/use-auth-store";
 import ResponsiveModel from "./ResponsiveModel";
-
+import CancerButton from './float-buttons/CancerButton'
+import DescriptionButton from "./float-buttons/descriptionButton";
 
 
 const StagerExperiment = (props) => {
@@ -34,13 +35,17 @@ const StagerExperiment = (props) => {
             speed={3}
             
           >
-           
+            <CancerButton position={[-1.6,0,0]}/>
+
+            <DescriptionButton position={[1.5,0,0]}/>
             {props.text}
           </Float>
 
-          <RotateHtml position={[0, 0, 0]} color={props.color} />
+          <RotateHtml position={[0, -1, 0]} color={props.color} />
 
-          <CancerButtons position={[2,0.2,0]} color={props.color} />
+          {/* <CancerButtons position={[2,0.2,0]} color={props.color} /> */}
+
+         
 
           <OrbitControls enableZoom={false} target={[0, 0, 0]} />
           <ambientLight intensity={4} />

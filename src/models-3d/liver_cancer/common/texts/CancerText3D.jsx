@@ -22,7 +22,7 @@ const CancerText3D = ({position,title,color}) => {
   })
 
   const size = useMemo(() => {
-      console.log(viewport.width)
+      
       if (viewport.width < 2) return 0.2;
       // if (viewport.width < 3 && viewport.width > 2) return [0, 0, 0];
       return 0.3;

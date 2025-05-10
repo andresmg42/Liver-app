@@ -8,16 +8,18 @@ import HtmlInterfaz from "./HtmlInterfaz";
 import cardscancer from "../../../../../pages/liver/desease/pageCancerLiverContent";
 import cardsymptoms from "../../../../../pages/liver/symptoms/symptomsContent";
 import { Fever } from "../../../simptoms/cancer/Fever";
-
+import { useEventStore } from "../../../../../stores/use-auth-store";
 const CancerPage = (props) => {
+  const { clickcancer } = useEventStore();
   return (
     <div>
-      <HtmlInterfaz
-        color="white"
-        cards={cardscancer}
-        position={[-2.4, -0.3, 0]}
-      />
-
+      {clickcancer && (
+        <HtmlInterfaz
+          color="white"
+          cards={cardscancer}
+          position={[-2.4, -0.3, 0]}
+        />
+      )}
       <ModelGeneralPage
         staging={<StagingCancerLiver />}
         text={
