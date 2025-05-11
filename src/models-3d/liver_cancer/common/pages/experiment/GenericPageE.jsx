@@ -8,6 +8,10 @@ import cardscancer from "../../../../../pages/liver/desease/pageCancerLiverConte
 import cardsymptoms from "../../../../../pages/liver/symptoms/symptomsContent";
 import { Fever } from '../../../simptoms/cancer/Fever';
 import GenericAuxPage from './GenericAuxPage';
+import StagingSurgery from '../../../desease/staging/cancer/StagingSurgery';
+import { Xrays } from '../../../treatment/Xrays';
+import StagingCity from '../../../desease/staging/cancer/StagingCity';
+import { Alcohol } from '../../../recomendations/Alcohol';
 
 const GenericPageE = (props) => {
     if(props.page=='cancer'){
@@ -17,9 +21,45 @@ const GenericPageE = (props) => {
       color_title='black'
       color_description='black'
       cards={cardscancer}
-      staging={<StagingCancerLiver/>}
+      staging={<StagingLiver/>}
       title='CANCER LIVER'
       model={<LiverCancerFinal home={false}/>}
+      />);
+
+    }
+    else if(props.page=='symptoms'){
+      return (<GenericAuxPage
+      color='white'
+      color_title='red'
+      color_description='white'
+      cards={cardsymptoms}
+      staging={<StagingCancerLiver/>}
+      title='FEVER'
+      model={<Fever home={false}/>}
+      />);
+    }
+
+    else if(props.page=='treatment'){
+      return (<GenericAuxPage
+      color='white'
+      color_title='blue'
+      color_description='white'
+      cards={cardsymptoms}
+      staging={<StagingSurgery/>}
+      title='X-RAYS'
+      model={<Xrays scale={0.7} home={false}/>}
+      />);
+
+    }
+     else if(props.page=='recomendations'){
+      return (<GenericAuxPage
+      color='white'
+      color_title='gray'
+      color_description='white'
+      cards={cardsymptoms}
+      staging={<StagingCity/>}
+      title='ALCOHOL'
+    model={<Alcohol scale={0.7} home={false}/>}
       />);
 
     }

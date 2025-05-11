@@ -21,6 +21,8 @@ function App() {
           {/* <Route path="/stagerexp" element={<StagerExperiment />} /> */}
           <Route path="/cancer" element={<GenericPageE page='cancer'/>} />
           <Route path="/symptoms" element={<GenericPageE page='symptoms'/>} />
+          <Route path="/treatment" element={<GenericPageE page='treatment'/>} />
+          <Route path="/recomendations" element={<GenericPageE page='recomendations'/>} />
           {/* <Route path="/genericancer" element={<CancerPage />} /> */}
 
     

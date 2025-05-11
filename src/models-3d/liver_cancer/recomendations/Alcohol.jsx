@@ -2,6 +2,7 @@ import { useEnvironment, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { useEventStore } from '../../../stores/use-auth-store';
+import { useEffect } from 'react';
 
 export function Alcohol(props) {
   const { nodes, materials } = useGLTF('/models/liver_cancer/recomendations/alcohol.glb')

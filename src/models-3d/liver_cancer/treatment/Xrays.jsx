@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useEventStore } from '../../../stores/use-auth-store'
-
+import { useEffect } from 'react'
 
 export function Xrays(props) {
   const { nodes, materials } = useGLTF('/models/liver_cancer/treatment/treatment-xrays.glb')
