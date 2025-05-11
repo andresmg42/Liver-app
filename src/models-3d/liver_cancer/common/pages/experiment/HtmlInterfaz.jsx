@@ -1,9 +1,6 @@
-import { Html } from "@react-three/drei";
-import React from "react";
 import { useState } from "react";
 import { useEventStore } from "../../../../../stores/use-auth-store";
-import { useThree } from "@react-three/fiber";
-import { useMemo } from "react";
+
 
 const HtmlInterfaz = ({ color, cards }) => {
   const { click, setClick, setClickView, clickview,setClickCancer } = useEventStore();
@@ -37,7 +34,9 @@ const HtmlInterfaz = ({ color, cards }) => {
         } overflow-y-auto `}
       >
         <div className=" flex justify-end w-full mb-3">
-          <button onClick={()=>setClickCancer(false)}  >
+          <button onClick={()=>{setClickCancer(false)
+            setClickView(false)
+          }}  >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

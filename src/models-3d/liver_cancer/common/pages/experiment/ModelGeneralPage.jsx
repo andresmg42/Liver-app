@@ -2,17 +2,17 @@
 import { Canvas } from "@react-three/fiber";
 import { Float, OrbitControls } from "@react-three/drei";
 import Recipient from "../../resipients/Resipient";
-
-
 import RotateHtml from "../../buttons/RotateHtml";
 import { useEventStore } from "../../../../../stores/use-auth-store";
 import ResponsiveModel from "./ResponsiveModel";
 import DescriptionButton from "./float-cards3D/DescriptionButton";
-import GenericButton3D from "./float-cards3D/GenericButton3D";
+import CancerButtons from "../../buttons/CancerButtons";
+import GenericButton3D from './float-cards3D/GenericButton3D'
 import { LiverCancerFinal } from "../../../desease/cancer/LiverCancerFinal";
-import { Fever } from "../../../simptoms/cancer/Fever";
-import { Alcohol } from "../../../recomendations/Alcohol";
 import { Xrays } from "../../../treatment/Xrays";
+import { Alcohol } from "../../../recomendations/Alcohol";
+import { Fever } from "../../../simptoms/cancer/Fever";
+
 const ModelGeneralPage = (props) => {
  
 
@@ -45,6 +45,16 @@ const ModelGeneralPage = (props) => {
             {props.text}
           </Float>
 
+
+
+          {/* <Float>
+
+            {props.text}
+            <DescriptionButton position={[0,1,0]} color={props.color_description}/>
+          </Float> */}
+          
+          
+        {/* <CancerButtons/> */}
             
           
 
