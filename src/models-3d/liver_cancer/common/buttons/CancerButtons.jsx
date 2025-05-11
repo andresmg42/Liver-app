@@ -23,9 +23,15 @@ const CancerButtons = ({ position, color }) => {
     navigate("/cancer");
   };
 
-  const handleClickRecomendations = () => {};
+  const handleClickRecomendations = (e) => {
+    e.stopPropagation();
+    navigate("/recomendations");
+  };
 
-  const handleClickTreatment = () => {};
+  const handleClickTreatment = (e) => {
+    e.stopPropagation();
+    navigate("/treatment");
+  };
 
   const { viewport } = useThree();
 

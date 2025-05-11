@@ -31,7 +31,7 @@ const GenericPageE = (props) => {
       return (<GenericAuxPage
       color='white'
       color_title='red'
-      color_description='white'
+      color_description='#ff4629'
       cards={cardsymptoms}
       staging={<StagingCancerLiver/>}
       title='FEVER'
@@ -43,7 +43,7 @@ const GenericPageE = (props) => {
       return (<GenericAuxPage
       color='white'
       color_title='blue'
-      color_description='white'
+      color_description='#7732fb'
       cards={cardsymptoms}
       staging={<StagingSurgery/>}
       title='X-RAYS'
@@ -54,12 +54,12 @@ const GenericPageE = (props) => {
      else if(props.page=='recomendations'){
       return (<GenericAuxPage
       color='white'
-      color_title='gray'
-      color_description='white'
+      color_title='#7f7f7f'
+      color_description='#a6a3a2'
       cards={cardsymptoms}
       staging={<StagingCity/>}
       title='ALCOHOL'
-    model={<Alcohol scale={0.7} home={false}/>}
+    model={<Alcohol scale={0.6} home={false}/>}
       />);
 
     }

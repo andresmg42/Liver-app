@@ -2,7 +2,10 @@ import { useEventStore } from "../../../../../../stores/use-auth-store";
 import ModelCard from "../../../ModelCard";
 import { Html } from "@react-three/drei";
 import { useNavigate } from "react-router";
+import { useMemo } from "react";
+import { useThree } from "@react-three/fiber";
 const GenericButton3D = ({ position, rute, model, speed }) => {
+  const {viewport}=useThree();
   const navigate = useNavigate();
   const {
     click,
@@ -42,8 +45,21 @@ const GenericButton3D = ({ position, rute, model, speed }) => {
     navigate(rute);
   };
 
+  const pos = useMemo(() => {
+      console.log(viewport.width)
+      console.log('abs',Math.abs(viewport.width-8.085992))
+       if (position[0]>0){
+        position[0]=position[0]-Math.abs(viewport.width-8.085992)*0.15
+         return position
+       }
+       if (position[0]<0) {
+        position[0]= position[0]+Math.abs(viewport.width-8.085992)*0.15
+        return position
+       }
+    }, [viewport.width]);
+
   return (
-    <Html center position={position} style={{ pointerEvents: "auto" }}>
+    <Html center position={pos} style={{ pointerEvents: "auto" }}>
       <div
         onClick={handleClick}
         onPointerDown={(e) => e.stopPropagation()}
