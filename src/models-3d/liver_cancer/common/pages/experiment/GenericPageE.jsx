@@ -15,6 +15,7 @@ const GenericPageE = (props) => {
       return (<GenericAuxPage
       color='white'
       color_title='black'
+      color_description='black'
       cards={cardscancer}
       staging={<StagingCancerLiver/>}
       title='CANCER LIVER'

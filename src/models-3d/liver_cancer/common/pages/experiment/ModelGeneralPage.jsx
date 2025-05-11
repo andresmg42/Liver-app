@@ -12,6 +12,10 @@ import DescriptionButton from "./float-buttons/descriptionButton";
 import SymptomsButton from "./float-buttons/SymptomsButton";
 import TratmentButton from "./float-buttons/TratmentButton";
 import RecomendationsButton from "./float-buttons/RecomendationsButton";
+import CancerButton3D from "./float-cards3D/CancerButton3D";
+import SymptomsButton3D from "./float-cards3D/SymptomsButton3D";
+import TreatmentButton3D from "./float-cards3D/TreatmentButton3D";
+import RecomendationsButton3D from "./float-cards3D/RecomendationsButton3D";
 
 
 const ModelGeneralPage = (props) => {
@@ -36,12 +40,16 @@ const ModelGeneralPage = (props) => {
             speed={3}
             
           >
-            <CancerButton position={[-2.2,0,0]} color={props.color}/>
+            {/* <CancerButton position={[-2.2,0,0]} color={props.color}/>
             <DescriptionButton position={[0,1,0]} color={props.color}/>
             <SymptomsButton position={[2.2,0,0]} color={props.color}/>
             <TratmentButton position={[2.2,-1,0]} color={props.color}/>
-            <RecomendationsButton position={[-2.2,-1,0]} color={props.color}/>
-            
+            <RecomendationsButton position={[-2.2,-1,0]} color={props.color}/> */}
+            <DescriptionButton position={[0,1,0]} color={props.color_description}/>
+            <CancerButton3D position={[-2.2,0,0]}/>
+            <SymptomsButton3D position={[2.2,0,0]}/>
+            <TreatmentButton3D position={[2.2,-1,0]}/>
+            <RecomendationsButton3D position={[-2.2,-1,0]}/>
             {props.text}
           </Float>
 

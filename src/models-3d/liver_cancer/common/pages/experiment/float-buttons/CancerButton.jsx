@@ -31,6 +31,7 @@ const CancerButton = ({ position, color }) => {
           onClick={handleClickCancer}
           onPointerDown={(e) => e.stopPropagation()}
           onPointerUp={(e) => e.stopPropagation()}
+          // onPointerEnter={()=>{console}}
           className={`${
             click ? "hidden" : "block"
           } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center h-[8vh] w-[8vh] justify-center animate-spin-slow `}

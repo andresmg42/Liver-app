@@ -1,10 +1,11 @@
 import { Html } from "@react-three/drei";
 import { useEventStore } from "../../../../../../stores/use-auth-store";
 import { useNavigate } from "react-router";
-
+import { useState } from "react";
 const DescriptionButton = ({ position, color }) => {
   const navigate = useNavigate();
   const { click, setClickCancer } = useEventStore();
+  // const {color2,setColor}=useState(color)
 
   const handleClickDescription = (e) => {
     e.stopPropagation();
@@ -17,9 +18,10 @@ const DescriptionButton = ({ position, color }) => {
         onClick={handleClickDescription}
         onPointerDown={(e) => e.stopPropagation()}
         onPointerUp={(e) => e.stopPropagation()}
+        // onPointerEnter={()=>setColor('white')}
         className={`${
           click ? "hidden" : "block"
-        } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-black bg-black/50 flex items-center h-[8vh] w-[8vh] justify-center animate-spin-slow `}
+        } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-black  flex items-center h-[8vh] w-[8vh] justify-center animate-spin-slow `}
       >
         <h1 className="text-2xl text-white">
           <svg

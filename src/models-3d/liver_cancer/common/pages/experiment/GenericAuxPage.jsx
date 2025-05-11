@@ -27,6 +27,7 @@ const GenericAuxPage = (props) => {
         }
         model={props.model}
         color={props.color}
+        color_description={props.color_description}
       />
     </div>
   );
