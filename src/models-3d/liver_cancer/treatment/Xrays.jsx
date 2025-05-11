@@ -1,11 +1,13 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { useEventStore } from '../../../stores/use-auth-store'
 
 
 export function Xrays(props) {
   const { nodes, materials } = useGLTF('/models/liver_cancer/treatment/treatment-xrays.glb')
-
+  
+  const {speed_treatment}=useEventStore()
    const xraysRef=useRef();
    
     const handleKey = (e) => {
@@ -35,7 +37,7 @@ export function Xrays(props) {
     
       if (props.home) {
         useFrame((state, delta) => {
-          xraysRef.current.rotation.y += 1 * delta;
+          xraysRef.current.rotation.y += 1 * delta*speed_treatment;
         });
       } else {
         useEffect(() => {

@@ -7,17 +7,12 @@ import Recipient from "../../resipients/Resipient";
 import RotateHtml from "../../buttons/RotateHtml";
 import { useEventStore } from "../../../../../stores/use-auth-store";
 import ResponsiveModel from "./ResponsiveModel";
-import CancerButton from './float-buttons/CancerButton'
-import DescriptionButton from "./float-buttons/descriptionButton";
-import SymptomsButton from "./float-buttons/SymptomsButton";
-import TratmentButton from "./float-buttons/TratmentButton";
-import RecomendationsButton from "./float-buttons/RecomendationsButton";
-import CancerButton3D from "./float-cards3D/CancerButton3D";
-import SymptomsButton3D from "./float-cards3D/SymptomsButton3D";
-import TreatmentButton3D from "./float-cards3D/TreatmentButton3D";
-import RecomendationsButton3D from "./float-cards3D/RecomendationsButton3D";
-
-
+import DescriptionButton from "./float-cards3D/DescriptionButton";
+import GenericButton3D from "./float-cards3D/GenericButton3D";
+import { LiverCancerFinal } from "../../../desease/cancer/LiverCancerFinal";
+import { Fever } from "../../../simptoms/cancer/Fever";
+import { Alcohol } from "../../../recomendations/Alcohol";
+import { Xrays } from "../../../treatment/Xrays";
 const ModelGeneralPage = (props) => {
  
 
@@ -40,16 +35,13 @@ const ModelGeneralPage = (props) => {
             speed={3}
             
           >
-            {/* <CancerButton position={[-2.2,0,0]} color={props.color}/>
-            <DescriptionButton position={[0,1,0]} color={props.color}/>
-            <SymptomsButton position={[2.2,0,0]} color={props.color}/>
-            <TratmentButton position={[2.2,-1,0]} color={props.color}/>
-            <RecomendationsButton position={[-2.2,-1,0]} color={props.color}/> */}
+      
             <DescriptionButton position={[0,1,0]} color={props.color_description}/>
-            <CancerButton3D position={[-2.2,0,0]}/>
-            <SymptomsButton3D position={[2.2,0,0]}/>
-            <TreatmentButton3D position={[2.2,-1,0]}/>
-            <RecomendationsButton3D position={[-2.2,-1,0]}/>
+            <GenericButton3D rute='/cancer' position={[-2.2,0,0]} model={<LiverCancerFinal scale={4} home={true} />} speed='cancer'/>
+            <GenericButton3D rute='/symptoms' position={[2.2,0,0]} model={<Fever scale={3} home={true} />} speed='symptoms'/>
+            <GenericButton3D rute='/treatment' position={[2.2,-1,0]} model={<Xrays scale={2.5} home={true} />} speed='treatment'/>
+            <GenericButton3D rute='/recomendations' position={[-2.2,-1,0]} model={<Alcohol scale={2.5} home={true}  />} speed='recomendations'/>
+
             {props.text}
           </Float>
 

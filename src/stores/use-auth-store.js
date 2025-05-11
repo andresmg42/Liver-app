@@ -129,6 +129,11 @@ export const useEventStore=create((set,get)=>({
   click:false,
   clickview:false,
   clickcancer:false,
+  speed_cancer:1,
+  speed_symptoms:1,
+  speed_treatment:1,
+  speed_recomendations:1,
+
   setClick:(bool)=>{
     set({click:bool})
     
@@ -136,17 +141,12 @@ export const useEventStore=create((set,get)=>({
   },
   setClickView:(bool)=>{set({clickview:bool})},
   setClickCancer:(bool)=>{set({clickcancer:bool})},
+  setSpeedCancer:(newspeed)=>{set({speed_cancer:newspeed})},
+  setSpeedSymptoms:(newspeed)=>{set({speed_symptoms:newspeed})},
+  setSpeedTreatment:(newspeed)=>{set({speed_treatment:newspeed})},
+  setSpeedRecomendations:(newspeed)=>{set({speed_recomendations:newspeed})},
 }))
 
-export const usePageEventStore=create((set,get)=>({
-  pagecancer:true,
-  pagesymptos:true,
-  pagetreatment:true,
-  pagerecomendations:true,
-  setPageCancer:(bool)=>set({pagecancer:bool}),
-  setPagesymptoms:(bool)=>set({pagesyptoms:bool}),
-  setPageTreatment:(bool)=>set({pagetreatment:bool}),
-  setPageRecomendations:(bool)=>set({pagerecomendations:bool}),
-}))
+
 
 export default useAuthStore

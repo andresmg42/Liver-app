@@ -21,7 +21,7 @@ const DescriptionButton = ({ position, color }) => {
         // onPointerEnter={()=>setColor('white')}
         className={`${
           click ? "hidden" : "block"
-        } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-black  flex items-center h-[8vh] w-[8vh] justify-center animate-spin-slow `}
+        } md:w-[10vh] md:h-[10vh] shadow-md rounded-full p-2 hover:bg-white/15  flex items-center h-[8vh] w-[8vh] justify-center animate-spin-slow `}
       >
         <h1 className="text-2xl text-white">
           <svg

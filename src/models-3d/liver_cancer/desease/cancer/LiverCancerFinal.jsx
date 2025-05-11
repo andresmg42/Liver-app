@@ -1,12 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import { useEventStore } from "../../../../stores/use-auth-store";
 
 
 export function LiverCancerFinal(props) {
   const { nodes, materials } = useGLTF(
     "/models/liver_cancer/desease/cancer-liver.glb"
   );
+
+  const {speed_cancer}=useEventStore()
 
   const cancerLiverRef = useRef();
 
@@ -39,7 +42,7 @@ export function LiverCancerFinal(props) {
 
   if (props.home) {
     useFrame((state, delta) => {
-      cancerLiverRef.current.rotation.y += 1 * delta;
+      cancerLiverRef.current.rotation.y += 1 * delta*speed_cancer;
     });
   } else {
     useEffect(() => {

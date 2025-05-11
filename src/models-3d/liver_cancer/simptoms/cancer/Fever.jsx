@@ -2,13 +2,14 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect } from "react";
+import { useEventStore } from "../../../../stores/use-auth-store";
 
 export function Fever(props) {
   const { nodes, materials } = useGLTF(
     "/models/liver_cancer/symptomps/fever.glb"
   );
   const termometerRef = useRef();
-
+  const {speed_symptoms}=useEventStore();
   const handleKey = (e) => {
     
 
@@ -36,7 +37,7 @@ export function Fever(props) {
 
   if (props.home) {
     useFrame((state, delta) => {
-      termometerRef.current.rotation.y += 1 * delta;
+      termometerRef.current.rotation.y += 1 * delta*speed_symptoms;
     });
   } else {
     useEffect(() => {

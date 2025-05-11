@@ -1,10 +1,13 @@
-import { useGLTF } from '@react-three/drei'
+import { useEnvironment, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
+import { useEventStore } from '../../../stores/use-auth-store';
 
 export function Alcohol(props) {
   const { nodes, materials } = useGLTF('/models/liver_cancer/recomendations/alcohol.glb')
   const alcoholRef=useRef();
+
+  const {speed_recomendations}= useEventStore();
     
 const handleKey = (e) => {
     
@@ -33,7 +36,7 @@ const handleKey = (e) => {
 
   if (props.home) {
     useFrame((state, delta) => {
-      alcoholRef.current.rotation.y += 1 * delta;
+      alcoholRef.current.rotation.y += 1 * delta*speed_recomendations;
     });
   } else {
     useEffect(() => {
