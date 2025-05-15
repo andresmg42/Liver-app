@@ -9,8 +9,18 @@ const ModelCard = (props) => {
     <Canvas>
     
     {/* <OrbitControls enableZoom={false} /> */}
-    <ambientLight intensity={2} />
-    <directionalLight position={[5, 5, 10]} intensity={4} />
+    <ambientLight intensity={0.5} />
+    {/* <directionalLight position={[5, 5, 10]} intensity={4} /> */}
+
+    {/* '0xff0040' */}
+
+    <pointLight color='0xffffff ' intensity={300} position={[0, 5, 3]}/>
+    
+    {/* <directionalLight
+            position={[0, 5, 5]}
+            intensity={7}
+            power={5}
+          /> */}
     {/* <LiverCancerFinal scale={5} home={true}/> */}
     {props.model}
 
