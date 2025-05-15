@@ -32,13 +32,15 @@ const Home = () => {
         </video> */}
 
         <img src="background-images\surgeryroom.png" alt="backgroundimg" className="fixed top-0 left-0 w-full h-full object-cover -z-10" />
+        
+        <h1 className="text-2xl md:text-3xl font-bold text-center text-white mb-10">
+              View Screen Mode: 3D Human Liver
+            </h1>
 
         {/* 3D Viewer Section */}
         <div className="md:w-[153vh] w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col mx-auto">
           {/* <div className="w-full bg-black/50"> */}
-            <h1 className="text-xl md:text-2xl font-bold text-center text-white mb-10">
-              View Screen Mode: 3D Human Liver
-            </h1>
+            
           {/* </div> */}
 
           <div className="w-full flex md:h-full h-[50vh]  rounded-lg ">
@@ -46,8 +48,38 @@ const Home = () => {
           </div>
         </div>
 
+        {/*itroductory text */}
+        <div className="md:w-[153vh] w-full h-[50vh] md:h-[30vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5">
+          <h1 className="text-2xl">Welcome!</h1>
+          <p className="text-xl">
+            Welcome to our interactive 3D educational page on liver cancer — a cutting-edge 
+            resource designed to help you understand the structure, function, and pathology of 
+            the liver through immersive web-based visuals. Whether you're a student, healthcare professional, 
+            or simply curious, this platform offers clear explanations and detailed 3D models to explore how liver 
+            cancer develops, spreads, and is treated. Dive in and learn at your own pace with engaging, scientifically 
+            accurate content.
+          </p>
+          
+        </div>
+
+        <div className="md:w-[153vh] w-full h-[50vh] md:h-[35vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5 mt-20">
+          <h1 className="text-2xl">Human Liver</h1>
+          <p className="text-xl">
+            The liver is one of the most vital organs in the human body, responsible for a wide range of 
+            essential functions that keep us healthy. It plays a key role in detoxifying the blood, breaking 
+            down harmful substances, and metabolizing drugs. The liver also produces bile, which is crucial for 
+            digesting fats, and helps regulate blood sugar levels by storing and releasing glucose as needed. Additionally, 
+            it stores important nutrients like vitamins and iron, and supports the immune system by removing bacteria and toxins
+             from the bloodstream. Without the liver’s proper function, the body cannot maintain balance or efficiently perform many 
+             of its basic processes.
+          </p>
+          
+        </div>
+
+
+
         {/* Liver Diseases Section */}
-        <div className="w-full max-w-6xl mx-auto px-4 mt-12 md:mt-20">
+        <div className="w-full max-w-6xl mx-auto px-4 mt-12 md:mt-10">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 text-white">
             Look at Any 3D Liver Diseases
           </h1>

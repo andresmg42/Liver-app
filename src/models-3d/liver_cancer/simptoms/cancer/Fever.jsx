@@ -37,7 +37,7 @@ export function Fever(props) {
 
   if (props.home) {
     useFrame((state, delta) => {
-      termometerRef.current.rotation.y += 1 * delta*speed_symptoms;
+      termometerRef.current.rotation.x += 1 * delta*speed_symptoms;
     });
   } else {
     useEffect(() => {
