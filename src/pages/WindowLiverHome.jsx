@@ -18,12 +18,13 @@ const WindowLiverHome = () => {
 
   return (
     <Canvas>
-      <StagingLiver/>
+      {/* <StagingLiver/> */}
       <OrbitControls enableZoom={false} />
       <ambientLight intensity={2} />
-      <directionalLight position={[5, 5, 10]} intensity={4} />
+      {/* <directionalLight position={[5, 5, 10]} intensity={4} /> */}
+       <pointLight color='0xffffff ' intensity={250} position={[0, 5, 3]}/>
       
-      <LiverHome scale={1.7}/>
+      <LiverHome scale={2.2}/>
 
 
 

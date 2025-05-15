@@ -9,12 +9,12 @@ const ModelCard = (props) => {
     <Canvas>
     
     {/* <OrbitControls enableZoom={false} /> */}
-    <ambientLight intensity={0.5} />
+    <ambientLight intensity={1} />
     {/* <directionalLight position={[5, 5, 10]} intensity={4} /> */}
 
     {/* '0xff0040' */}
 
-    <pointLight color='0xffffff ' intensity={300} position={[0, 5, 3]}/>
+    <pointLight color='0xffffff ' intensity={250} position={[0, 5, 3]}/>
     
     {/* <directionalLight
             position={[0, 5, 5]}
