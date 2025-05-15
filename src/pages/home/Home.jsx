@@ -5,7 +5,10 @@ import { NavLink } from "react-router";
 import Header from "../../layout/header/Header";
 import ModelCard from "../../models-3d/liver_cancer/common/ModelCard";
 import { LiverCancerFinal } from "../../models-3d/liver_cancer/desease/cancer/LiverCancerFinal";
-
+import GenericHomeCard from "../../models-3d/liver_cancer/common/pages/experiment/GenericHomeCard";
+import { Fever } from "../../models-3d/liver_cancer/simptoms/cancer/Fever";
+import {Xrays} from "../../models-3d/liver_cancer/treatment/Xrays"
+import {Alcohol} from "../../models-3d/liver_cancer/recomendations/Alcohol"
 const Home = () => {
   const { userLooged, verifyAndSignInWithLink } = useAuthStore();
 
@@ -18,7 +21,7 @@ const Home = () => {
       <Header />
       <div className="min-h-screen w-full relative">
         {/* Background Video */}
-        <video
+        {/* <video
           autoPlay
           loop
           muted
@@ -26,7 +29,9 @@ const Home = () => {
           className="fixed top-0 left-0 w-full h-full object-cover -z-10"
         >
           <source src="videos/login.mp4" type="video/mp4" />
-        </video>
+        </video> */}
+
+        <img src="background-images\surgeryroom.png" alt="backgroundimg" className="fixed top-0 left-0 w-full h-full object-cover -z-10" />
 
         {/* 3D Viewer Section */}
         <div className="md:w-[153vh] w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col mx-auto ">
@@ -48,33 +53,39 @@ const Home = () => {
           </h1>
 
           {/* Single disease card centered on all screens */}
-          <div className="flex justify-center w-full">
-            <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
-              <div className="w-full h-[300px]">
-                <ModelCard model={<LiverCancerFinal scale={5} home={true}/>} />
-              </div>
-              <h1 className="font-bold text-xl md:text-2xl text-center mt-4">
-                Cancer Liver
-              </h1>
-              <NavLink className="mt-4 mb-4" to={"/cancer"}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-circle-chevron-right-icon lucide-circle-chevron-right"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m10 8 4 4-4 4" />
-                </svg>
-              </NavLink>
-            </div>
+
+          {/* <div className="flex justify-center items-center"> */}
+
+            <div className="grid grid-cols-2 gap-4  place-items-center mx-40 ">
+            <GenericHomeCard  
+            title='Liver Cancer' 
+            model={<ModelCard model={<LiverCancerFinal scale={5} home={true}/>} />}
+            path='/cancer'
+            />
+
+            <GenericHomeCard  
+            title='Symptoms' 
+            model={<ModelCard model={<Fever scale={3.5} home={true}/>} />}
+            path='/symptoms'
+            />
+
+            <GenericHomeCard  
+            title='Treatment' 
+            model={<ModelCard model={<Xrays scale={3} home={true}/>} />}
+            path='/treatment'
+            />
+
+            <GenericHomeCard  
+            title='Recomendations' 
+            model={<ModelCard model={<Alcohol scale={3.5} home={true}/>} />}
+            path='/recomendations'
+            />
+
           </div>
+
+
+          {/* </div> */}
+          
         </div>
 
         {/* Available For Section */}
