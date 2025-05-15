@@ -2,7 +2,7 @@ import { NavLink } from "react-router"
 
 const GenericHomeCard = (props) => {
   return (
-    <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
+    <div className="bg-white/15 w-full md:max-w-[400px] md:min-h-[400px] max-w-[300px] min-h-[300px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
               <div className="w-full h-[300px]">
                 {/* <ModelCard model={<LiverCancerFinal scale={5} home={true}/>} /> */}
                 {props.model}

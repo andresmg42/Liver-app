@@ -56,7 +56,7 @@ const Home = () => {
 
           {/* <div className="flex justify-center items-center"> */}
 
-            <div className="grid grid-cols-2 gap-4  place-items-center mx-40 ">
+            <div className="grid md:grid-cols-2 grid-col-1 gap-4  place-items-center md:mx-40  ">
             <GenericHomeCard  
             title='Liver Cancer' 
             model={<ModelCard model={<LiverCancerFinal scale={5} home={true}/>} />}
