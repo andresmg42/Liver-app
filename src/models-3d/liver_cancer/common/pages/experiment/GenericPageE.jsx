@@ -6,6 +6,8 @@ import StagingLiver from "../../../desease/staging/cancer/StagingLiver";
 import HtmlInterfaz from "./HtmlInterfaz";
 import cardscancer from "../../../../../pages/liver/desease/pageCancerLiverContent";
 import cardsymptoms from "../../../../../pages/liver/symptoms/symptomsContent";
+import cardtreatment from '../../../../../pages/liver/treatment/treatmentContent';
+import cardsrecomendations from '../../../../../pages/liver/recomendations/recomendationsContent';
 import { Fever } from '../../../simptoms/cancer/Fever';
 import GenericAuxPage from './GenericAuxPage';
 import StagingSurgery from '../../../desease/staging/cancer/StagingSurgery';
@@ -44,7 +46,7 @@ const GenericPageE = (props) => {
       color='white'
       color_title='blue'
       color_description='#7732fb'
-      cards={cardsymptoms}
+      cards={cardtreatment}
       staging={<StagingSurgery/>}
       title='X-RAYS'
       model={<Xrays scale={0.7} home={false}/>}
@@ -56,7 +58,7 @@ const GenericPageE = (props) => {
       color='white'
       color_title='#7f7f7f'
       color_description='#a6a3a2'
-      cards={cardsymptoms}
+      cards={cardsrecomendations}
       staging={<StagingCity/>}
       title='ALCOHOL'
     model={<Alcohol scale={0.6} home={false}/>}

@@ -33,9 +33,9 @@ const Home = () => {
 
         <img src="background-images\surgeryroom.png" alt="backgroundimg" className="fixed top-0 left-0 w-full h-full object-cover -z-10" />
         
-        <h1 className="text-2xl md:text-3xl font-bold text-center text-white mb-10">
+        {/* <h1 className="text-2xl md:text-3xl font-bold text-center text-white mb-10">
               View Screen Mode: 3D Human Liver
-            </h1>
+            </h1> */}
 
         {/* 3D Viewer Section */}
         <div className="md:w-[153vh] w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col mx-auto">
@@ -43,7 +43,7 @@ const Home = () => {
             
           {/* </div> */}
 
-          <div className="w-full flex md:h-full h-[50vh]  rounded-lg ">
+          <div className="w-full flex md:h-full h-[50vh]  rounded-lg  ">
             <WindowLiverHome />
           </div>
         </div>
