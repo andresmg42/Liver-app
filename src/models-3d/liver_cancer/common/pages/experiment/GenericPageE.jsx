@@ -60,7 +60,7 @@ const GenericPageE = (props) => {
       color_description='#a6a3a2'
       cards={cardsrecomendations}
       staging={<StagingCity/>}
-      title='ALCOHOL'
+      title='AVOID ALCOHOL'
     model={<Alcohol scale={0.6} home={false}/>}
       />);
 
