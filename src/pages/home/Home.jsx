@@ -9,6 +9,7 @@ import GenericHomeCard from "../../models-3d/liver_cancer/common/pages/experimen
 import { Fever } from "../../models-3d/liver_cancer/simptoms/cancer/Fever";
 import {Xrays} from "../../models-3d/liver_cancer/treatment/Xrays"
 import {Alcohol} from "../../models-3d/liver_cancer/recomendations/Alcohol"
+import VideoSection from "./VideoSection";
 const Home = () => {
   const { userLooged, verifyAndSignInWithLink } = useAuthStore();
 
@@ -43,11 +44,13 @@ const Home = () => {
             
           {/* </div> */}
 
-          <div className="w-full flex md:h-full h-[50vh]  rounded-lg  ">
+          <div className="w-full flex md:h-full h-[50vh]  rounded-lg   ">
             <WindowLiverHome />
           </div>
+
         </div>
 
+        
         {/*itroductory text */}
         <div className="md:w-[153vh]  w-[45vh] h-[50vh] md:h-[30vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5">
           <h1 className="md:text-2xl text-xl">Welcome!</h1>
@@ -74,6 +77,10 @@ const Home = () => {
              of its basic processes.
           </p>
           
+        </div>
+
+         <div className="w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col   ">
+          <VideoSection/>
         </div>
 
 
