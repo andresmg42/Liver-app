@@ -5,12 +5,12 @@ import { useFrame,useThree } from "@react-three/fiber"
 
 
 
-
-
 const BillBoardText = () => {
 
-  const textRef=useRef()
+
+const textRef=useRef()
 const {camera}=useThree()
+
 
 useFrame(()=>{
   if(textRef.current){
