@@ -62,7 +62,7 @@ const Home = () => {
           
         </div>
 
-        <div className="md:w-[153vh]  w-[45vh] h-[60vh] md:h-[35vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5 md:mt-20 mt-10">
+        <div className="md:w-[153vh]  w-[45vh] h-[60vh] md:h-[35vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5 md:mt-15  mt-10">
           <h1 className="md:text-2xl text-xl">Human Liver</h1>
           <p className="md:text-base text-sm">
             The liver is one of the most vital organs in the human body, responsible for a wide range of 
