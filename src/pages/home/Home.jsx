@@ -11,12 +11,7 @@ import {Xrays} from "../../models-3d/liver_cancer/treatment/Xrays"
 import {Alcohol} from "../../models-3d/liver_cancer/recomendations/Alcohol"
 import VideoSection from "./VideoSection";
 const Home = () => {
-  const { userLooged, verifyAndSignInWithLink } = useAuthStore();
-
-  useEffect(() => {
-    verifyAndSignInWithLink();
-  }, []);
-
+  
   return (
     <>
       <Header />
