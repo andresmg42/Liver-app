@@ -1,6 +1,6 @@
 import useAuthStore from "../../stores/use-auth-store";
 import { useEffect } from "react";
-import WindowLiverHome from "../WindowLiverHome";
+import WindowLiverHome from "./WindowLiverHome";
 import { NavLink } from "react-router";
 import Header from "../../layout/header/Header";
 import ModelCard from "../../models-3d/liver_cancer/common/ModelCard";
@@ -12,6 +12,9 @@ import {Alcohol} from "../../models-3d/liver_cancer/recomendations/Alcohol"
 import VideoSection from "./VideoSection";
 const Home = () => {
   
+
+  
+
   return (
     <>
       <Header />
@@ -114,7 +117,7 @@ const Home = () => {
             Available For
           </h1>
 
-          <div className="w-full mx-auto relative bg-white/15 rounded-lg px-4 py-6 md:py-8">
+          <div className="w-full mx-auto relative bg-white/15  px-4 py-6 md:py-8">
             <div className="grid grid-cols-2 sm:grid-cols-4 w-full place-items-center gap-4 md:gap-6">
               <div className="flex flex-col items-center text-center">
                 <img
