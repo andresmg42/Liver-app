@@ -65,20 +65,6 @@ const Home = () => {
           
         </div>
 
-        {/* <div className="md:w-[153vh]  w-[45vh] h-[60vh] md:h-[35vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5 md:mt-15  mt-10">
-          <h1 className="md:text-2xl text-xl">Human Liver</h1>
-          <p className="md:text-base text-sm">
-            The liver is one of the most vital organs in the human body, responsible for a wide range of 
-            essential functions that keep us healthy. It plays a key role in detoxifying the blood, breaking 
-            down harmful substances, and metabolizing drugs. The liver also produces bile, which is crucial for 
-            digesting fats, and helps regulate blood sugar levels by storing and releasing glucose as needed. Additionally, 
-            it stores important nutrients like vitamins and iron, and supports the immune system by removing bacteria and toxins
-             from the bloodstream. Without the liver’s proper function, the body cannot maintain balance or efficiently perform many 
-             of its basic processes.
-          </p>
-          
-        </div> */}
-
          <div className="w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col   ">
           <VideoSection/>
         </div>

@@ -46,8 +46,7 @@ const GenericButton3D = ({ position, rute, model, speed }) => {
   };
 
   const pos = useMemo(() => {
-      console.log(viewport.width)
-      console.log('abs',Math.abs(viewport.width-8.085992))
+      
        if (position[0]>0){
         position[0]=position[0]-Math.abs(viewport.width-8.085992)*0.15
          return position

@@ -1,10 +1,16 @@
 import { Canvas } from "@react-three/fiber";
 import VideoSurgery from "./VideoSurgery";
 import { Html } from "@react-three/drei";
+import { Text } from "@react-three/drei";
+import TitleVideo from "../../models-3d/liver_cancer/common/texts/TitleVideo";
 
 const VideoSection = () => {
   return (
     <Canvas camera={{ position: [-2, 0, 3] }}>
+
+
+      <TitleVideo/>
+      
       <VideoSurgery position={[-1.55, 0, 0]} size={[3.5, 2.5]} />
 
       <Html position={[2, 1.5, 0]}>

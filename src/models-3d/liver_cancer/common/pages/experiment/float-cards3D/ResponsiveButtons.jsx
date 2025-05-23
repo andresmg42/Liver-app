@@ -15,7 +15,7 @@ const ResponsiveButtons = (props) => {
     const {viewport}=useThree();
 
      const responsive=useMemo(()=>{
-      console.log('viewport',viewport.width)
+      
     if (viewport.width<2.5) return true
     return false
   },[viewport.width])
