@@ -52,7 +52,7 @@ const Home = () => {
 
         
         {/*itroductory text */}
-        <div className="md:w-[153vh]  w-[45vh] h-[50vh] md:h-[32vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5">
+        <div className="md:w-[153vh]  w-[45vh] h-[50vh] md:h-[32vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15   p-5">
           <h1 className="md:text-2xl text-xl">Welcome!</h1>
           <p className="md:text-base text-sm mt-5">
             Welcome to our interactive 3D educational page on liver cancer — a cutting-edge 
@@ -74,7 +74,7 @@ const Home = () => {
         {/* Liver Diseases Section */}
         <div className="w-full max-w-6xl mx-auto px-4 mt-12 md:mt-10">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 text-white">
-            Look at Any 3D Liver Diseases
+            Look at Any 3D Desease Models
           </h1>
 
           {/* Single disease card centered on all screens */}

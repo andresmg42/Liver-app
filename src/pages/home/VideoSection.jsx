@@ -13,8 +13,8 @@ const VideoSection = () => {
       
       <VideoSurgery position={[-1.55, 0, 0]} size={[3.5, 2.5]} />
 
-      <Html position={[2, 1.5, 0]}>
-        <div className="flex flex-col items-center md:w-[60vh] md:h-[32vh] bg-white/15 rounded-lg p-4">
+      <Html position={[0.2, 1.27, 0]}>
+        <div className="flex flex-col items-center md:w-[74vh] md:h-[33vh] bg-white/15  p-4">
           <h1 className="md:text-2xl text-xl">Perspective</h1>
           <p className="md:text-base text-sm mt-5  ">
             As of recent global estimates, over 20 million people worldwide are
