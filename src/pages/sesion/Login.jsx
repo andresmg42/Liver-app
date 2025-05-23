@@ -24,27 +24,25 @@ const Login = () => {
 
       const { displayName, email } = data?.user;
 
-      const res_search= await api.post("users/email",{displayName,email});
+      const res_search = await api.post("users/email", { displayName, email });
 
       console.log(res_search.data);
 
       navigate("/");
     } catch (error) {
-      
-      if (error.response.status==404){
+      if (error.response.status == 404) {
         try {
-            const res_axios = await api.post("users/", { displayName, email });
-            console.log(res_axios.data)
+          const res_axios = await api.post("users/", { displayName, email });
+          console.log(res_axios.data);
+          navigate("/")
         } catch (error) {
-            console.error('Error in handleGoogleLogin',error)
-            
+          console.error("Error in handleGoogleLogin", error);
         }
-      }
-      else{
+      } else {
         console.error("Error in handleGoogleLogin:", error);
       }
-  }
-}
+    }
+  };
 
   const handleFacebookLogin = async () => {
     try {
@@ -53,14 +51,40 @@ const Login = () => {
       if (data != undefined) {
         const { displayName, email } = data?.user;
 
-        const res_axios = await api.post("users/", { displayName, email });
+        try {
+          
+          const res_search = await api.post("users/email", {
+            displayName,
+            email,
+          });
 
-        console.log(res_axios.data);
+         console.log(res_search);
+
+          navigate("/");
+
+        } catch (error) {
+          if (error.response.status == 404) {
+            try {
+              const res_axios = await api.post("users/", {
+                displayName,
+                email,
+              });
+              console.log(res_axios.data);
+              navigate("/")
+            } catch (error) {
+              console.error("Error in handleGoogleLoginFacebook", error);
+            }
+          } else {
+            console.error("Error in handleGoogleLoginFacebook:", error);
+          }
+        }
+
+        
       }
 
-      navigate("/");
+      
     } catch (error) {
-      console.error("Error in handleLogin:", error);
+      console.error("Error in handleLoginFacebook:", error);
     }
   };
 

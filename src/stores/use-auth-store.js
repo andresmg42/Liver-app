@@ -45,6 +45,7 @@ const useAuthStore = create((set) => {
           alert(
             "you already have an account whit another provider, please choose the provider of this account"
           )
+          
         } else {
           console.log(error)
         }
