@@ -52,9 +52,9 @@ const Home = () => {
 
         
         {/*itroductory text */}
-        <div className="md:w-[153vh]  w-[45vh] h-[50vh] md:h-[30vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5">
+        <div className="md:w-[153vh]  w-[45vh] h-[50vh] md:h-[32vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5">
           <h1 className="md:text-2xl text-xl">Welcome!</h1>
-          <p className="md:text-base text-sm">
+          <p className="md:text-base text-sm mt-5">
             Welcome to our interactive 3D educational page on liver cancer — a cutting-edge 
             resource designed to help you understand the structure, function, and pathology of 
             the liver through immersive web-based visuals. Whether you're a student, healthcare professional, 
@@ -65,7 +65,7 @@ const Home = () => {
           
         </div>
 
-        <div className="md:w-[153vh]  w-[45vh] h-[60vh] md:h-[35vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5 md:mt-15  mt-10">
+        {/* <div className="md:w-[153vh]  w-[45vh] h-[60vh] md:h-[35vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15 rounded-lg  p-5 md:mt-15  mt-10">
           <h1 className="md:text-2xl text-xl">Human Liver</h1>
           <p className="md:text-base text-sm">
             The liver is one of the most vital organs in the human body, responsible for a wide range of 
@@ -77,7 +77,7 @@ const Home = () => {
              of its basic processes.
           </p>
           
-        </div>
+        </div> */}
 
          <div className="w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col   ">
           <VideoSection/>
