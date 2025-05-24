@@ -130,6 +130,7 @@ export const useEventStore = create((set, get) => ({
   click: false,
   clickview: false,
   clickcancer: false,
+  clickQuestion:false,
   speed_cancer: 1,
   speed_symptoms: 1,
   speed_treatment: 1,
@@ -144,6 +145,9 @@ export const useEventStore = create((set, get) => ({
   setClickCancer: (bool) => {
     set({ clickcancer: bool });
   },
+  
+  setClickQuestion:(bool)=>set({clickQuestion:bool}),
+
   setSpeedCancer: (newspeed) => {
     set({ speed_cancer: newspeed });
   },
