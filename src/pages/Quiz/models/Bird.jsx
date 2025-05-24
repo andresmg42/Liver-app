@@ -14,7 +14,7 @@ export function Bird(props) {
 
 
  useEffect(()=>{
-    console.log('actions: ',actions);
+    // console.log('actions: ',actions);
     actions['Take 001']?.reset().fadeIn(0.5).play()
 
   },[actions])

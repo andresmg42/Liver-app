@@ -3,6 +3,7 @@ import { useThree } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
 import { Bird } from "./models/Bird";
 import GenericFloor from "./models/GenericFloor";
+import BattelFloor from "./models/floor/BattelFloor";
 
 
 
@@ -17,18 +18,26 @@ const BattleFIeld = () => {
   },[])
 
   return (
-    <Physics debug gravity={[0,-9.8,0]}>
+    <Physics  gravity={[0,-9.8,0]}>
 
 
           <group position={[0,0,0]} >
 
-            <Bird scale={0.2}/>
+            <Bird scale={0.2} position={[-50,0,0]}/>
 
           {/* Bird Floor */}
-          <GenericFloor
+          <BattelFloor
+          geometry={{
+            args:[200,200]
+          }}
+          />
+
+
+
+          {/* <GenericFloor
 
             geometry={{
-              args: [30, 30],
+              args: [200, 200],
             }}
             meshM={{
               // transparent: true,
@@ -36,7 +45,7 @@ const BattleFIeld = () => {
               color:'white'
 
             }}
-          />
+          /> */}
           </group>
           
           
