@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useThree } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Bird } from "./models/Bird";
+import { Bird } from "./models/avatars/Bird";
 import GenericFloor from "./models/GenericFloor";
 import BattelFloor from "./models/floor/BattelFloor";
+import Dron from "./models/avatars/Dron";
 
 
 
@@ -17,13 +18,15 @@ const BattleFIeld = () => {
     camera.lookAt(0,0,0)
   },[])
 
+  
+
   return (
     <Physics  gravity={[0,-9.8,0]}>
 
 
           <group position={[0,0,0]} >
 
-            <Bird scale={0.2} position={[-50,0,0]}/>
+            <Bird scale={0.3} position={[-50,0,0]}/>
 
           {/* Bird Floor */}
           <BattelFloor
@@ -32,20 +35,8 @@ const BattleFIeld = () => {
           }}
           />
 
+          <Dron scale={4} position={[0,20,-12]}/>
 
-
-          {/* <GenericFloor
-
-            geometry={{
-              args: [200, 200],
-            }}
-            meshM={{
-              // transparent: true,
-              // opacity: 0,
-              color:'white'
-
-            }}
-          /> */}
           </group>
           
           

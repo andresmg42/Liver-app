@@ -3,7 +3,7 @@ import RoomStaging from "./staging/RoomStaging";
 import { OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/rapier";
 import Floor from "./models/Floor";
-import { Bird } from "./models/Bird";
+import { Bird } from "./models/avatars/Bird";
 import GenericFloor from "./models/GenericFloor";
 import BattleFIeld from "./BattleFIeld";
 
