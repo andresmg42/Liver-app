@@ -10,6 +10,7 @@ const Floor = (props) => {
             <meshStandardMaterial 
             transparent={true} 
             opacity={0} 
+            //  color={'white'}
             />
         </mesh>
     </RigidBody>
