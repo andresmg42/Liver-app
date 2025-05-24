@@ -25,7 +25,7 @@ export function Bird(props) {
       e.stopPropagation();
       // console.log(pilotRef.current)
       birdRef.current.wakeUp();
-      birdRef.current.applyImpulse({x:0,y:0,z:-500},true);
+      birdRef.current.applyImpulse({x:-100000,y:0,z:0},true);
     },[birdRef]
   )
 

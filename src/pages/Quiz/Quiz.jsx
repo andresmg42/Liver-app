@@ -14,43 +14,48 @@ const Quiz = () => {
         <RoomStaging />
 
         <Physics debug gravity={[0,-9.8,0]}>
-          {/* <PilotAvatar scale={15} position={[0,-25,-40]}/> */}
-          <Bird scale={0.1} />
+
+
+          <group >
+
+            <Bird scale={0.2}
+          
+          // position={[-100,0,0]}
+          
+          />
 
           {/* Bird Floor */}
           <GenericFloor
-            cuboid={{
-              args: [10, 0.2, 10],
-              position: [0, 0, 0],
-            }}
-            mesh={{
-              position: [0, 0, 0],
-            }}
+
+          //  position={[-100,0,0]}
+            
             geometry={{
-              args: [10, 10],
+              args: [30, 30],
             }}
             meshM={{
-              transparent: true,
-              opacity: 0,
+              // transparent: true,
+              // opacity: 0,
+              color:'white'
+
             }}
           />
+          </group>
+          
+          
 
           {/* Room Floor */}
 
           <GenericFloor
-            cuboid={{
-              args: [4000, 0.2, 3000],
-              position: [0, -500, 0],
-            }}
-            mesh={{
-              position: [0, -500, 0],
-            }}
+
+          position={[0,-500,0]}
+            
             geometry={{
               args: [4000, 3000],
             }}
             meshM={{
               transparent: true,
               opacity: 0,
+              
             }}
           />
 
