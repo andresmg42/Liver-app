@@ -3,6 +3,8 @@ import React from 'react'
 import RoomStaging from './staging/RoomStaging'
 import { OrbitControls } from '@react-three/drei'
 import { PilotAvatar } from './models/PilotAvatar'
+import { Physics } from '@react-three/rapier'
+import Floor from './models/Floor'
 
 const Quiz = () => {
   return (
@@ -10,8 +12,10 @@ const Quiz = () => {
         <Canvas>
             <OrbitControls/>
             <RoomStaging/>
+            <Physics debug>
             <PilotAvatar scale={15} position={[0,-25,-40]}/>
-
+            <Floor/>
+            </Physics>
 
         </Canvas>
     </div>
