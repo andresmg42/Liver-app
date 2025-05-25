@@ -118,6 +118,7 @@ const HtmlQuestions = (props) => {
                   className="w-4 h-4"
                   checked={selectedAnswers.includes(`${item}`)}
                   onChange={() => handleAnswerChange(`${item}`)}
+    
                 />
                 <label
                   htmlFor={`answer-${item}`}
@@ -129,6 +130,10 @@ const HtmlQuestions = (props) => {
               </li>
             ))}
           </ul>
+          <button className="bg-white/50 hover:bg-black text-white font-bold py-2 px-4 rounded-full mt-3">
+            Send
+
+          </button>
         </div>
       </div>
     </Html>
