@@ -110,75 +110,24 @@ const HtmlQuestions = (props) => {
           </div>
 
           <ul className="space-y-2">
-            <li className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                id="answer-a"
-                className="w-4 h-4"
-                checked={selectedAnswers.includes("a")}
-                onChange={() => handleAnswerChange("a")}
-              />
-              <label
-                htmlFor="answer-a"
-                className="text-sm md:text-xl md:font-bold text-left cursor-pointer"
-                style={{ color }}
-              >
-                {cards[index].answers.a}
-              </label>
-            </li>
-
-            <li className='flex items-center gap-2'>
-              <input
-                type="checkbox"
-                id="answer-b"
-                className="w-4 h-4"
-                checked={selectedAnswers.includes("b")}
-                onChange={() => handleAnswerChange("b")}
-              />
-
-              <label
-                htmlFor="answer-b"
-                className="text-sm md:text-xl md:font-bold text-left cursor-pointer"
-                style={{ color }}
-              >
-                {cards[index].answers.b}
-              </label>
-            </li>
-
-            <li className='flex items-center gap-2'>
-              <input
-                type="checkbox"
-                id="answer-c"
-                className="w-4 h-4"
-                checked={selectedAnswers.includes("c")}
-                onChange={() => handleAnswerChange("c")}
-              />
-              <label
-                htmlFor="answer-c"
-                className="text-sm md:text-xl md:font-bold text-left cursor-pointer"
-                style={{ color }}
-              >
-                {cards[index].answers.c}
-              </label>
-            </li>
-
-            <li className='flex items-center gap-2'>
-              <input
-                type="checkbox"
-                id="answer-d"
-                className="w-4 h-4"
-                checked={selectedAnswers.includes("d")}
-                onChange={() => handleAnswerChange("d")}
-              />
-
-              <label
-                htmlFor="answer-d"
-                className="text-sm md:text-xl md:font-bold text-left cursor-pointer"
-                style={{ color }}
-              >
-                {cards[index].answers.d}
-              </label>
-            </li>
+            {["a", "b", "c", "d"].map((item, i) => (
+              <li key={item} className="flex items-center gap-2 ml-2">
+                <input
+                  type="checkbox"
+                  id={`answer-${item}`}
+                  className="w-4 h-4"
+                  checked={selectedAnswers.includes(`${item}`)}
+                  onChange={() => handleAnswerChange(`${item}`)}
+                />
+                <label
+                  htmlFor={`answer-${item}`}
+                  className="text-sm md:text-xl md:font-bold text-left cursor-pointer"
+                  style={{ color }}
+                >
+                  {cards[index].answers[item]}
+                </label>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
