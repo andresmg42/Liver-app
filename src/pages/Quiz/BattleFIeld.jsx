@@ -14,11 +14,10 @@ const BattleFIeld = () => {
 
     const {camera}=useThree();
 
-  useEffect(()=>{
-
-    camera.position.set(60,60,0)
-    camera.lookAt(0,0,0)
-  },[])
+//  useEffect(() => {
+//   camera.position.set(0, 2, 0);        // Center of battlefield, 2 units high
+//   camera.lookAt(0, 2, -1);             // Look forward on -Z axis
+// }, []);
 
   
 
@@ -27,10 +26,10 @@ const BattleFIeld = () => {
 
 
           
-          <group position={[-50,0,0]}>
+          <group position={[-100,0,0]}>
 
             <Bird scale={0.3} />
-           <HtmlQuestions cards={cards} scale={5} position={[0,50,0]} transform color={'white'} rotation={[0, Math.PI / 2, 0]} />
+           <HtmlQuestions cards={cards} scale={5} position={[0,10,0]} transform color={'white'} rotation={[0, Math.PI / 2, 0]} />
 
 
           </group>
@@ -38,12 +37,15 @@ const BattleFIeld = () => {
 
           {/* Bird Floor */}
           <BattelFloor
+
+          position={[0,-30,0]}
           geometry={{
-            args:[200,200]
+            args:[400,400]
           }}
           />
-
+          <group  position={[0,0,-50]} >
           <Dron scale={4} position={[0,20,-12]}/>
+          </group>
 
          
           

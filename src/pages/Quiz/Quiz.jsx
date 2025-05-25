@@ -19,8 +19,17 @@ const Quiz = () => {
         onPointerUp={() => {
           setClick(false);
         }}
+
+        // camera={{
+        //   position:[0,30,0],
+           
+        
+        // }}
+        
       >
-        <OrbitControls />
+        <OrbitControls
+        // target={[0, 30, 0]}
+        />
         <RoomStaging />
 
         <BattleFIeld/>
