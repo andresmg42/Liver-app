@@ -7,17 +7,54 @@ import BattelFloor from "./models/floor/BattelFloor";
 import Dron from "./models/avatars/Dron";
 import HtmlQuestions from "./questions/HtmlQustions";
 import {cards} from './questions'
-
+import api from "../../api/user.api";
+import { useState } from "react";
+import {  Text } from "@react-three/drei"
 
 
 const BattleFIeld = () => {
 
-    const {camera}=useThree();
+  const [quiz,setQuiz]=useState(null)
 
-//  useEffect(() => {
-//   camera.position.set(0, 2, 0);        // Center of battlefield, 2 units high
-//   camera.lookAt(0, 2, -1);             // Look forward on -Z axis
-// }, []);
+  
+    useEffect( ()=>{
+
+      async function loadQuiz(){
+        try {
+
+          const res= await api.get('/quiz/')
+          console.log(res.data[0])
+        
+          setQuiz(res.data[0])
+          
+        } catch (error) {
+
+          console.Error('error cargando quiz: ',error)
+          
+        }
+      }
+
+      loadQuiz();
+
+      
+
+    },[])
+
+    if(!quiz){
+      return (<Text
+      position={[0,0,0]}
+      color={'white'}
+      anchorX={'center'}
+      anchorY={'middle'}
+      fontSize={0.8}
+      fontStyle='bold'
+      font="fonts\OpenSans-Bold.ttf"
+      >Loading Qui...</Text>);
+    }
+
+
+
+
 
   
 
@@ -29,7 +66,7 @@ const BattleFIeld = () => {
           <group position={[-100,0,0]}>
 
             <Bird scale={0.3} />
-           <HtmlQuestions cards={cards} scale={5} position={[0,10,0]} transform color={'white'} rotation={[0, Math.PI / 2, 0]} />
+           <HtmlQuestions sections={quiz.sections[0]} quiz_id={quiz._id} scale={5} position={[0,10,0]} transform color={'white'} rotation={[0, Math.PI / 2, 0]} />
 
 
           </group>

@@ -10,28 +10,71 @@ const HtmlQuestions = (props) => {
 
   const targetRef = useRef();
 
-  const cards = props.cards;
+  const questions = props.sections.questions;
+
   const color = props.color;
 
   const [index, setIndex] = useState(0);
 
   const next = () => {
-    setIndex((prev) => (prev + 1) % cards.length);
+    setIndex((prev) => (prev + 1) % questions.length);
   };
 
   const back = () => {
-    setIndex((prev) => (prev - 1 + cards.length) % cards.length);
+    setIndex((prev) => (prev - 1 + questions.length) % questions.length);
   };
 
-  const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const [answers, setAnswers] = useState({
+    user_id: "6830af4f0fb3dcddd4f69210",
+    quiz_id: props.quiz_id,
+    section_slug: props.sections.slug,
+    answers: [],
+  });
 
-  const handleAnswerChange = (answer) => {
-    setSelectedAnswers((prev) =>
-      prev.includes(answer)
-        ? prev.filter((a) => a !== answer)
-        : [...prev, answer]
+  const handleAnswerChange = () => {
+    const selected = document.querySelector(
+      `input[name=question-${questions[index]._id}]:checked`
     );
+
+    if (!selected) {
+      console.warn("No radio option selected");
+      return;
+    }
+
+    const selectedValue = parseInt(selected.value);
+
+    setAnswers((prev) => {
+      const existingAnswers = [...prev.answers];
+      const index_question = existingAnswers.findIndex(
+        (a) => a.question_id === questions[index]._id
+      );
+
+      if (index_question >= 0) {
+        existingAnswers[index_question].selected_index = selectedValue;
+
+        existingAnswers[index_question].correct =
+          selectedValue === questions[index].correct_option_index;
+
+        existingAnswers[index_question] = {
+          ...existingAnswers[index_question],
+          selected_index: selectedValue,
+          correct: selectedValue === questions[index].correct_option_index,
+        };
+      } else {
+        const answer = {
+          question_id: questions[index]._id,
+          selected_index: selectedValue,
+          correct: selectedValue === questions[index].correct_option_index,
+        };
+
+        existingAnswers.push(answer);
+      }
+
+      return { ...prev, answers: existingAnswers };
+    });
   };
+
+  // console.log("answers: ", answers);
 
   return (
     <Html {...props} ref={targetRef}>
@@ -88,7 +131,7 @@ const HtmlQuestions = (props) => {
               className="text-base md:text-2xl font-semibold text-center"
               style={{ color }}
             >
-              {cards[index].title}
+              {questions[index].text}
             </h2>
 
             <button onClick={next} className="animate-bounce-right">
@@ -110,29 +153,37 @@ const HtmlQuestions = (props) => {
           </div>
 
           <ul className="space-y-2">
-            {["a", "b", "c", "d"].map((item, i) => (
+            {["a", "b", "c", "d"].map((item, i) => {
+            
+            const currentQuestionId=questions[index]._id;
+
+            const existingAnswer=answers.answers.find(a=>a.question_id===currentQuestionId);
+            
+            return (
               <li key={item} className="flex items-center gap-2 ml-2">
                 <input
-                  type="checkbox"
+                  type="radio"
                   id={`answer-${item}`}
                   className="w-4 h-4"
-                  checked={selectedAnswers.includes(`${item}`)}
-                  onChange={() => handleAnswerChange(`${item}`)}
-    
+                  onChange={() => handleAnswerChange()}
+                  value={i}
+                  name={`question-${currentQuestionId}`}
+                  checked={existingAnswer?.selected_index===i}
                 />
                 <label
                   htmlFor={`answer-${item}`}
                   className="text-sm md:text-xl md:font-bold text-left cursor-pointer"
                   style={{ color }}
                 >
-                  {cards[index].answers[item]}
+                  {questions[index].options[i]}
                 </label>
               </li>
-            ))}
+            )}
+            
+            )}
           </ul>
           <button className="bg-white/50 hover:bg-black text-white font-bold py-2 px-4 rounded-full mt-3">
             Send
-
           </button>
         </div>
       </div>
