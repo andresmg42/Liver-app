@@ -10,7 +10,7 @@ const HtmlQuestions = (props) => {
 
   const {userEmail}=useAuthStore();
 
-  const { camera } = useThree();
+
 
   const targetRef = useRef();
 
@@ -80,6 +80,7 @@ const HtmlQuestions = (props) => {
 
 
   const handleSend=()=>{
+
 
     sendProgress(answers)
 

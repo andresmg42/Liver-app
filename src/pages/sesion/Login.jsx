@@ -21,16 +21,14 @@ const Login = () => {
     try {
       const data = await loginGoogleWithPopUp();
 
-      console.log(data);
 
       const { displayName, email } = data?.user;
 
       const res_search = await api.get(`users/email/?email=${email}`);
 
-      // console.log(res_search.data);
 
       if (res_search.data) {
-        setUser(displayName, email, data._id);
+        setUser(displayName, email, res_search.data._id);
       }
 
       
@@ -40,7 +38,6 @@ const Login = () => {
       if (error.response.status == 404) {
         try {
           const res = await api.post("users/", { displayName, email });
-          console.log(res.data);
 
           if (res.data) {
             setUser(displayName, email, data._id);
@@ -65,7 +62,6 @@ const Login = () => {
         try {
           const res_search = await api.get(`users/email/?email=${email}`);
 
-          console.log(res_search);
 
           if (res_search.data) {
             setUser(displayName, email, data._id);
@@ -79,7 +75,6 @@ const Login = () => {
                 displayName,
                 email,
               });
-              console.log(res.data);
 
               if (res.data) {
                 setUser(displayName, email, data._id);

@@ -34,6 +34,16 @@ export const getUserByEmail = async (email)=>{
     }
 }
 
+// export const loadProgress= async (email)=>{
+//     try {
+
+//         const res =await api.get()
+        
+//     } catch (error) {
+        
+//     }
+// }
+
 
 
 
