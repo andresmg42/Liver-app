@@ -27,11 +27,13 @@ const Login = () => {
 
       const res_search = await api.get(`users/email/?email=${email}`);
 
-      console.log(res_search.data);
+      // console.log(res_search.data);
 
       if (res_search.data) {
         setUser(displayName, email, data._id);
       }
+
+      
 
       navigate("/");
     } catch (error) {

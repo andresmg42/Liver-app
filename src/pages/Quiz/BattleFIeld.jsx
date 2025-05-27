@@ -23,7 +23,7 @@ const BattleFIeld = () => {
         try {
 
           const res= await api.get('/quiz/')
-          console.log(res.data[0])
+          // console.log(res.data[0])
         
           setQuiz(res.data[0])
           
