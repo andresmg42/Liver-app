@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-import { useEventStore } from "../../../stores/use-auth-store";
+import useAuthStore, { useEventStore } from "../../../stores/use-auth-store";
 import { Html } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
+import { sendProgress } from "../services/services";
+
 const HtmlQuestions = (props) => {
   const { click, setClickQuestion } = useEventStore();
+
+  const {userEmail}=useAuthStore();
 
   const { camera } = useThree();
 
@@ -25,7 +29,7 @@ const HtmlQuestions = (props) => {
   };
 
   const [answers, setAnswers] = useState({
-    user_id: "6830af4f0fb3dcddd4f69210",
+    user_id: userEmail.user_id,
     quiz_id: props.quiz_id,
     section_slug: props.sections.slug,
     answers: [],
@@ -74,7 +78,17 @@ const HtmlQuestions = (props) => {
     });
   };
 
+
+  const handleSend=()=>{
+
+    sendProgress(answers)
+
+  }
+
   // console.log("answers: ", answers);
+
+  // console.log('questions:',questions.length)
+  // console.log('answers:',answers.answers.length)
 
   return (
     <Html {...props} ref={targetRef}>
@@ -182,9 +196,15 @@ const HtmlQuestions = (props) => {
             
             )}
           </ul>
-          <button className="bg-white/50 hover:bg-black text-white font-bold py-2 px-4 rounded-full mt-3">
+         {questions.length===answers.answers.length &&(
+           <button 
+           className="bg-white/50 hover:bg-black text-white font-bold py-2 px-4 rounded-full mt-3"
+           onClick={handleSend}
+           
+           >
             Send
           </button>
+         )}
         </div>
       </div>
     </Html>

@@ -23,7 +23,7 @@ const useAuthStore = create((set) => {
   observeAuthState();
   return {
     userLooged: null,
-    userEmail: { displayName: null, email: null },
+    userEmail: { displayName: null, email: null,user_id:null },
 
     loginGoogleWithPopUp: async () => {
       const provider = new GoogleAuthProvider();
@@ -114,6 +114,12 @@ const useAuthStore = create((set) => {
         console.log("no entro a verfy");
       }
     },
+
+    setUser:(user,email,id)=>set({userEmail:{
+      displayName:user,
+      email:email,
+      user_id:id
+    }}),
 
     logout: async () => {
       try {

@@ -13,6 +13,7 @@ const Login = () => {
     loginWithEmail,
     sendSignInLink,
     loginGithubWithPopup,
+    setUser,
   } = useAuthStore();
   const navigate = useNavigate();
 
@@ -24,17 +25,25 @@ const Login = () => {
 
       const { displayName, email } = data?.user;
 
-      const res_search = await api.post("users/email", { displayName, email });
+      const res_search = await api.get(`users/email/?email=${email}`);
 
       console.log(res_search.data);
+
+      if (res_search.data) {
+        setUser(displayName, email, data._id);
+      }
 
       navigate("/");
     } catch (error) {
       if (error.response.status == 404) {
         try {
-          const res_axios = await api.post("users/", { displayName, email });
-          console.log(res_axios.data);
-          navigate("/")
+          const res = await api.post("users/", { displayName, email });
+          console.log(res.data);
+
+          if (res.data) {
+            setUser(displayName, email, data._id);
+          }
+          navigate("/");
         } catch (error) {
           console.error("Error in handleGoogleLogin", error);
         }
@@ -52,25 +61,29 @@ const Login = () => {
         const { displayName, email } = data?.user;
 
         try {
-          
-          const res_search = await api.post("users/email", {
-            displayName,
-            email,
-          });
+          const res_search = await api.get(`users/email/?email=${email}`);
 
-         console.log(res_search);
+          console.log(res_search);
+
+          if (res_search.data) {
+            setUser(displayName, email, data._id);
+          }
 
           navigate("/");
-
         } catch (error) {
           if (error.response.status == 404) {
             try {
-              const res_axios = await api.post("users/", {
+              const res = await api.post("users/", {
                 displayName,
                 email,
               });
-              console.log(res_axios.data);
-              navigate("/")
+              console.log(res.data);
+
+              if (res.data) {
+                setUser(displayName, email, data._id);
+              }
+
+              navigate("/");
             } catch (error) {
               console.error("Error in handleGoogleLoginFacebook", error);
             }
@@ -78,11 +91,7 @@ const Login = () => {
             console.error("Error in handleGoogleLoginFacebook:", error);
           }
         }
-
-        
       }
-
-      
     } catch (error) {
       console.error("Error in handleLoginFacebook:", error);
     }
