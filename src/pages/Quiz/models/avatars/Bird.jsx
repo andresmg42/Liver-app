@@ -19,15 +19,7 @@ export function Bird(props) {
 
   },[actions])
 
-  const handlePilot=useCallback(
-    (e)=>{
-      // console.log('se hiso click')
-      e.stopPropagation();
-      // console.log(pilotRef.current)
-      birdRef.current.wakeUp();
-      birdRef.current.applyImpulse({x:-100000,y:0,z:0},true);
-    },[birdRef]
-  )
+ 
 
   return (
      <RigidBody
@@ -41,7 +33,7 @@ export function Bird(props) {
     
     
         >
-    <group ref={group} {...props} dispose={null} onClick={handlePilot}>
+    <group ref={group} {...props} dispose={null} >
       <group name="Sketchfab_Scene">
         <group
           name="Sketchfab_model"

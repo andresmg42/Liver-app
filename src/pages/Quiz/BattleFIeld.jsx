@@ -6,106 +6,164 @@ import GenericFloor from "./models/floor/GenericFloor";
 import BattelFloor from "./models/floor/BattelFloor";
 import Dron from "./models/avatars/Dron";
 import HtmlQuestions from "./questions/HtmlQustions";
-import {cards} from './questions'
+import { cards } from "./questions";
 import api from "../../api/user.api";
 import { useState } from "react";
-import {  Text } from "@react-three/drei"
-
+import { Text } from "@react-three/drei";
+import { Float } from "@react-three/drei";
+import Esphere from "./models/simpleobjects/Esphere";
+import { Text3D } from "@react-three/drei";
+import OptionsText from "./models/text/OptionsText";
+import { Eye } from "./models/avatars/Eye";
+import RareHuman from "./models/avatars/RareHuman";
 
 const BattleFIeld = () => {
+  // const [quiz,setQuiz]=useState(null)
 
-  const [quiz,setQuiz]=useState(null)
+  //   useEffect( ()=>{
 
-  
-    useEffect( ()=>{
+  //     async function loadQuiz(){
+  //       try {
 
-      async function loadQuiz(){
-        try {
+  //         const res= await api.get('/quiz/')
+  //         // console.log(res.data[0])
 
-          const res= await api.get('/quiz/')
-          // console.log(res.data[0])
-        
-          setQuiz(res.data[0])
-          
-        } catch (error) {
+  //         setQuiz(res.data[0])
 
-          console.Error('error cargando quiz: ',error)
-          
-        }
-      }
+  //       } catch (error) {
 
-      loadQuiz();
+  //         console.Error('error cargando quiz: ',error)
 
-      
+  //       }
+  //     }
 
-    },[])
+  //     loadQuiz();
 
-    if(!quiz){
-      return (<Text
-      position={[0,0,0]}
-      color={'white'}
-      anchorX={'center'}
-      anchorY={'middle'}
-      fontSize={0.8}
-      fontStyle='bold'
-      font="fonts\OpenSans-Bold.ttf"
-      >Loading Qui...</Text>);
-    }
+  //   },[])
 
-
-
-
-
-  
+  //   if(!quiz){
+  //     return (<Text
+  //     position={[0,0,0]}
+  //     color={'white'}
+  //     anchorX={'center'}
+  //     anchorY={'middle'}
+  //     fontSize={0.8}
+  //     fontStyle='bold'
+  //     font="fonts\OpenSans-Bold.ttf"
+  //     >Loading Qui...</Text>);
+  //   }
 
   return (
-    <Physics  gravity={[0,-9.8,0]}>
-
-
-          
-          <group position={[-100,0,0]}>
-
-            <Bird scale={0.3} />
-           <HtmlQuestions sections={quiz.sections[0]} quiz_id={quiz._id} scale={5} position={[0,10,0]} transform color={'white'} rotation={[0, Math.PI / 2, 0]} />
-
-
-          </group>
-          
-
-          {/* Bird Floor */}
-          <BattelFloor
-
-          position={[0,-30,0]}
-          geometry={{
-            args:[400,400]
-          }}
-          />
-          <group  position={[0,0,-50]} >
-          <Dron scale={4} position={[0,20,-12]}/>
-          </group>
-
-         
-          
-         
-
-
+    <Physics gravity={[0, -9.8, 0]}  >
+      
+        <group position={[-150, 0, 0]}>
+          <Float speed={5}>
+          <OptionsText position={[0,30,0]} size={7} text={'D'} color={'black'} rotation={[0, Math.PI / 2, 0]}/>
+          </Float>
+          <Bird scale={0.3} />
+          {/* <HtmlQuestions sections={quiz.sections[0]} quiz_id={quiz._id} scale={5} position={[0,10,0]} transform color={'white'} rotation={[0, Math.PI / 2, 0]} /> */}
           <GenericFloor
-
-          position={[0,-500,0]}
-            
+            position={[-20, 0, 0]}
             geometry={{
-              args: [4000, 3000],
+              args: [70, 70],
             }}
             meshM={{
               transparent: true,
               opacity: 0,
-              
+              // color:'white'
             }}
           />
+        </group>
 
-          
-        </Physics>
-  )
-}
 
-export default BattleFIeld
+       
+        <group position={[0, -10, 150]}>
+          <Float speed={5}>
+          <OptionsText position={[0,50,0]} size={7} text={'C'} color={'black'} rotation={[0,Math.PI,0]}/>
+          </Float>
+
+           <RareHuman scale={6}  />
+
+         
+          {/* <GenericFloor
+            position={[0, -10, 0]}
+            geometry={{
+              args: [40, 40],
+            }}
+            meshM={{
+              transparent: true,
+              opacity: 0,
+              color:'white'
+            }}
+          /> */}
+        </group>
+
+         <group position={[150, 0, 0]} >
+          <Float speed={5}>
+          <OptionsText position={[0,30,0]} size={7} text={'B'} color={'black'} rotation={[0, -Math.PI / 2, 0]}/>
+          </Float>
+
+          <Eye scale={2.5} />
+         
+          <GenericFloor
+            position={[0, -10, 0]}
+            geometry={{
+              args: [40, 40],
+            }}
+            meshM={{
+              transparent: true,
+              opacity: 0,
+              color:'white'
+            }}
+          />
+        </group>
+
+
+      
+      
+      
+      <Esphere position={[0, 10, 0]} />
+      <GenericFloor
+        position={[0, -10, 0]}
+        geometry={{
+          args: [10, 10],
+        }}
+        meshM={{
+          transparent: true,
+          opacity: 0,
+          // color: "white",
+        }}
+      />
+
+      {/* Bird Floor */}
+      <BattelFloor
+        position={[0, -30, 0]}
+        geometry={{
+          args: [400, 400],
+        }}
+      />
+
+    
+      <group position={[0, 0, -50]}>
+        <Float speed={5}>
+          <OptionsText position={[0,15,-50]} size={7} text={'A'} color={'black'}/>
+        </Float>
+        <Dron scale={4} position={[0, 20, -12]} />
+      </group>
+      
+
+      <GenericFloor
+        position={[0, -500, 0]}
+        geometry={{
+          args: [4000, 3000],
+        }}
+        meshM={{
+          transparent: true,
+          opacity: 0,
+        }}
+      />
+    </Physics>
+  );
+};
+
+export default BattleFIeld;

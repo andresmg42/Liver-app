@@ -19,26 +19,26 @@ const Dron = (props) => {
   },[actions])
 
 
-  const handleDron=useCallback(
-      (e)=>{
-        // console.log('se hiso click')
-        e.stopPropagation();
-        // console.log(pilotRef.current)
-        dronRef.current.wakeUp();
-        dronRef.current.applyImpulse({x:0,y:0,z:-500000},true);
-      },[dronRef]
-    )
+  // const handleDron=useCallback(
+  //     (e)=>{
+  //       // console.log('se hiso click')
+  //       e.stopPropagation();
+  //       // console.log(pilotRef.current)
+  //       dronRef.current.wakeUp();
+  //       dronRef.current.applyImpulse({x:0,y:0,z:-500000},true);
+  //     },[dronRef]
+  //   )
 
   return (
     <RigidBody
       {...props}
       name="dronRB"
       ref={dronRef}
-      colliders="cuboid"
+      colliders='cuboid'
       type="dinamic"
       mass={0.01}
     >
-      <group ref={group} onClick={handleDron}>
+      <group ref={group} >
         <mesh {...props}>
           <primitive object={scene} />
         </mesh>

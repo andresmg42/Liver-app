@@ -17,12 +17,12 @@ const Quiz = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!userLooged) {
-      navigate("/login");
-      return;
-    }
-  }, [userLooged]);
+  // useEffect(() => {
+  //   if (!userLooged) {
+  //     navigate("/login");
+  //     return;
+  //   }
+  // }, [userLooged]);
 
   return (
     <div className="fixed top-0 left-0 w-full h-full object-cover  Z-0">
@@ -33,6 +33,8 @@ const Quiz = () => {
         onPointerUp={() => {
           setClick(false);
         }}
+
+        camera={{position:[-50,20,0]}}
       >
         <OrbitControls />
         <RoomStaging />

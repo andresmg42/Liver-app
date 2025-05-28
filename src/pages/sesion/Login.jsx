@@ -35,7 +35,7 @@ const Login = () => {
 
       navigate("/");
     } catch (error) {
-      if (error.response.status == 404) {
+      if (error.response.status === 404) {
         try {
           const res = await api.post("users/", { displayName, email });
 
