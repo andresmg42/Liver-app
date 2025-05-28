@@ -9,6 +9,7 @@ import { useEventStore } from "../../stores/use-auth-store";
 import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
+import QuestionsInterfaz from "./questions/QuestionsInterfaz";
 
 const Quiz = () => {
   const { setClick } = useEventStore();
@@ -25,7 +26,10 @@ const Quiz = () => {
   // }, [userLooged]);
 
   return (
+    <>
+     <QuestionsInterfaz/>
     <div className="fixed top-0 left-0 w-full h-full object-cover  Z-0">
+     
       <Canvas
         onPointerDown={() => {
           setClick(true);
@@ -42,6 +46,7 @@ const Quiz = () => {
         <BattleFIeld />
       </Canvas>
     </div>
+    </>
   );
 };
 

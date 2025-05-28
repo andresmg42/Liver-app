@@ -29,7 +29,7 @@ useEffect(()=>{
       mass={0.01}
     
     >
-    <group ref={group} {...props} dispose={null} rotation={[0,Math.PI/2,0]}>
+    <group ref={group} {...props} dispose={null} rotation={[0,-Math.PI/2,0]}>
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
           <group name="root">
