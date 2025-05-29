@@ -32,7 +32,7 @@ const Dron = (props) => {
   return (
     <RigidBody
       {...props}
-      name="dronRB"
+      name="recomendations"
       ref={dronRef}
       colliders='cuboid'
       type="dinamic"

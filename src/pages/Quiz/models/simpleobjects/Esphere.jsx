@@ -3,11 +3,15 @@ import { useState } from "react";
 import { useRef, useCallback } from "react";
 import { useThree } from "@react-three/fiber";
 import { Vector2, Vector3 } from "three";
+import useQuizStore from "../../../../stores/useQuizStore";
 
 const Esphere = (props) => {
   const sphereRef = useRef();
   const { camera, raycaster } = useThree();
 
+  const {index,color,setCollide,setCountCollisions}=useQuizStore();
+  
+  
   
 
   const handleEsphere = useCallback(
@@ -86,6 +90,24 @@ const Esphere = (props) => {
       colliders="ball"
       friction={0}
       {...props}
+
+      onCollisionEnter={({manifold,target,other})=>{
+        if(other.rigidBodyObject){
+
+          // console.log(target.rigidBodyObject.name,"collided whit",other.rigidBodyObject.name)
+          const othername=other.rigidBodyObject.name
+
+          if (othername==='SphereFloorRB'){
+            setCountCollisions(0);
+          }
+
+          console.log('Coliciono con ',othername)
+          setCollide(othername)
+          
+
+        }
+      }}
+      // onCollisionExit={()=>console.log("sphere collision exit")}
     
     >
       <mesh onClick={handleEsphere}>

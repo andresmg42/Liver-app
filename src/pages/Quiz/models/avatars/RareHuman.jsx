@@ -14,7 +14,7 @@ const RareHuman = (props) => {
   const { actions } = useAnimations(animations, group);
 
   useEffect(()=>{
-    console.log('actions',actions)
+    // console.log('actions',actions)
     actions['anim']?.reset().fadeIn(0.5).play()
   },[actions])
 
@@ -32,7 +32,7 @@ const RareHuman = (props) => {
   return (
     <RigidBody
       {...props}
-      name="rarehumanRB"
+      name="symptoms"
       ref={dronRef}
       colliders='cuboid'
       type="dinamic"

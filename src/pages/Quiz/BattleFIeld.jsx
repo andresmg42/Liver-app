@@ -72,6 +72,8 @@ const BattleFIeld = () => {
               opacity: 0,
               // color:'white'
             }}
+
+            name='cancerFloor'
           />
         </group>
 
@@ -100,7 +102,7 @@ const BattleFIeld = () => {
 
          <group position={[150, 0, 0]} >
           <Float speed={5}>
-          <OptionsText position={[0,30,0]} size={7} text={'TREATMENT'} color={'TREATMENT'} rotation={[0, -Math.PI / 2, 0]}/>
+          <OptionsText position={[0,30,0]} size={7} text={'TREATMENT'} color={'black'} rotation={[0, -Math.PI / 2, 0]}/>
           </Float>
 
           <Eye scale={2.5} />
@@ -115,6 +117,8 @@ const BattleFIeld = () => {
               opacity: 0,
               color:'white'
             }}
+
+            name='treatmentFloor'
           />
         </group>
 
@@ -133,6 +137,8 @@ const BattleFIeld = () => {
           opacity: 0,
           // color: "white",
         }}
+
+        name='SphereFloorRB'
       />
 
       {/* Bird Floor */}
@@ -161,6 +167,8 @@ const BattleFIeld = () => {
           transparent: true,
           opacity: 0,
         }}
+
+        name='StagingFloorRB'
       />
     </Physics>
   );

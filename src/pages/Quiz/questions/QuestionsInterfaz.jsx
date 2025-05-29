@@ -9,12 +9,13 @@ const QuestionsInterfaz = () => {
 const {index,setColor}=useQuizStore();
 
 
-const {color,image,title}=questions[index];
+const  {color,image,title}=questions[index];
   
 
   
 
   useEffect(()=>{
+    console.log('index',index)
     
     setColor(color)
   },[index])

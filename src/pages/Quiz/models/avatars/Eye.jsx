@@ -22,7 +22,7 @@ useEffect(()=>{
     <RigidBody
     // position={props.position}
     {...props}
-      name="dronRB"
+      name="treatment"
       ref={eyeRef}
       colliders='ball'
       type="dinamic"

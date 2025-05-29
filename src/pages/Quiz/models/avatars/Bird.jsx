@@ -24,7 +24,7 @@ export function Bird(props) {
   return (
      <RigidBody
         {...props}
-        name='pilotRB'
+        name='cancer'
         ref={birdRef}
         colliders='hull'
         type='dynamic'

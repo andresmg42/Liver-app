@@ -17,7 +17,7 @@ const BattelFloor = (props) => {
 
     });
   return (
-    <RigidBody name='floorRB' type='fixed' colliders={'cuboid'} friction={0} position={props.position}>
+    <RigidBody name='BattleFloorRB' type='fixed' colliders={'cuboid'} friction={0} position={props.position}>
             {/* <CuboidCollider {...props.cuboid}/>  */}
             <mesh rotation-x={-Math.PI/2} >
                 <planeGeometry {...props.geometry}/>
