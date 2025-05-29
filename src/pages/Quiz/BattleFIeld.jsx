@@ -58,7 +58,7 @@ const BattleFIeld = () => {
       
         <group position={[-150, 0, 0]}>
           <Float speed={5}>
-          <OptionsText position={[0,30,0]} size={7} text={'D'} color={'black'} rotation={[0, Math.PI / 2, 0]}/>
+          <OptionsText position={[0,30,0]} size={7} text={'LIVER CANCER'} color={'black'} rotation={[0, Math.PI / 2, 0]}/>
           </Float>
           <Bird scale={0.3} />
           {/* <HtmlQuestions sections={quiz.sections[0]} quiz_id={quiz._id} scale={5} position={[0,10,0]} transform color={'white'} rotation={[0, Math.PI / 2, 0]} /> */}
@@ -79,7 +79,7 @@ const BattleFIeld = () => {
        
         <group position={[0, -10, 150]}>
           <Float speed={5}>
-          <OptionsText position={[0,50,0]} size={7} text={'C'} color={'black'} rotation={[0,Math.PI,0]}/>
+          <OptionsText position={[0,50,0]} size={7} text={'SYMPTOMS'} color={'black'} rotation={[0,Math.PI,0]}/>
           </Float>
 
            <RareHuman scale={6}  />
@@ -100,7 +100,7 @@ const BattleFIeld = () => {
 
          <group position={[150, 0, 0]} >
           <Float speed={5}>
-          <OptionsText position={[0,30,0]} size={7} text={'B'} color={'black'} rotation={[0, -Math.PI / 2, 0]}/>
+          <OptionsText position={[0,30,0]} size={7} text={'TREATMENT'} color={'TREATMENT'} rotation={[0, -Math.PI / 2, 0]}/>
           </Float>
 
           <Eye scale={2.5} />
@@ -146,7 +146,7 @@ const BattleFIeld = () => {
     
       <group position={[0, 0, -50]}>
         <Float speed={5}>
-          <OptionsText position={[0,15,-50]} size={7} text={'A'} color={'black'}/>
+          <OptionsText position={[0,15,-50]} size={7} text={'RECOMENDATIONS'} color={'black'}/>
         </Float>
         <Dron scale={4} position={[0, 20, -12]} />
       </group>
