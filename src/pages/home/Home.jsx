@@ -52,7 +52,7 @@ const Home = () => {
         {/*itroductory text */}
         <div className="md:w-[153vh]  w-[45vh] h-[50vh] md:h-[32vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15   p-5">
           <h1 className="md:text-2xl text-xl">Welcome!</h1>
-          <p className="md:text-base text-sm mt-5">
+          <p className="md:text-xl text-sm mt-5">
             Welcome to our interactive 3D educational page on liver cancer — a cutting-edge 
             resource designed to help you understand the structure, function, and pathology of 
             the liver through immersive web-based visuals. Whether you're a student, healthcare professional, 

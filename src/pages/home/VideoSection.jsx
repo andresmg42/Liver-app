@@ -15,7 +15,7 @@ const VideoSection = () => {
 
       <Html position={[0.2, 1.27, 0]}>
         <div className="flex flex-col items-center md:w-[74vh] md:h-[33vh] bg-white/15  p-4">
-          <h1 className="md:text-2xl text-xl">Perspective</h1>
+          <h1 className="md:text-xl text-xl">Perspective</h1>
           <p className="md:text-base text-sm mt-5  ">
             As of recent global estimates, over 20 million people worldwide are
             living with cancer. Liver cancer is among the leading causes of
