@@ -34,15 +34,21 @@ export const getUserByEmail = async (email)=>{
     }
 }
 
-// export const loadProgress= async (email)=>{
-//     try {
+export const loadProgress= async (user_id,quiz_id)=>{
+    try {
 
-//         const res =await api.get()
+        const res =await api.get(`/progress/?userId=${user_id}&quizId=${quiz_id}`)
+
         
-//     } catch (error) {
+
+        return res.data
         
-//     }
-// }
+    } catch (error) {
+
+        throw error;
+        
+    }
+}
 
 
 

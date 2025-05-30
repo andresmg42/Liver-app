@@ -28,7 +28,8 @@ const Login = () => {
 
 
       if (res_search.data) {
-        setUser(displayName, email, res_search.data._id);
+        // setUser(displayName, email, res_search.data._id);
+        localStorage.setItem('user_id',res_search.data._id);
       }
 
       
@@ -40,7 +41,10 @@ const Login = () => {
           const res = await api.post("users/", { displayName, email });
 
           if (res.data) {
-            setUser(displayName, email, data._id);
+            localStorage.setItem('user_id',res_search.data._id);
+            // setUser(displayName, email, data._id);
+            
+            
           }
           navigate("/");
         } catch (error) {

@@ -125,6 +125,7 @@ const useAuthStore = create((set) => {
       try {
         await signOut(auth);
         set({ userLogged: null });
+        localStorage.removeItem('user_id')
       } catch (error) {
         console.error("Error loggin out:", error);
       }

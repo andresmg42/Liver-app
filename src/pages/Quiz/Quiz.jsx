@@ -7,16 +7,16 @@ import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import QuestionsInterfaz from "./questions/QuestionsInterfaz";
-import { useState } from "react";
 import api from "../../api/user.api";
 import useQuizStore from "../../stores/useQuizStore";
+import { loadProgress } from "./services/services";
 
 const Quiz = () => {
   const { setClick } = useEventStore();
 
-  const { userLooged } = useAuthStore();
+  const { userLooged,userEmail } = useAuthStore();
 
-  const {quiz,setQuiz}=useQuizStore()
+  const {quiz,setQuiz,progress,setProgress,setIndex}=useQuizStore()
 
   const navigate = useNavigate();
 
@@ -32,14 +32,49 @@ const Quiz = () => {
           const res= await api.get('/quiz/')
           console.log('quiz:',res.data[0])
 
+          if (!res.data) return;
+
           setQuiz(res.data[0])
+
+          
+
+          const resProgress= await loadProgress(localStorage.user_id,res.data[0]._id)
+
+        
+
+          if(!resProgress){
+
+
+            const newProgress={...progress,
+              user_id:localStorage.getItem('user_id'),
+              quiz_id:res.data[0]._id}
+
+            console.log(newProgress)
+
+            setProgress(newProgress)
+
+            setIndex(0);
+            return;
+
+          }
+
+         setProgress(resProgress.data)
+
+         setIndex(resProgress.data.answers.length-1)
+
+
+
+           
 
         } catch (error) {
 
-          console.Error('error cargando quiz: ',error)
+          console.error('Error loading quiz',error)
+
+
+          }
 
         }
-      }
+      
 
       loadQuiz();
   }, []);

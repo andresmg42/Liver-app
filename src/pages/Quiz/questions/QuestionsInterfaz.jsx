@@ -6,7 +6,7 @@ const QuestionsInterfaz = (props) => {
 
 
 
-const {index,setColor,quiz}=useQuizStore();
+const {index,setColor,quiz,progress}=useQuizStore();
 
 const  {color,image,title}=quiz.questions[index];
 
@@ -21,6 +21,8 @@ const  {color,image,title}=quiz.questions[index];
     setColor(color)
   },[index])
 
+  
+
 
   return (
     <div
@@ -34,6 +36,12 @@ const  {color,image,title}=quiz.questions[index];
 
         <img src={image} alt={title}/>
         <h1 className='text-md mt-10 ' style={{color:color}}> {title}</h1>
+        <div>
+          <h1 className='text-2xl font-bold' style={{color:color}}>
+            {`Score:${progress.total_score}`}
+          </h1>
+          
+        </div>
 
 
         
