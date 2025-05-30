@@ -15,13 +15,14 @@ const useQuizStore= create((set)=>{
         index:0,
         color:'white',
         countCollisions:0,
-        // collide:null,
+        quiz:null,
         answers:{
             user_id:null,
             quiz_id:'1p',
             answers:[]
 
         },
+        setQuiz:(quiz)=>set({quiz:quiz}),
         setCountCollisions:(countCollisions)=>set({countCollisions:countCollisions}),
         setIndex:(index)=>set({index:index}),
         setColor:(color)=>set({color:color}),

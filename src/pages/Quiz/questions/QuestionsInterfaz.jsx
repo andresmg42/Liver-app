@@ -2,14 +2,15 @@ import React, { useEffect } from 'react'
 import { questions } from './questions'
 import { useState } from 'react';
 import useQuizStore from '../../../stores/useQuizStore';
-const QuestionsInterfaz = () => {
+const QuestionsInterfaz = (props) => {
 
 
 
-const {index,setColor}=useQuizStore();
+const {index,setColor,quiz}=useQuizStore();
+
+const  {color,image,title}=quiz.questions[index];
 
 
-const  {color,image,title}=questions[index];
   
 
   

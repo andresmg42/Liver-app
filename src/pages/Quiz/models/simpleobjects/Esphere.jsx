@@ -112,7 +112,7 @@ const Esphere = (props) => {
     >
       <mesh onClick={handleEsphere}>
         <sphereGeometry args={[5, 32]} />
-        <meshStandardMaterial />
+        <meshStandardMaterial color={color}/>
       </mesh>
     </RigidBody>
   );

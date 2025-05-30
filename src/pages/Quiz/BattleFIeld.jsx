@@ -6,10 +6,9 @@ import GenericFloor from "./models/floor/GenericFloor";
 import BattelFloor from "./models/floor/BattelFloor";
 import Dron from "./models/avatars/Dron";
 import HtmlQuestions from "./questions/HtmlQustions";
-import { cards } from "./questions";
 import api from "../../api/user.api";
 import { useState } from "react";
-import { Text } from "@react-three/drei";
+
 import { Float } from "@react-three/drei";
 import Esphere from "./models/simpleobjects/Esphere";
 import { Text3D } from "@react-three/drei";
@@ -18,40 +17,7 @@ import { Eye } from "./models/avatars/Eye";
 import RareHuman from "./models/avatars/RareHuman";
 
 const BattleFIeld = () => {
-  // const [quiz,setQuiz]=useState(null)
-
-  //   useEffect( ()=>{
-
-  //     async function loadQuiz(){
-  //       try {
-
-  //         const res= await api.get('/quiz/')
-  //         // console.log(res.data[0])
-
-  //         setQuiz(res.data[0])
-
-  //       } catch (error) {
-
-  //         console.Error('error cargando quiz: ',error)
-
-  //       }
-  //     }
-
-  //     loadQuiz();
-
-  //   },[])
-
-  //   if(!quiz){
-  //     return (<Text
-  //     position={[0,0,0]}
-  //     color={'white'}
-  //     anchorX={'center'}
-  //     anchorY={'middle'}
-  //     fontSize={0.8}
-  //     fontStyle='bold'
-  //     font="fonts\OpenSans-Bold.ttf"
-  //     >Loading Qui...</Text>);
-  //   }
+  
 
   return (
     <Physics gravity={[0, -9.8, 0]}  >
