@@ -1,5 +1,5 @@
 import { create } from "zustand";
-
+import { sendProgress } from "../pages/Quiz/services/services";
 
 
 const useQuizStore= create((set)=>{
@@ -54,6 +54,8 @@ const useQuizStore= create((set)=>{
 
 
         const newProgress={...state.progress,answers:[...state.progress.answers,newAnswer],total_score,completed}
+
+        sendProgress(newProgress);
 
         return {
           

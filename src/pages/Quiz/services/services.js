@@ -5,7 +5,7 @@ export const  sendProgress= async (data)=>{
     try {
 
     const res= await api.post('/progress/',data)
-    console.log(res.data)
+    console.log('send data: ',res.data)
 
         
     } catch (error) {
