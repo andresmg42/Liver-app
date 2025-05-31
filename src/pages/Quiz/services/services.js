@@ -59,4 +59,16 @@ export const sendLeaderBoard=async (quiz_id,user_id)=>{
     }
 }
 
+export const loadLeaderBoard=async ()=>{
+    try {
+
+        const leaderboard= await api.get('/leaderboard/');
+        console.log('leader board:',leaderboard)
+
+        return leaderboard.data
+    } catch (error) {
+        console.error('error loading leaderboard',error)
+    }
+}
+
 

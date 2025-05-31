@@ -10,6 +10,7 @@ import QuestionsInterfaz from "./questions/QuestionsInterfaz";
 import api from "../../api/user.api";
 import useQuizStore from "../../stores/useQuizStore";
 import { loadProgress } from "./services/services";
+import LeaderBoard from "./questions/LeaderBoard";
 
 const Quiz = () => {
   const { setClick } = useEventStore();
@@ -91,7 +92,8 @@ const Quiz = () => {
 
   return (
     <>
-    <QuestionsInterfaz/>
+    {true && <LeaderBoard/>}
+    {false && <QuestionsInterfaz/>}
     <div className="fixed top-0 left-0 w-full h-full object-cover  Z-0">
      
       <Canvas
