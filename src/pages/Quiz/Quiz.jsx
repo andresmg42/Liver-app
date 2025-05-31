@@ -60,7 +60,10 @@ const Quiz = () => {
 
          setProgress(resProgress)
 
-         const newindex=Math.max(0,resProgress.answers.length-1)
+        const nextIndex = Math.max(0, resProgress.answers.length);
+        const maxIndex = res.data[0].questions.length - 1;
+
+         const newindex=Math.min(nextIndex,maxIndex)
 
          setIndex(newindex)
 

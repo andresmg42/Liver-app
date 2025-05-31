@@ -9,6 +9,8 @@ const QuestionsInterfaz = (props) => {
 
 const {index,setColor,quiz,progress,setProgress,setIndex}=useQuizStore();
 
+
+console.log('index questionsInterfaz',index)
 const  {color,image,title}=quiz.questions[index];
 
 
