@@ -31,7 +31,7 @@ const Esphere = (props) => {
       const shootDirection = raycaster.ray.direction.clone();
 
       // Scale the direction by desired force
-      const force = 200000; // Adjust this value to control shot strength
+      const force = 200000; //200000 Adjust this value to control shot strength
 
       // Apply impulse in the shoot direction
       sphereRef.current.wakeUp();
@@ -83,7 +83,7 @@ const Esphere = (props) => {
 
   return (
     <RigidBody
-      mass={10}
+      mass={5}
       ref={sphereRef}
       name="esphereRB"
       type="dynamic" // Fixed typo: was "dinamic"
@@ -101,7 +101,7 @@ const Esphere = (props) => {
             setCountCollisions(0);
           }
 
-          console.log('Coliciono con ',othername)
+          // console.log('Coliciono con ',othername)
           setCollide(othername)
           
 

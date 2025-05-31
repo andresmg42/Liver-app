@@ -8,16 +8,16 @@ const RareHuman = (props) => {
 
   const group = useRef();
 
-  const {scene,nodes,materials,animations} = useGLTF("models/quiz/rareh.glb");
-  
+  const { scene, nodes, materials, animations } = useGLTF(
+    "models/quiz/rareh.glb"
+  );
 
   const { actions } = useAnimations(animations, group);
 
-  useEffect(()=>{
+  useEffect(() => {
     // console.log('actions',actions)
-    actions['anim']?.reset().fadeIn(0.5).play()
-  },[actions])
-
+    actions["anim"]?.reset().fadeIn(0.5).play();
+  }, [actions]);
 
   // const handleDron=useCallback(
   //     (e)=>{
@@ -34,16 +34,19 @@ const RareHuman = (props) => {
       {...props}
       name="symptoms"
       ref={dronRef}
-      colliders='cuboid'
-      type="dinamic"
-      mass={0.01}
+      colliders="cuboid"
+      type="dynamic"
+      mass={1000} // Heavy, but not extreme
+      friction={2}
+      linearDamping={2}
+      angularDamping={2}
+      // canSleep
     >
-       
-      <group ref={group} rotation={[0,Math.PI,0]} >
+      <group ref={group} rotation={[0, Math.PI, 0]}>
         <mesh {...props}>
           <primitive object={scene} />
         </mesh>
-         {/* <CuboidCollider 
+        {/* <CuboidCollider 
          args={[3,10,2]}
          position={[0,0,0]}
          rotation={[0,2*Math.PI,0]}

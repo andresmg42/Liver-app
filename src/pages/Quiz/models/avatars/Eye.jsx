@@ -24,9 +24,14 @@ useEffect(()=>{
     {...props}
       name="treatment"
       ref={eyeRef}
-      colliders='ball'
-      type="dinamic"
-      mass={0.01}
+      colliders='cuboid'
+      type='dynamic'
+      mass={10000}
+      // friction={2}
+      // mass={50000}
+//       friction={2}
+//       linearDamping={0.5}
+// angularDamping={0.5}
     
     >
     <group ref={group} {...props} dispose={null} rotation={[0,-Math.PI/2,0]}>

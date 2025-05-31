@@ -35,8 +35,12 @@ const Dron = (props) => {
       name="recomendations"
       ref={dronRef}
       colliders='cuboid'
-      type="dinamic"
-      mass={0.01}
+      type="dynamic"
+     mass={100} // Heavy, but not extreme
+  friction={2}
+  linearDamping={0.9}
+  angularDamping={0.9}
+  // canSleep={true}
     >
       <group ref={group} >
         <mesh {...props}>
