@@ -21,7 +21,7 @@ const Quiz = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!userLooged) {
+    if (!localStorage.getItem('user_id')) {
       navigate("/login");
       return;
     }
@@ -60,7 +60,9 @@ const Quiz = () => {
 
          setProgress(resProgress)
 
-         setIndex(resProgress.answers.length-1)
+         const newindex=Math.max(0,resProgress.answers.length-1)
+
+         setIndex(newindex)
 
 
 

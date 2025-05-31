@@ -56,7 +56,7 @@ const useQuizStore= create((set)=>{
         const newProgress={...state.progress,answers:[...state.progress.answers,newAnswer],total_score,completed}
 
         
-        console.log('newProgresstosend:',newProgress)
+        // console.log('newProgresstosend:',newProgress)
 
         async function sendProgressAndLeader(){
 

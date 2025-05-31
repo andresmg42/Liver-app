@@ -2,11 +2,12 @@ import React, { useEffect } from 'react'
 import { questions } from './questions'
 import { useState } from 'react';
 import useQuizStore from '../../../stores/useQuizStore';
+import { sendProgress } from '../services/services';
 const QuestionsInterfaz = (props) => {
 
 
 
-const {index,setColor,quiz,progress}=useQuizStore();
+const {index,setColor,quiz,progress,setProgress,setIndex}=useQuizStore();
 
 const  {color,image,title}=quiz.questions[index];
 
@@ -17,9 +18,30 @@ const  {color,image,title}=quiz.questions[index];
 
   useEffect(()=>{
     console.log('index',index)
+    console.log('quiz en questions:',quiz)
     
     setColor(color)
   },[index])
+
+  const handleTryAgain=async ()=>{
+   const newProgress= {
+            user_id:localStorage.getItem('user_id'),
+            quiz_id:quiz._id,
+            answers:[],
+            total_score:0,
+            completed:false,
+            last_updataed:Date.now()
+
+        }
+
+        setIndex(0)
+        
+        await sendProgress(newProgress)
+
+        setProgress(newProgress)
+
+
+  }
 
   
 
@@ -42,6 +64,17 @@ const  {color,image,title}=quiz.questions[index];
           </h1>
           
         </div>
+
+        {progress.completed &&(
+          
+          <button 
+          className="bg-white/50 hover:bg-black text-white font-bold py-2 px-4 rounded-full mt-3"
+          onClick={handleTryAgain}
+          >
+            Try Again
+          </button>
+          
+        )}
 
 
         
