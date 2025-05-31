@@ -40,7 +40,7 @@ const Quiz = () => {
 
           const resProgress= await loadProgress(localStorage.user_id,res.data[0]._id)
 
-        
+          console.log('res progress: ',resProgress,)
 
           if(!resProgress){
 
@@ -58,9 +58,9 @@ const Quiz = () => {
 
           }
 
-         setProgress(resProgress.data)
+         setProgress(resProgress)
 
-         setIndex(resProgress.data.answers.length-1)
+         setIndex(resProgress.answers.length-1)
 
 
 

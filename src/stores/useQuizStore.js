@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { sendProgress } from "../pages/Quiz/services/services";
+import { sendLeaderBoard, sendProgress } from "../pages/Quiz/services/services";
 
 
 const useQuizStore= create((set)=>{
@@ -33,10 +33,10 @@ const useQuizStore= create((set)=>{
       set((state) => {
         const newCount = state.countCollisions + 1;
 
-        if (newCount>1) return state;
+        if (newCount>1 || !state.quiz || !state.quiz.questions || state.progress.completed) return state;
 
 
-        if (!state.quiz || !state.quiz.questions) return state;
+        
 
         const actualQuestion=state.quiz.questions[state.index];
         const actualScore=state.progress.total_score;
@@ -55,12 +55,22 @@ const useQuizStore= create((set)=>{
 
         const newProgress={...state.progress,answers:[...state.progress.answers,newAnswer],total_score,completed}
 
-        sendProgress(newProgress);
+        
+        console.log('newProgresstosend:',newProgress)
+
+        async function sendProgressAndLeader(){
+
+          await  sendProgress(newProgress);
+
+          if(newProgress.completed) await sendLeaderBoard(newProgress.quiz_id,newProgress.user_id);
+        }
+
+        sendProgressAndLeader();
 
         return {
           
           countCollisions: newCount,
-          index:  state.index + 1,
+          index: !newProgress.completed? state.index + 1: state.index,
           progress:newProgress
         };
 

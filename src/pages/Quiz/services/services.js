@@ -50,6 +50,13 @@ export const loadProgress= async (user_id,quiz_id)=>{
     }
 }
 
-
+export const sendLeaderBoard=async (quiz_id,user_id)=>{
+    try {
+        const res= api.put('/leaderboard/',{quiz_id:quiz_id,user_id:user_id})
+        console.log('res send leader:',res)
+    } catch (error) {
+        console.error('error sending leaderboard',error)
+    }
+}
 
 
