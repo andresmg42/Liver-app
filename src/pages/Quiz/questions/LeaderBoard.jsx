@@ -1,9 +1,20 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { loadLeaderBoard } from "../services/services";
+import GenericMedal from "../medals/GenericMedal";
+import { ThirdMedal } from "../medals/ThirdMedal";
+import { FirstMedal } from "../medals/FirstMedal";
+import { SecondMedal } from "../medals/SecondMedal";
 
 const LeaderBoard = () => {
   const [leaderBoard, setLeaderBoard] = useState([]);
+
+  const models=[
+    <FirstMedal  scale={3.5}/>,
+    <SecondMedal  scale={3.5}/>,
+    <ThirdMedal  scale={3.5}/>
+
+  ]
 
   useEffect(() => {
     async function loadLB() {
@@ -24,27 +35,29 @@ const LeaderBoard = () => {
     );
 
   return (
-    <div className="items-center  gap-8 md:w-[70vh] md:h-[70vh]  w-[45vh]  mx-auto px-4 relative bg-black/50 rounded-lg z-10">
-      <div className="flex flex-col gap-4 p-4">
+    <div className="items-center  gap-8 md:w-[70vh] min-h-[30vh] max-h-[80vh] w-[45vh]  mx-auto px-4 relative bg-black/50 rounded-lg z-10">
+      <div className="flex flex-col gap-4 p-4 overflow-y-auto">
         {leaderBoard.map((b, index) => (
           <div
             key={index}
-            className="bg-black/70 rounded-lg p-4 border border-gray-600 "
+            className="flex items-center justify-between  bg-black/70 rounded-lg p-4 border border-gray-600 "
           >
             <ul className="text-left space-y-2 text-white">
-              <li className="flex jutify-between items-center">
+              <li className="flex justify-between items-center">
                 <span className="text-gray-300">Username:</span>
                 <span className="font-semibold">{b.username}</span>
               </li>
-              <li className="flex jutify-between items-center">
+              <li className="flex justify-between items-center">
                 <span className="text-gray-300">Score:</span>
                 <span className="font-bold text-yellow-400">{b.score}</span>
               </li>
-              <li className="flex jutify-between items-center">
+              <li className="flex justify-between items-center">
                 <span className="text-gray-300">Rank:</span>
                 <span className="font-bold text-blue-400">{b.rank}</span>
               </li>
             </ul>
+            {/* thirdMedal */}
+            <div  className=" ml-4 flex-shrink-0 w-20 h-20 md:w-60 md:h-40 flex items-center justify-center averflow-hidden"><GenericMedal model={models[index]}/></div>
           </div>
         ))}
       </div>

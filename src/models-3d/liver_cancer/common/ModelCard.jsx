@@ -12,7 +12,7 @@ const ModelCard = (props) => {
 
     {/* '0xff0040' */}
 
-    <pointLight color='0xffffff ' intensity={250} position={[0, 5, 3]}/>
+    <pointLight  intensity={250} position={[0, 5, 3]}/>
     
     {/* <directionalLight
             position={[0, 5, 5]}
