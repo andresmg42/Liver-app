@@ -5,9 +5,14 @@ import GenericMedal from "../medals/GenericMedal";
 import { ThirdMedal } from "../medals/ThirdMedal";
 import { FirstMedal } from "../medals/FirstMedal";
 import { SecondMedal } from "../medals/SecondMedal";
+import useQuizStore from "../../../stores/useQuizStore";
+import { sendProgress } from "../services/services";
+
 
 const LeaderBoard = () => {
   const [leaderBoard, setLeaderBoard] = useState([]);
+
+  const {setIndex,setProgress,quiz,progress}=useQuizStore();
 
   const models=[
     <FirstMedal  scale={3.5}/>,
@@ -33,6 +38,27 @@ const LeaderBoard = () => {
         </h1>
       </div>
     );
+
+
+    const handleTryAgain=async ()=>{
+       const newProgress= {
+                user_id:localStorage.getItem('user_id'),
+                quiz_id:quiz._id,
+                answers:[],
+                total_score:0,
+                completed:false,
+                last_updataed:Date.now()
+    
+            }
+    
+            setIndex(0)
+            
+            await sendProgress(newProgress)
+    
+            setProgress(newProgress)
+    
+    
+      }
 
   return (
     <div className="items-center  gap-8 md:w-[70vh] min-h-[30vh] max-h-[80vh] w-[45vh]  mx-auto px-4 relative bg-black/50 rounded-lg z-10">
@@ -60,7 +86,21 @@ const LeaderBoard = () => {
             <div  className=" ml-4 flex-shrink-0 w-20 h-20 md:w-60 md:h-40 flex items-center justify-center averflow-hidden"><GenericMedal model={models[index]}/></div>
           </div>
         ))}
+
+        {/* Try button */}
+        
+          
+         
+          
+        
+
       </div>
+       <button 
+          className="bg-white/50 hover:bg-black text-white font-bold py-2 px-4 rounded-full mt-3 mb-3"
+          onClick={handleTryAgain}
+          >
+            Try Again
+          </button>
     </div>
   );
 };

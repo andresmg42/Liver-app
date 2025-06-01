@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { sendLeaderBoard, sendProgress } from "../pages/Quiz/services/services";
+import LeaderBoard from "../pages/Quiz/questions/LeaderBoard";
 
 
 const useQuizStore= create((set)=>{

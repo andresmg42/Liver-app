@@ -92,8 +92,8 @@ const Quiz = () => {
 
   return (
     <>
-    {true && <LeaderBoard/>}
-    {false && <QuestionsInterfaz/>}
+    {progress.completed && <LeaderBoard/>}
+    {!progress.completed && <QuestionsInterfaz/>}
     <div className="fixed top-0 left-0 w-full h-full object-cover  Z-0">
      
       <Canvas
