@@ -10,9 +10,11 @@ import { sendProgress } from "../services/services";
 
 
 const LeaderBoard = () => {
-  const [leaderBoard, setLeaderBoard] = useState([]);
 
-  const {setIndex,setProgress,quiz,progress}=useQuizStore();
+  const [leaderboard,setLeaderboard]=useState();
+
+
+  const {setIndex,setProgress,quiz}=useQuizStore();
 
   const models=[
     <FirstMedal  scale={3.5}/>,
@@ -23,14 +25,16 @@ const LeaderBoard = () => {
 
   useEffect(() => {
     async function loadLB() {
+      await new Promise(resolve => setTimeout(resolve, 300));
+
       const board = await loadLeaderBoard();
-      setLeaderBoard(board);
+      setLeaderboard(board);
       console.log("leader board loaded in front:", board);
     }
     loadLB();
   }, []);
 
-  if (leaderBoard.length === 0)
+  if (!leaderboard)
     return (
       <div className="z-10">
         <h1 className="text-xl text-white font-bold">
@@ -63,7 +67,7 @@ const LeaderBoard = () => {
   return (
     <div className="items-center  gap-8 md:w-[70vh] min-h-[30vh] max-h-[80vh] w-[45vh]  mx-auto px-4 relative bg-black/50 rounded-lg z-10">
       <div className="flex flex-col gap-4 p-4 overflow-y-auto">
-        {leaderBoard.map((b, index) => (
+        {leaderboard.map((b, index) => (
           <div
             key={index}
             className="flex items-center justify-between  bg-black/70 rounded-lg p-4 border border-gray-600 "
