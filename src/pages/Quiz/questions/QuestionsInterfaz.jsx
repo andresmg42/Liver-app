@@ -7,22 +7,23 @@ const QuestionsInterfaz = (props) => {
 
 
 
-const {index,setColor,quiz,progress,setProgress,setIndex}=useQuizStore();
+const {index,setColor,quiz,progress,setProgress,setIndex,timer,setTimer}=useQuizStore();
 
 
 const  {color,image,title}=quiz.questions[index];
 
 
-  
+
 
   
 
   useEffect(()=>{
-    console.log('index',index)
-    console.log('quiz en questions:',quiz)
+    
     
     setColor(color)
   },[index])
+
+  
 
   const handleTryAgain=async ()=>{
    const newProgress= {
@@ -46,6 +47,8 @@ const  {color,image,title}=quiz.questions[index];
 
   
 
+  
+
 
   return (
     <div
@@ -63,19 +66,11 @@ const  {color,image,title}=quiz.questions[index];
           <h1 className='text-2xl font-bold' style={{color:color}}>
             {`Score:${progress.total_score}`}
           </h1>
+          <h1 id='display'>00:00</h1>
           
         </div>
 
-        {progress.completed &&(
-          
-          <button 
-          className="bg-white/50 hover:bg-black text-white font-bold py-2 px-4 rounded-full mt-3"
-          onClick={handleTryAgain}
-          >
-            Try Again
-          </button>
-          
-        )}
+       
 
 
         

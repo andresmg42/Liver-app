@@ -5,113 +5,108 @@ import BattleFIeld from "./BattleFIeld";
 import { useEventStore } from "../../stores/use-auth-store";
 import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from "react-router";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import QuestionsInterfaz from "./questions/QuestionsInterfaz";
 import api from "../../api/user.api";
 import useQuizStore from "../../stores/useQuizStore";
 import { loadProgress } from "./services/services";
 import LeaderBoard from "./questions/LeaderBoard";
+import { Chronometer } from "./services/chronometer";
+import InformationInterfaz from "./InformationInterfaz";
 
 const Quiz = () => {
   const { setClick } = useEventStore();
 
-  const { userLooged,userEmail } = useAuthStore();
+  const { userLooged, userEmail } = useAuthStore();
 
-  const {quiz,setQuiz,progress,setProgress,setIndex}=useQuizStore()
+
+  const { quiz, setQuiz, progress, setProgress, setIndex, setTimer,info } =
+    useQuizStore();
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem('user_id')) {
+    if (!localStorage.getItem("user_id")) {
       navigate("/login");
       return;
     }
 
-    async function loadQuiz(){
-        try {
+    async function loadQuiz() {
+      try {
+        const res = await api.get("/quiz/");
+        console.log("quiz:", res.data[0]);
 
-          const res= await api.get('/quiz/')
-          console.log('quiz:',res.data[0])
+        if (!res.data) return;
 
-          if (!res.data) return;
+        setQuiz(res.data[0]);
 
-          setQuiz(res.data[0])
+        const resProgress = await loadProgress(
+          localStorage.user_id,
+          res.data[0]._id
+        );
 
-          
+        console.log("res progress: ", resProgress);
 
-          const resProgress= await loadProgress(localStorage.user_id,res.data[0]._id)
+        if (!resProgress) {
+          const newProgress = {
+            ...progress,
+            user_id: localStorage.getItem("user_id"),
+            quiz_id: res.data[0]._id,
+          };
 
-          console.log('res progress: ',resProgress,)
+          console.log(newProgress);
 
-          if(!resProgress){
+          setProgress(newProgress);
 
+          setIndex(0);
+          return;
+        }
 
-            const newProgress={...progress,
-              user_id:localStorage.getItem('user_id'),
-              quiz_id:res.data[0]._id}
-
-            console.log(newProgress)
-
-            setProgress(newProgress)
-
-            setIndex(0);
-            return;
-
-          }
-
-         setProgress(resProgress)
-
+        setProgress(resProgress);
+        
         const nextIndex = Math.max(0, resProgress.answers.length);
         const maxIndex = res.data[0].questions.length - 1;
 
-         const newindex=Math.min(nextIndex,maxIndex)
+        const newindex = Math.min(nextIndex, maxIndex);
 
-         setIndex(newindex)
+        setIndex(newindex);
+      } catch (error) {
+        console.error("Error loading quiz", error);
+      }
+    }
 
-
-
-           
-
-        } catch (error) {
-
-          console.error('Error loading quiz',error)
-
-
-          }
-
-        }
-      
-
-      loadQuiz();
+    loadQuiz();
   }, []);
 
-
-    if(!quiz){
-      return <div><h1 className="text-3xl font-bold text-white">Loading Quiz...</h1></div>;
-    }
+  if (!quiz) {
+    return (
+      <div>
+        <h1 className="text-3xl font-bold text-white">Loading Quiz...</h1>
+      </div>
+    );
+  }
 
   return (
     <>
-    {progress.completed && <LeaderBoard/>}
-    {!progress.completed && <QuestionsInterfaz/>}
-    <div className="fixed top-0 left-0 w-full h-full object-cover  Z-0">
-     
-      <Canvas
-        onPointerDown={() => {
-          setClick(true);
-        }}
-        onPointerUp={() => {
-          setClick(false);
-        }}
+       {info && <InformationInterfaz/>}
+      {progress.completed && <LeaderBoard />}
+      {!progress.completed && !info && <QuestionsInterfaz />}
+      <div className="fixed top-0 left-0 w-full h-full object-cover  Z-0">
+        <Canvas
+          onPointerDown={() => {
+            setClick(true);
+          }}
+          onPointerUp={() => {
+            setClick(false);
+          }}
+          camera={{ position: [-50, 20, 0] }}
+        >
+          <OrbitControls />
+          <RoomStaging />
 
-        camera={{position:[-50,20,0]}}
-      >
-        <OrbitControls />
-        <RoomStaging />
-
-        <BattleFIeld />
-      </Canvas>
-    </div>
+          <BattleFIeld />
+        </Canvas>
+      </div>
     </>
   );
 };

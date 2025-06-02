@@ -13,7 +13,7 @@ const LeaderBoard = () => {
 
   const [feedback, setFeedback] = useState(false);
 
-  const { setIndex, setProgress, quiz, progress } = useQuizStore();
+  const { setIndex, setProgress, quiz, progress,chronometer } = useQuizStore();
 
   const { answers } = progress;
 
@@ -52,6 +52,7 @@ const LeaderBoard = () => {
       answers: [],
       total_score: 0,
       completed: false,
+      timer:0,
       last_updataed: Date.now(),
     };
 
@@ -60,6 +61,12 @@ const LeaderBoard = () => {
     await sendProgress(newProgress);
 
     setProgress(newProgress);
+
+    chronometer.stopChrono();
+    chronometer.setStartTime(Date.now())
+    chronometer.startChrono();
+
+
   };
 
   return (
