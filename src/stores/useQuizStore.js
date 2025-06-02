@@ -23,7 +23,6 @@ const useQuizStore = create((set) => {
       completed: false,
       last_updataed: Date.now(),
     },
-    setLeaderBoard: (leaderboard) => set({ leaderboard: leaderboard }),
     setName: (name) => set({ name: name }),
     setQuiz: (quiz) => set({ quiz: quiz }),
     setCountCollisions: (countCollisions) =>
