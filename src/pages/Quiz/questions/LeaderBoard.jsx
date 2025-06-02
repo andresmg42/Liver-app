@@ -17,7 +17,7 @@ const LeaderBoard = () => {
   const {setIndex,setProgress,quiz}=useQuizStore();
 
   const models=[
-    <FirstMedal  scale={3.5}/>,
+    <FirstMedal  scale={3.2}/>,
     <SecondMedal  scale={3.5}/>,
     <ThirdMedal  scale={3.5}/>
 
@@ -67,7 +67,7 @@ const LeaderBoard = () => {
   return (
     <div className="items-center  gap-8 md:w-[70vh] min-h-[30vh] max-h-[80vh] w-[45vh]  mx-auto px-4 relative bg-black/50 rounded-lg z-10">
       <div className="flex flex-col gap-4 p-4 overflow-y-auto">
-        {leaderboard.map((b, index) => (
+        {leaderboard.sort(l=>l.score).map((b, index) => (
           <div
             key={index}
             className="flex items-center justify-between  bg-black/70 rounded-lg p-4 border border-gray-600 "
@@ -83,7 +83,7 @@ const LeaderBoard = () => {
               </li>
               <li className="flex justify-between items-center">
                 <span className="text-gray-300">Rank:</span>
-                <span className="font-bold text-blue-400">{b.rank}</span>
+                <span className="font-bold text-blue-400">{index+1}</span>
               </li>
             </ul>
             {/* thirdMedal */}
