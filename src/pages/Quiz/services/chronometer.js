@@ -3,8 +3,8 @@ import useQuizStore from "../../../stores/useQuizStore";
 export class Chronometer{
 
     constructor(){
-     this.setTimer;
-     this.startTime;
+     this.setTimer=null;
+     this.startTime=null;
      this.interval=null;
     }
 

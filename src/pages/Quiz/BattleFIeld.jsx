@@ -1,97 +1,87 @@
-import { useEffect } from "react";
-import { useThree } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Bird } from "./models/avatars/Bird";
 import GenericFloor from "./models/floor/GenericFloor";
 import BattelFloor from "./models/floor/BattelFloor";
-import Dron from "./models/avatars/Dron";
-import HtmlQuestions from "./questions/HtmlQustions";
-import api from "../../api/user.api";
-import { useState } from "react";
-
 import { Float } from "@react-three/drei";
 import Esphere from "./models/simpleobjects/Esphere";
-import { Text3D } from "@react-three/drei";
 import OptionsText from "./models/text/OptionsText";
-import { Eye } from "./models/avatars/Eye";
-import RareHuman from "./models/avatars/RareHuman";
+import GenericTarget from "./models/avatars/GenericTarget";
 
 const BattleFIeld = () => {
-  
-
   return (
-    <Physics gravity={[0, -9.8, 0]}  >
-      
-        <group position={[-150, 0, 0]}>
-          <Float speed={5}>
-          <OptionsText position={[0,30,0]} size={7} text={'LIVER CANCER'} color={'black'} rotation={[0, Math.PI / 2, 0]}/>
-          </Float>
-          <Bird scale={0.3} />
-          {/* <HtmlQuestions sections={quiz.sections[0]} quiz_id={quiz._id} scale={5} position={[0,10,0]} transform color={'white'} rotation={[0, Math.PI / 2, 0]} /> */}
-          <GenericFloor
-            position={[-20, 0, 0]}
-            geometry={{
-              args: [70, 70],
-            }}
-            meshM={{
-              transparent: true,
-              opacity: 0,
-              // color:'white'
-            }}
-
-            name='cancerFloor'
+    <Physics gravity={[0, -9.8, 0]}>
+      <group position={[-150, 0, 0]}>
+        <Float speed={5}>
+          <OptionsText
+            position={[0, 30, 20]}
+            size={7}
+            text={"LIVER CANCER"}
+            color={"black"}
+            rotation={[0, Math.PI / 2, 0]}
           />
-        </group>
+        </Float>
+        <GenericTarget
+          position={[0, 0, 0]}
+          scale={40}
+          name={"cancer"}
+          path="textures/cancerTexture.jpg"
+        />
+      </group>
 
-
-       
-        <group position={[0, -10, 150]}>
-          <Float speed={5}>
-          <OptionsText position={[0,50,0]} size={7} text={'SYMPTOMS'} color={'black'} rotation={[0,Math.PI,0]}/>
-          </Float>
-
-           <RareHuman scale={6}  />
-
-         
-          {/* <GenericFloor
-            position={[0, -10, 0]}
-            geometry={{
-              args: [40, 40],
-            }}
-            meshM={{
-              transparent: true,
-              opacity: 0,
-              color:'white'
-            }}
-          /> */}
-        </group>
-
-         <group position={[150, 0, 0]} >
-          <Float speed={5}>
-          <OptionsText position={[0,30,0]} size={7} text={'TREATMENT'} color={'black'} rotation={[0, -Math.PI / 2, 0]}/>
-          </Float>
-
-          <Eye scale={2.5} />
-         
-          <GenericFloor
-            position={[0, -10, 0]}
-            geometry={{
-              args: [40, 40],
-            }}
-            meshM={{
-              transparent: true,
-              opacity: 0,
-              color:'white'
-            }}
-
-            name='treatmentFloor'
+      <group position={[0, 0, 150]}>
+        <Float speed={5}>
+          <OptionsText
+            position={[20, 30, 0]}
+            size={7}
+            text={"SYMPTOMS"}
+            color={"black"}
+            rotation={[0, Math.PI, 0]}
           />
-        </group>
+        </Float>
 
+        <GenericTarget
+          position={[0, 0, 0]}
+          scale={40}
+          name={"symptoms"}
+          path="textures/symptoms.jpg"
+        />
+      </group>
 
-      
-      
-      
+      <group position={[150, 0, 0]}>
+        <Float speed={5}>
+          <OptionsText
+            position={[0, 30, -25]}
+            size={7}
+            text={"RECOMENDATIONS"}
+            color={"black"}
+            rotation={[0, -Math.PI / 2, 0]}
+          />
+        </Float>
+
+        <GenericTarget
+          position={[0, 0, 0]}
+          scale={40}
+          name={"recomendations"}
+          path="textures/recomendations.webp"
+        />
+      </group>
+
+      <group position={[0, 0, -150]}>
+        <Float speed={5}>
+          <OptionsText
+            position={[-20, 30, 0]}
+            size={7}
+            text={"TREATMENT"}
+            color={"black"}
+          />
+        </Float>
+        <GenericTarget
+          position={[0, 0, 0]}
+          scale={40}
+          name={"treatment"}
+          path="textures/surgery.jpg"
+        />
+      </group>
+
       <Esphere position={[0, 10, 0]} />
       <GenericFloor
         position={[0, -10, 0]}
@@ -101,28 +91,17 @@ const BattleFIeld = () => {
         meshM={{
           transparent: true,
           opacity: 0,
-          // color: "white",
         }}
-
-        name='SphereFloorRB'
+        name="SphereFloorRB"
+        color="white"
       />
 
-      {/* Bird Floor */}
       <BattelFloor
         position={[0, -30, 0]}
         geometry={{
-          args: [400, 400],
+          args: [600, 600], //400*400
         }}
       />
-
-    
-      <group position={[0, 0, -50]}>
-        <Float speed={5}>
-          <OptionsText position={[0,15,-50]} size={7} text={'RECOMENDATIONS'} color={'black'}/>
-        </Float>
-        <Dron scale={4} position={[0, 20, -12]} />
-      </group>
-      
 
       <GenericFloor
         position={[0, -500, 0]}
@@ -133,8 +112,7 @@ const BattleFIeld = () => {
           transparent: true,
           opacity: 0,
         }}
-
-        name='StagingFloorRB'
+        name="StagingFloorRB"
       />
     </Physics>
   );
