@@ -5,10 +5,11 @@ import { Float } from "@react-three/drei";
 import Esphere from "./models/simpleobjects/Esphere";
 import OptionsText from "./models/text/OptionsText";
 import GenericTarget from "./models/avatars/GenericTarget";
+import CircleTarget from "./models/avatars/circleTarget";
 
 const BattleFIeld = () => {
   return (
-    <Physics gravity={[0, -9.8, 0]}>
+    <Physics gravity={[0, -9.8, 0]} debug>
       <group position={[-150, 0, 0]}>
         <Float speed={5}>
           <OptionsText
@@ -24,6 +25,7 @@ const BattleFIeld = () => {
           scale={40}
           name={"cancer"}
           path="textures/cancerTexture.jpg"
+          collider='dynamic'
         />
       </group>
 
@@ -43,6 +45,7 @@ const BattleFIeld = () => {
           scale={40}
           name={"symptoms"}
           path="textures/symptoms.jpg"
+          collider='dynamic'
         />
       </group>
 
@@ -62,6 +65,7 @@ const BattleFIeld = () => {
           scale={40}
           name={"recomendations"}
           path="textures/recomendations.webp"
+          collider='dynamic'
         />
       </group>
 
@@ -79,8 +83,28 @@ const BattleFIeld = () => {
           scale={40}
           name={"treatment"}
           path="textures/surgery.jpg"
+          collider='dynamic'
         />
       </group>
+
+     <group  position={[200, 150, -200]}>
+       <Float speed={5}>
+          <OptionsText
+          rotation={[0,-Math.PI/4,0]}
+            position={[-20, 40, 0]}
+            size={10}
+            text={"ANITHING"}
+            color={"black"}
+          />
+        </Float>
+       <GenericTarget
+         position={[0,0,0]}
+          scale={40}
+          name={"anything"}
+          path="textures/target.png"
+          collider='fixed'
+        />
+     </group>
 
       <Esphere position={[0, 10, 0]} />
       <GenericFloor

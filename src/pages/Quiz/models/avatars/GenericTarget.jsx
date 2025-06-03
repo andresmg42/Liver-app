@@ -14,7 +14,7 @@ const GenericTarget = (props) => {
        name={props.name}
           ref={treatmentRef}
           colliders='cuboid'
-          type='dynamic'
+          type={props.collider}
           mass={1}
         
           
