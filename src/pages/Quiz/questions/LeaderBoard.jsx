@@ -132,6 +132,10 @@ const LeaderBoard = () => {
                     <span className="text-gray-300">Rank:</span>
                     <span className="font-bold text-blue-400">{index + 1}</span>
                   </li>
+                  <li className="flex justify-between items-center">
+                    <span className="text-gray-300">Time:</span>
+                    <span className="font-bold text-blue-400">{b.time}</span>
+                  </li>
                 </ul>
                 {/* thirdMedal */}
                 {index < 3 && (
