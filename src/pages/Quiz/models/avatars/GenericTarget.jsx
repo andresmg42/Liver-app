@@ -15,7 +15,8 @@ const GenericTarget = (props) => {
           ref={treatmentRef}
           colliders='cuboid'
           type={props.collider}
-          mass={1}
+          mass={5}
+          friction={0.5}
         
           
        >
