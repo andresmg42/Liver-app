@@ -55,18 +55,23 @@ const  {color,image,title}=quiz.questions[index];
      className={`items-center  gap-8 md:w-[40vh]  w-[45vh]  mx-auto px-4 relative ml-5   z-10`}
     >
       <div
-      className={`bg-black/50 p-5 rounded-xl shadow-xl w-full transition-all duration-500 
-           h-[30vh] md:h-[50vh] overflow-y-auto `}
+      className={`bg-black/50 p-5 gap-2 rounded-xl shadow-xl w-full transition-all duration-500 
+            flex flex-col  `}
       >
-        <h1>{`${index}`}</h1>
+        <h1 className='font-bold text-xl' style={{color:color}}>{`Question: ${index}`}</h1>
 
         <img src={image} alt={title}/>
-        <h1 className='text-md mt-10 ' style={{color:color}}> {title}</h1>
+
+        <div className='bg-white/15 p-4 rounded-lg'>
+          <p className='text-md mt-4 font-bold ' style={{color:color}}> {title}</p>
+
+        </div>
+        
         <div>
           <h1 className='text-2xl font-bold' style={{color:color}}>
             {`Score:${progress.total_score}`}
           </h1>
-          <h1 id='display'>00:00</h1>
+          <h1 id='display' className='font-bold' style={{color:color}}>00:00</h1>
           
         </div>
 

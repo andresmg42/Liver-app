@@ -9,7 +9,7 @@ import CircleTarget from "./models/avatars/circleTarget";
 
 const BattleFIeld = () => {
   return (
-    <Physics gravity={[0, -9.8, 0]} debug>
+    <Physics gravity={[0, -9.8, 0]} >
       <group position={[-150, 0, 0]}>
         <Float speed={5}>
           <OptionsText
