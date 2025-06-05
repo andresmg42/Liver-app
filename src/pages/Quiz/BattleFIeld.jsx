@@ -113,11 +113,13 @@ const BattleFIeld = () => {
           args: [10, 10],
         }}
         meshM={{
-          transparent: true,
-          opacity: 0,
+          // transparent: true,
+          // opacity: 0,
+          color:"white"
+          
         }}
         name="SphereFloorRB"
-        color="white"
+        
       />
 
       <BattelFloor
