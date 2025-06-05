@@ -83,12 +83,15 @@ const Esphere = (props) => {
 
   return (
     <RigidBody
+      ccd
       mass={5}
       ref={sphereRef}
       name="esphereRB"
       type="dynamic" // Fixed typo: was "dinamic"
       colliders="ball"
       friction={0}
+      restitution={0.8}
+      canSleep={false}
       {...props}
 
       onCollisionEnter={({manifold,target,other})=>{

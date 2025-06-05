@@ -89,7 +89,7 @@ const Quiz = () => {
   return (
     <>
        {info && <InformationInterfaz/>}
-      {progress.completed && <LeaderBoard />}
+      {progress.completed && !info && <LeaderBoard />}
       {!progress.completed && !info && <QuestionsInterfaz />}
       <div className="fixed top-0 left-0 w-full h-full object-cover  Z-0">
         <Canvas

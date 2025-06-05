@@ -17,13 +17,13 @@ const BattelFloor = (props) => {
 
     });
   return (
-    <RigidBody name='BattleFloorRB' type='fixed' colliders={'cuboid'} friction={0} position={props.position}>
+    <RigidBody name='BattleFloorRB' type='fixed' colliders={'cuboid'} friction={0} position={props.position}  >
             {/* <CuboidCollider {...props.cuboid}/>  */}
             <mesh rotation-x={-Math.PI/2} >
                 <planeGeometry {...props.geometry}/>
                 <meshStandardMaterial 
                 map={floorTexture.map}
-                nomralMap={floorTexture.normalMap}
+                normalMap={floorTexture.normalMap}
                 displacementMap={floorTexture.displacementMap}
                 aoMap={floorTexture.aoMap}
                 metalnessMap={floorTexture.metalnessMap}
