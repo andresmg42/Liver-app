@@ -90,7 +90,6 @@ const Esphere = (props) => {
       type="dynamic" // Fixed typo: was "dinamic"
       colliders="ball"
       friction={0}
-      restitution={0.8}
       canSleep={false}
       {...props}
 

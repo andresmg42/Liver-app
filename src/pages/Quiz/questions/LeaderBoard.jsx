@@ -22,7 +22,7 @@ const LeaderBoard = () => {
   const models = [
     <FirstMedal scale={3.2} />,
     <SecondMedal scale={3.5} />,
-    <ThirdMedal scale={3.5} />,
+    <ThirdMedal scale={3.8} />,
   ];
 
   useEffect(() => {

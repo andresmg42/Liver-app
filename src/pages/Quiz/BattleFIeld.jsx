@@ -63,7 +63,7 @@ const BattleFIeld = () => {
         <GenericTarget
           position={[0, 0, 0]}
           scale={40}
-          name={"recomendations"}
+          name={"recommendations"}
           path="textures/recomendations.webp"
           collider='dynamic'
         />
@@ -93,14 +93,14 @@ const BattleFIeld = () => {
           rotation={[0,-Math.PI/4,0]}
             position={[-20, 40, 0]}
             size={10}
-            text={"ANITHING"}
+            text={"NEITHER"}
             color={"black"}
           />
         </Float>
        <GenericTarget
          position={[0,0,0]}
           scale={40}
-          name={"anything"}
+          name={"neither"}
           path="textures/target.png"
           collider='fixed'
         />

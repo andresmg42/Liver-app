@@ -7,7 +7,7 @@ import {
 import {  Chronometer } from "../pages/Quiz/services/chronometer";
 
 const useQuizStore = create((set) => {
-  const zones = ["symptoms", "cancer", "treatment", "recomendations","anything"];
+  const zones = ["symptoms", "cancer", "treatment", "recommendations","neither"];
 
   const chronometer=new Chronometer();
 
