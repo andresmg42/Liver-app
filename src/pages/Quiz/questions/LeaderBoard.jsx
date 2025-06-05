@@ -70,11 +70,12 @@ const LeaderBoard = () => {
   };
 
   return (
-    <div className="items-center  gap-8 md:w-[70vh] min-h-[30vh] max-h-[80vh] w-[45vh]  mx-auto px-4 relative bg-black/50 rounded-lg z-10">
-      <div className="flex flex-col gap-4 p-4 overflow-y-auto">
+    <div className="items-center  gap-8 md:w-[70vh] min-h-[30vh] max-h-[50vh] w-[45vh]  mx-auto px-4 relative bg-black/50 rounded-lg z-10">
+      <div className="flex flex-col gap-4 p-4 h-full ">
         {feedback && (
-          <table className="min-w-full shadow-md rounded-lg overflow-hidden">
-            <thead className="text-white">
+         <div className="overflow-y-auto max-h-full">
+           <table className="min-w-full shadow-md rounded-lg overflow-hidden">
+            <thead className="text-white sticky top-0 bg-black/70">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                   Question
@@ -109,6 +110,7 @@ const LeaderBoard = () => {
               ))}
             </tbody>
           </table>
+         </div>
         )}
 
         {!feedback &&
