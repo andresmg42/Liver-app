@@ -4,12 +4,26 @@ import { useRef, useCallback } from "react";
 import { useThree } from "@react-three/fiber";
 import { Vector2, Vector3 } from "three";
 import useQuizStore from "../../../../stores/useQuizStore";
+import { useMemo } from "react";
+import { useTexture } from "@react-three/drei";
 
 const Esphere = (props) => {
   const sphereRef = useRef();
   const { camera, raycaster } = useThree();
 
   const {index,color,setCollide,setCountCollisions}=useQuizStore();
+
+   const PATH=useMemo(()=>'textures/black-floor/cloudy-veined-quartz_',[]);
+        
+            const spherePlatformTexture=useTexture({
+                
+                normalMap:`${PATH}normal-ogl.png`,
+                roughnessMap:`${PATH}roughness.png`,
+                // displacementMap:`${PATH}height.png`,
+                aoMap:`${PATH}ao.png`,
+                metalnessMap: `${PATH}metallic.png`,
+        
+            });
   
   
   
@@ -114,7 +128,7 @@ const Esphere = (props) => {
     >
       <mesh onClick={handleEsphere}>
         <sphereGeometry args={[5, 32]} />
-        <meshStandardMaterial color={color}/>
+        <meshStandardMaterial color={color} {...spherePlatformTexture}/>
       </mesh>
     </RigidBody>
   );
