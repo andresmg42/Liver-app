@@ -117,7 +117,6 @@ const LeaderBoard = () => {
 
         {!feedback &&
           leaderboard
-            .sort((l) => l.score)
             .map((b, index) => (
               <div
                 key={index}
@@ -139,6 +138,10 @@ const LeaderBoard = () => {
                   <li className="flex justify-between items-center">
                     <span className="text-gray-300">Time:</span>
                     <span className="font-bold text-blue-400">{b.time}</span>
+                  </li>
+                  <li className="flex justify-between items-center">
+                    <span className="text-gray-300">Total Score:</span>
+                    <span className="font-bold text-blue-400">{b.total_score}</span>
                   </li>
                 </ul>
                 {/* thirdMedal */}
