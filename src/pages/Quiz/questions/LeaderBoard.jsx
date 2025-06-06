@@ -66,6 +66,8 @@ const LeaderBoard = () => {
     chronometer.setStartTime(Date.now())
     chronometer.startChrono();
 
+    location.reload();
+
 
   };
 
