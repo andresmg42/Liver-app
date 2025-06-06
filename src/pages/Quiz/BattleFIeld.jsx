@@ -6,8 +6,22 @@ import Esphere from "./models/simpleobjects/Esphere";
 import OptionsText from "./models/text/OptionsText";
 import GenericTarget from "./models/avatars/GenericTarget";
 import CircleTarget from "./models/avatars/circleTarget";
+import { useMemo } from "react";
+import { useTexture } from "@react-three/drei";
 
 const BattleFIeld = () => {
+
+  const PATH=useMemo(()=>'textures/sphere-platform/cloudy-veined-quartz-light_',[]);
+    
+        const horizontalPlatformTexture=useTexture({
+            map:`${PATH}albedo.png`,
+            normalMap:`${PATH}normal-ogl.png`,
+            roughnessMap:`${PATH}roughness.png`,
+            // displacementMap:`${PATH}height.png`,
+            aoMap:`${PATH}ao.png`,
+            metalnessMap: `${PATH}metallic.png`,
+    
+        });
   return (
     <Physics gravity={[0, -9.8, 0]} >
       <group position={[-150, 0, 0]}>
@@ -105,22 +119,18 @@ const BattleFIeld = () => {
           collider='fixed'
         />
      </group>
-
+      
       <Esphere position={[0, 10, 0]} />
       <GenericFloor
         position={[0, -10, 0]}
         geometry={{
           args: [10, 10],
         }}
-        meshM={{
-          // transparent: true,
-          // opacity: 0,
-          color:"white"
-          
-        }}
+        meshM={{...horizontalPlatformTexture}}
         name="SphereFloorRB"
         
       />
+      <CircleTarget position={[0,-20,0]}/>
 
       <BattelFloor
         position={[0, -30, 0]}
