@@ -72,10 +72,10 @@ const LeaderBoard = () => {
   };
 
   return (
-    <div className="items-center  gap-8 md:w-[70vh] min-h-[30vh] max-h-[50vh] w-[45vh]  mx-auto px-4 relative bg-black/50 rounded-lg z-10">
-      <div className="flex flex-col gap-4 p-4 h-full ">
+    <div className="flex flex-col items-center  gap-8 md:w-[100vh] min-h-[30vh] max-h-[60vh] w-[45vh]  mx-auto p-4 relative bg-black/50 rounded-lg z-10 ">
+      
         {feedback && (
-         <div className="overflow-y-auto max-h-full">
+         <div className=" max-h-full overflow-y-auto">
            <table className="min-w-full shadow-md rounded-lg overflow-hidden">
             <thead className="text-white sticky top-0 bg-black/70">
               <tr>
@@ -115,12 +115,14 @@ const LeaderBoard = () => {
          </div>
         )}
 
-        {!feedback &&
-          leaderboard
+        {!feedback && (
+          <div className="w-full grid grid-cols-1 gap-4 overflow-y-auto">
+            {
+              leaderboard
             .map((b, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between  bg-black/70 rounded-lg p-4 border border-gray-600 "
+                className="flex items-center relative justify-between  bg-black/70 rounded-lg p-4 border border-gray-600 "
               >
                 <ul className="text-left space-y-2 text-white">
                   <li className="flex justify-between items-center">
@@ -151,10 +153,14 @@ const LeaderBoard = () => {
                   </div>
                 )}
               </div>
-            ))}
+            ))
+            }
+          </div>
+        )
+          }
 
         {/* Try button */}
-      </div>
+      
       <div className="flex relative justify-center items-center gap-2">
         <button
           className="bg-white/50 hover:bg-black text-white font-bold py-2 px-4 rounded-full mt-3 mb-3"
