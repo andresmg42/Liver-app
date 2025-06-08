@@ -143,7 +143,7 @@ const LeaderBoard = () => {
                   </li>
                   <li className="flex  items-center">
                     <span className="text-gray-300 mr-4">Total Score:</span>
-                    <span className="font-bold text-blue-400">{b.total_score}</span>
+                    <span className="font-bold text-blue-400">{b.total_score.toFixed(2)}</span>
                   </li>
                 </ul>
                 {/* thirdMedal */}
