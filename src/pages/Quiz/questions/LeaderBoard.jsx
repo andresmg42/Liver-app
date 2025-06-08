@@ -125,24 +125,24 @@ const LeaderBoard = () => {
                 className="flex items-center relative justify-between  bg-black/70 rounded-lg p-4 border border-gray-600 "
               >
                 <ul className="text-left space-y-2 text-white">
-                  <li className="flex justify-between items-center">
-                    <span className="text-gray-300">Username:</span>
+                  <li className="flex  items-center">
+                    <span className="text-gray-300 mr-4">Username:</span>
                     <span className="font-semibold">{b.username}</span>
                   </li>
-                  <li className="flex justify-between items-center">
-                    <span className="text-gray-300">Score:</span>
+                  <li className="flex  items-center">
+                    <span className="text-gray-300 mr-4">Score:</span>
                     <span className="font-bold text-yellow-400">{b.score}</span>
                   </li>
-                  <li className="flex justify-between items-center">
-                    <span className="text-gray-300">Rank:</span>
+                  <li className="flex  items-center">
+                    <span className="text-gray-300 mr-4">Rank:</span>
                     <span className="font-bold text-blue-400">{index + 1}</span>
                   </li>
-                  <li className="flex justify-between items-center">
-                    <span className="text-gray-300">Time:</span>
+                  <li className="flex  items-center">
+                    <span className="text-gray-300 mr-4">Time:</span>
                     <span className="font-bold text-blue-400">{b.time}</span>
                   </li>
-                  <li className="flex justify-between items-center">
-                    <span className="text-gray-300">Total Score:</span>
+                  <li className="flex  items-center">
+                    <span className="text-gray-300 mr-4">Total Score:</span>
                     <span className="font-bold text-blue-400">{b.total_score}</span>
                   </li>
                 </ul>
