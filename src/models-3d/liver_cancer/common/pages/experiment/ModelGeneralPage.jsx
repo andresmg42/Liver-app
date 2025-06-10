@@ -58,7 +58,7 @@ const ModelGeneralPage = (props) => {
         <ResponsiveModel originalScale={3}>
           <>
             {props.model}
-            <Recipient />
+            <Recipient texture={props.texture} position_floor={props.position_floor}/>
           </>
         </ResponsiveModel>
       </Canvas>

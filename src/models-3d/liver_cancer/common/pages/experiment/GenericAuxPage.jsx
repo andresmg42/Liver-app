@@ -21,13 +21,16 @@ const GenericAuxPage = (props) => {
         text={
           <CancerText3D
             title={props.title}
-            position={[0, 1.5, 0]}
+            position={props.position_title}
             color={props.color_title}
           />
         }
         model={props.model}
         color={props.color}
         color_description={props.color_description}
+        // texture_path={props.texture_path}
+        texture={props.texture}
+        position_floor={props.position_floor}
       />
     </div>
   );
