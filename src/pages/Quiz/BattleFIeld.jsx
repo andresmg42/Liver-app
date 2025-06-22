@@ -5,7 +5,7 @@ import { Float } from "@react-three/drei";
 import Esphere from "./models/simpleobjects/Esphere";
 import OptionsText from "./models/text/OptionsText";
 import GenericTarget from "./models/avatars/GenericTarget";
-import CircleTarget from "./models/avatars/circleTarget";
+import CircleTarget from "./models/avatars/CircleTarget"
 import { useMemo } from "react";
 import { useTexture } from "@react-three/drei";
 
