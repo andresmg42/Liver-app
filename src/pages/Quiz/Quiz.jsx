@@ -20,7 +20,7 @@ const Quiz = () => {
   const { userLooged, userEmail } = useAuthStore();
 
 
-  const { quiz, setQuiz, progress, setProgress, setIndex, setTimer,info } =
+  const { quiz, setQuiz, progress, setProgress, setIndex, setTimer,info,setInfo } =
     useQuizStore();
 
   const navigate = useNavigate();
@@ -74,7 +74,7 @@ const Quiz = () => {
         console.error("Error loading quiz", error);
       }
     }
-
+    setInfo(true)
     loadQuiz();
   }, []);
 
