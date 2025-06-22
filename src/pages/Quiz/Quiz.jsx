@@ -73,7 +73,7 @@ const Quiz = () => {
         console.error("Error loading quiz", error);
       }
     }
-    
+
     setInfo(true)
     loadQuiz();
   }, []);
