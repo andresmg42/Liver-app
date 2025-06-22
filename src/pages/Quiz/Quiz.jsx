@@ -11,7 +11,6 @@ import api from "../../api/user.api";
 import useQuizStore from "../../stores/useQuizStore";
 import { loadProgress } from "./services/services";
 import LeaderBoard from "./questions/LeaderBoard";
-import { Chronometer } from "./services/chronometer";
 import InformationInterfaz from "./InformationInterfaz";
 
 const Quiz = () => {
@@ -20,7 +19,7 @@ const Quiz = () => {
   const { userLooged, userEmail } = useAuthStore();
 
 
-  const { quiz, setQuiz, progress, setProgress, setIndex, setTimer,info } =
+  const { quiz, setQuiz, progress, setProgress, setIndex, setTimer,info,setInfo } =
     useQuizStore();
 
   const navigate = useNavigate();
@@ -74,7 +73,8 @@ const Quiz = () => {
         console.error("Error loading quiz", error);
       }
     }
-
+    
+    setInfo(true)
     loadQuiz();
   }, []);
 
