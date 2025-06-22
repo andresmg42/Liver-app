@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^10.0.5",
     "@react-three/fiber": "^9.1.0",
+    "@react-three/rapier": "^2.1.0",
     "@tailwindcss/vite": "^4.0.8",
     "axios": "^1.8.1",
     "firebase": "^11.4.0",

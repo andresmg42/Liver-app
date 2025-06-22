@@ -9,7 +9,7 @@ const RotateHtml = ({ position,color }) => {
  
 
   return (
-    <Html center position={position} distancFactor={2}>
+    <Html center position={position} distancFactor={1} >
       {overButton ? (
         <div
           className={` flex items-center justify-center shadow-md`}
@@ -17,13 +17,11 @@ const RotateHtml = ({ position,color }) => {
             setOverButton(false);
           }}
         >
-          <h3 style={{color}}>push w,A,S,D to move 3D model</h3>
+          <h3 className="md:text-base text-sm" style={{color}}>push w,A,S,D to move 3D model</h3>
         </div>
       ) : (
         <div
-          className={`${
-            click ? "hidden" : "block"
-          } flex items-center justify-center w-20 h-20 rounded-full bg-black/15 shadow-md animate-spin-slow ${clickview? "hidden md:flex":"flex"}`}
+          className={`${click? 'hidden':'block'} flex items-center justify-center md:w-20 md:h-20  w-10 h-10 rounded-full bg-black/15  animate-spin-slow ${clickview? "hidden md:flex":"flex"}`}
           onPointerEnter={() => setOverButton(true)}
         >
           <Box className="w-8 h-8" style={{color}} />

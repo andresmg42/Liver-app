@@ -1,24 +1,26 @@
 import useAuthStore from "../../stores/use-auth-store";
 import { useEffect } from "react";
-import WindowLiverHome from "../WindowLiverHome";
+import WindowLiverHome from "./WindowLiverHome";
 import { NavLink } from "react-router";
 import Header from "../../layout/header/Header";
 import ModelCard from "../../models-3d/liver_cancer/common/ModelCard";
 import { LiverCancerFinal } from "../../models-3d/liver_cancer/desease/cancer/LiverCancerFinal";
-
+import GenericHomeCard from "../../models-3d/liver_cancer/common/pages/experiment/GenericHomeCard";
+import { Fever } from "../../models-3d/liver_cancer/simptoms/cancer/Fever";
+import {Xrays} from "../../models-3d/liver_cancer/treatment/Xrays"
+import {Alcohol} from "../../models-3d/liver_cancer/recomendations/Alcohol"
+import VideoSection from "./VideoSection";
 const Home = () => {
-  const { userLooged, verifyAndSignInWithLink } = useAuthStore();
+  
 
-  useEffect(() => {
-    verifyAndSignInWithLink();
-  }, []);
+  
 
   return (
     <>
       <Header />
       <div className="min-h-screen w-full relative">
         {/* Background Video */}
-        <video
+        {/* <video
           autoPlay
           loop
           muted
@@ -26,55 +28,87 @@ const Home = () => {
           className="fixed top-0 left-0 w-full h-full object-cover -z-10"
         >
           <source src="videos/login.mp4" type="video/mp4" />
-        </video>
+        </video> */}
+
+        <img src="background-images\surgeryroom.png" alt="backgroundimg" className="fixed top-0 left-0 w-full h-full object-cover -z-10" />
+        
+        {/* <h1 className="text-2xl md:text-3xl font-bold text-center text-white mb-10">
+              View Screen Mode: 3D Human Liver
+            </h1> */}
 
         {/* 3D Viewer Section */}
-        <div className="md:w-[153vh] w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col mx-auto ">
-          <div className="w-full bg-black/50">
-            <h1 className="text-xl md:text-2xl font-bold text-center text-white">
-              View Screen Mode: 3D Human Liver
-            </h1>
-          </div>
+        <div className="md:w-[153vh] w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col mx-auto">
+          {/* <div className="w-full bg-black/50"> */}
+            
+          {/* </div> */}
 
-          <div className="w-full flex md:h-full h-[50vh] ">
+          <div className="w-full flex md:h-full h-[50vh]  rounded-lg   ">
             <WindowLiverHome />
           </div>
+
         </div>
 
+        
+        {/*itroductory text */}
+        <div className="md:w-[153vh]  w-[45vh] h-[50vh] md:h-[32vh] xl:h-[25vh] max-h-[75vh]  flex flex-col mx-auto bg-white/15   p-5">
+          <h1 className="md:text-2xl text-xl">Welcome!</h1>
+          <p className="md:text-xl text-sm mt-5">
+            Welcome to our interactive 3D educational page on liver cancer — a cutting-edge 
+            resource designed to help you understand the structure, function, and pathology of 
+            the liver through immersive web-based visuals. Whether you're a student, healthcare professional, 
+            or simply curious, this platform offers clear explanations and detailed 3D models to explore how liver 
+            cancer develops, spreads, and is treated. Dive in and learn at your own pace with engaging, scientifically 
+            accurate content.
+          </p>
+          
+        </div>
+
+         <div className="w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col   ">
+          <VideoSection/>
+        </div>
+
+
+
         {/* Liver Diseases Section */}
-        <div className="w-full max-w-6xl mx-auto px-4 mt-12 md:mt-20">
+        <div className="w-full max-w-6xl mx-auto px-4 mt-12 md:mt-10">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-10 text-white">
-            Look at Any 3D Liver Diseases
+            Look at Any 3D Desease Models
           </h1>
 
           {/* Single disease card centered on all screens */}
-          <div className="flex justify-center w-full">
-            <div className="bg-white/15 w-full max-w-[400px] min-h-[400px] p-4 text-white rounded-lg flex flex-col items-center justify-between">
-              <div className="w-full h-[300px]">
-                <ModelCard model={<LiverCancerFinal scale={5} home={true}/>} />
-              </div>
-              <h1 className="font-bold text-xl md:text-2xl text-center mt-4">
-                Cancer Liver
-              </h1>
-              <NavLink className="mt-4 mb-4" to={"/cancer"}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-circle-chevron-right-icon lucide-circle-chevron-right"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m10 8 4 4-4 4" />
-                </svg>
-              </NavLink>
-            </div>
+
+          {/* <div className="flex justify-center items-center"> */}
+
+            <div className="grid md:grid-cols-2 grid-col-1 gap-4  place-items-center md:mx-40  ">
+            <GenericHomeCard  
+            title='Liver Cancer' 
+            model={<ModelCard model={<LiverCancerFinal scale={5} home={true}/>} />}
+            path='/cancer'
+            />
+
+            <GenericHomeCard  
+            title='Symptoms' 
+            model={<ModelCard model={<Fever scale={3.5} home={true}/>} />}
+            path='/symptoms'
+            />
+
+            <GenericHomeCard  
+            title='Treatment' 
+            model={<ModelCard model={<Xrays scale={3} home={true}/>} />}
+            path='/treatment'
+            />
+
+            <GenericHomeCard  
+            title='Recomendations' 
+            model={<ModelCard model={<Alcohol scale={3.5} home={true}/>} />}
+            path='/recomendations'
+            />
+
           </div>
+
+
+          {/* </div> */}
+          
         </div>
 
         {/* Available For Section */}
@@ -83,7 +117,7 @@ const Home = () => {
             Available For
           </h1>
 
-          <div className="w-full mx-auto relative bg-white/15 rounded-lg px-4 py-6 md:py-8">
+          <div className="w-full mx-auto relative bg-white/15  px-4 py-6 md:py-8">
             <div className="grid grid-cols-2 sm:grid-cols-4 w-full place-items-center gap-4 md:gap-6">
               <div className="flex flex-col items-center text-center">
                 <img

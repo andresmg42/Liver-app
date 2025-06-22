@@ -6,6 +6,8 @@ import Login from "./pages/sesion/Login";
 import Prubas from "./pages/home/Prubas";
 import ScrollToTop from "./help/ScrollToTop";
 import GenericPageE from "./models-3d/liver_cancer/common/pages/experiment/GenericPageE";
+import VerifyPage from "./pages/sesion/VerifyPage";
+import Quiz from "./pages/Quiz/Quiz";
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +23,12 @@ function App() {
           {/* <Route path="/stagerexp" element={<StagerExperiment />} /> */}
           <Route path="/cancer" element={<GenericPageE page='cancer'/>} />
           <Route path="/symptoms" element={<GenericPageE page='symptoms'/>} />
+          <Route path="/treatment" element={<GenericPageE page='treatment'/>} />
+          <Route path="/recomendations" element={<GenericPageE page='recomendations'/>} />
+          <Route path="/verifyEmail" element={<VerifyPage/>} />
+          <Route path="/quiz" element={<Quiz/>} />
+
+    
         </Routes>
       </Layout>
     </BrowserRouter>

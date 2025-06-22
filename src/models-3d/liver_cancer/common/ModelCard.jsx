@@ -1,6 +1,4 @@
-import React from 'react'
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
 
 
 
@@ -8,9 +6,19 @@ const ModelCard = (props) => {
   return (
     <Canvas>
     
-    <OrbitControls enableZoom={false} />
-    <ambientLight intensity={2} />
-    <directionalLight position={[5, 5, 10]} intensity={4} />
+    {/* <OrbitControls enableZoom={false} /> */}
+    <ambientLight intensity={1} />
+    {/* <directionalLight position={[5, 5, 10]} intensity={4} /> */}
+
+    {/* '0xff0040' */}
+
+    <pointLight  intensity={250} position={[0, 5, 3]}/>
+    
+    {/* <directionalLight
+            position={[0, 5, 5]}
+            intensity={7}
+            power={5}
+          /> */}
     {/* <LiverCancerFinal scale={5} home={true}/> */}
     {props.model}
 
