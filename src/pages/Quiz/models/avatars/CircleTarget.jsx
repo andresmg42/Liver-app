@@ -1,7 +1,4 @@
-import { RigidBody } from "@react-three/rapier";
-import React from "react";
 import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
 import { useMemo } from "react";
 import { useTexture } from "@react-three/drei";
 
