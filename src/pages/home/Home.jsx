@@ -63,7 +63,7 @@ const Home = () => {
           
         </div>
 
-         <div className="w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col   ">
+         <div className="w-full h-[50vh] md:h-[100vh] max-h-[75vh]  flex flex-col">
           <VideoSection/>
         </div>
 
