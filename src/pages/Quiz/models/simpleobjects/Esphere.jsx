@@ -45,7 +45,7 @@ const Esphere = (props) => {
       const shootDirection = raycaster.ray.direction.clone();
 
       // Scale the direction by desired force
-      const force = 800000; //200000 Adjust this value to control shot strength
+      const force = 900000; //200000 Adjust this value to control shot strength
 
       // Apply impulse in the shoot direction
       sphereRef.current.wakeUp();
@@ -98,7 +98,7 @@ const Esphere = (props) => {
   return (
     <RigidBody
       ccd
-      mass={5}
+      mass={50}
       ref={sphereRef}
       name="esphereRB"
       type="dynamic" // Fixed typo: was "dinamic"
