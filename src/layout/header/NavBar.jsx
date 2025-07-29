@@ -75,15 +75,6 @@ const NabBar = () => {
         </li>
         <li>
           <NavLink
-            to="/enfermedades"
-            className="hover:text-[#797777] block md:inline-block py-2 md:py-0"
-            activeClassName="text-blue-500"
-          >
-            Deseases
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/quiz"
             className="hover:text-[#797777] block md:inline-block py-2 md:py-0"
             activeClassName="text-blue-500"
@@ -100,6 +91,7 @@ const NabBar = () => {
             About Us
           </NavLink>
         </li>
+        {!userLooged && 
         <li>
           <NavLink
             to="/login"
@@ -109,6 +101,7 @@ const NabBar = () => {
             Sign In
           </NavLink>
         </li>
+        }
         {userLooged && (
           <li>
             <button
@@ -119,6 +112,11 @@ const NabBar = () => {
             </button>
           </li>
         )}
+        <li>
+          <NavLink
+          >         
+          </NavLink>
+        </li>
       </ul>
     </nav>
   </div>

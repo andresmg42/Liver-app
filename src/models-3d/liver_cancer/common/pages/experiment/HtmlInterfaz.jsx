@@ -98,7 +98,7 @@ const HtmlInterfaz = ({ color, cards }) => {
           </button>
         </div>
 
-        <p className="text-sm md:text-xl md:font-bold " style={{ color }}>
+        <p className="text-sm md:text-xl md:font-bold" style={{ color }}>
           {cards[index].descripcion}
         </p>
         {(cards[index].imagen || cards[index].video) && (

@@ -8,29 +8,92 @@ import ScrollToTop from "./help/ScrollToTop";
 import GenericPageE from "./models-3d/liver_cancer/common/pages/experiment/GenericPageE";
 import VerifyPage from "./pages/sesion/VerifyPage";
 import Quiz from "./pages/Quiz/Quiz";
+import NabBar from "./layout/header/NavBar";
+import Footer from "./layout/footer/Footer";
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
+      
         <ScrollToTop />
         <Routes>
-          <Route index path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route index path="/" element={
+            <>
+            <NabBar/>
+            <Home />
+            <Footer/>
+            </>
+            
+            } />
+          <Route path="/login" element={
+            <>
+            <NabBar/>
+            <Login />
+            <Footer/>
+            </>
+            
+            } />
           <Route path="/profile" element={<Profile />} />
           <Route path="/prubas" element={<Prubas />} />
-          {/* <Route path="/cancer" element={<GenericPage page="cancer" />} /> */}
-          {/* <Route path="/symptoms" element={<GenericPage page="symptoms" />} /> */}
-          {/* <Route path="/stagerexp" element={<StagerExperiment />} /> */}
-          <Route path="/cancer" element={<GenericPageE page='cancer'/>} />
-          <Route path="/symptoms" element={<GenericPageE page='symptoms'/>} />
-          <Route path="/treatment" element={<GenericPageE page='treatment'/>} />
-          <Route path="/recomendations" element={<GenericPageE page='recomendations'/>} />
-          <Route path="/verifyEmail" element={<VerifyPage/>} />
-          <Route path="/quiz" element={<Quiz/>} />
+          <Route path="/cancer" element={
+            <>
+             <NabBar/>
+              <div className="pt-20" >
+              <GenericPageE page='cancer'/>
+            </div>
+             
+            </>
+            
+            } />
+          <Route path="/symptoms" element={
+            <>
+            <NabBar/>
+            <div className="pt-20" >
+              <GenericPageE page='symptoms'/>
+            </div>
+            
+            
+            </>
+            } />
+          <Route path="/treatment" element={
+            <>
+            <NabBar/>
+            <div className="pt-20" >
+              <GenericPageE page='treatment'/>
+            </div>
+            
+            </>
+            } />
+          <Route path="/recomendations" element={
+            <>
+            <NabBar/>
+            <div className="pt-20" >
+              <GenericPageE page='recomendations'/>
+            </div>
+            </>
+
+            
+            } />
+          <Route path="/verifyEmail" element={
+            <>
+            <NabBar/>
+            <VerifyPage/>
+            <Footer/>
+            </>
+            } />
+          <Route path="/quiz" element={
+            <>
+            <NabBar/>
+            <div className="pt-20" >
+              <Quiz />
+            </div>
+            
+            </>
+            
+            } />
 
     
         </Routes>
-      </Layout>
+      
     </BrowserRouter>
   );
 }

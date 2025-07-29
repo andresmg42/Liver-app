@@ -12,6 +12,7 @@ import useQuizStore from "../../stores/useQuizStore";
 import { loadProgress } from "./services/services";
 import LeaderBoard from "./questions/LeaderBoard";
 import InformationInterfaz from "./InformationInterfaz";
+import { RingLoader } from "react-spinners";
 
 const Quiz = () => {
   const { setClick } = useEventStore();
@@ -34,6 +35,8 @@ const Quiz = () => {
       try {
         const res = await api.get("/quiz/");
         console.log("quiz:", res.data[0]);
+
+        
 
         if (!res.data) return;
 
@@ -80,9 +83,12 @@ const Quiz = () => {
 
   if (!quiz) {
     return (
+      <>
+      <RingLoader color="white"/>
       <div>
         <h1 className="text-3xl font-bold text-white">Loading Quiz...</h1>
       </div>
+      </>
     );
   }
 
