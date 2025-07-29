@@ -7,21 +7,21 @@ const QuestionsInterfaz = (props) => {
 
 
 
-const {index,setColor,quiz,progress,setProgress,setIndex,timer,setTimer}=useQuizStore();
+const {index,color,quiz,progress,setProgress,setIndex,timer,setTimer}=useQuizStore();
 
 
-const  {color,image,title}=quiz.questions[index];
+const  {image,title}=quiz.questions[index];
 
 
 
 
   
 
-  useEffect(()=>{
+  // useEffect(()=>{
     
     
-    setColor(color)
-  },[index])
+  //   setColor(color)
+  // },[index])
 
   
 
@@ -58,20 +58,20 @@ const  {color,image,title}=quiz.questions[index];
       className={`bg-black/50 p-5 gap-2 rounded-xl shadow-xl w-full transition-all duration-500 
             flex flex-col  `}
       >
-        <h1 className='font-bold text-xl' style={{color:color}}>{`Question: ${index}/${quiz.questions.length}`}</h1>
+        <h1 className='font-bold text-xl text-center' style={{color:'white'}}>{`Question: ${index}/${quiz.questions.length}`}</h1>
 
         <img src={image} alt={title}/>
 
         <div className='bg-white/15 p-4 rounded-lg'>
-          <p className='text-md mt-4 font-bold ' style={{color:color}}> {title}</p>
+          <p className='text-md mt-4 font-bold text-center' style={{color:'white'}}> {title}</p>
 
         </div>
         
         <div>
-          <h1 className='text-2xl font-bold' style={{color:color}}>
+          <h1 className='text-2xl font-bold text-center' style={{color:color}}>
             {`Score:${progress.total_score}`}
           </h1>
-          <h1 id='display' className='font-bold' style={{color:color}}>00:00</h1>
+          <h1 id='display' className='font-bold text-center' style={{color:'white'}}>00:00</h1>
           
         </div>
 

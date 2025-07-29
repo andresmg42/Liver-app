@@ -15,7 +15,7 @@ const InformationInterfaz = () => {
   return (
     <div className="items-center flex flex-col py-4 gap-8 md:w-[70vh] min-h-[30vh] max-h-[80vh] w-[45vh]  mx-auto px-4 relative bg-black/50 rounded-lg z-10">
       <div className="p-4">
-        <h1 className="font-bold text-base text-white">Game Instructions</h1>
+        <h1 className="font-bold text-base text-white text-center">Game Instructions</h1>
         <p>
           The game consists of clicking anywhere on the
           sphere, which causes an impulse in the direction of the click—similar

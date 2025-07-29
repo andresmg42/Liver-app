@@ -64,6 +64,8 @@ const useQuizStore = create((set) => {
           correct: name === actualQuestion.zone,
         };
 
+        state.color= newAnswer.correct ? 'green':'red'
+
         const score = actualScore + (newAnswer.correct ? 1 : -1);
 
         const total_score = Math.max(0, score);

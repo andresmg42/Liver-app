@@ -27,8 +27,9 @@ const GenericTarget = (props) => {
       ref={treatmentRef}
       colliders="cuboid"
       type={props.collider}
-      mass={5}
-      friction={0.5}
+      mass={1}
+      restitution={0.2}
+      friction={0.4}
     >
       <mesh {...props}>
         <boxGeometry />
