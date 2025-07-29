@@ -128,7 +128,7 @@ const Esphere = (props) => {
     >
       <mesh onClick={handleEsphere}>
         <sphereGeometry args={[5, 32]} />
-        <meshStandardMaterial color={color} {...spherePlatformTexture}/>
+        <meshStandardMaterial color={'black'} {...spherePlatformTexture}/>
       </mesh>
     </RigidBody>
   );
