@@ -5,6 +5,7 @@ import api from "../../api/user.api.js";
 
 const Login = () => {
   const [email, setEmail] = useState({ email: null });
+  const [googleinfo, setGoogleInfo]= useState({displayName:null,email:null})
 
   const {
     loginGoogleWithPopUp,
@@ -24,6 +25,10 @@ const Login = () => {
 
       const { displayName, email } = data?.user;
 
+      console.log('este es el displayname:',displayName)
+
+      setGoogleInfo({displayName:displayName,email:email})
+
       const res_search = await api.get(`users/email/?email=${email}`);
 
 
@@ -38,10 +43,10 @@ const Login = () => {
     } catch (error) {
       if (error.response.status === 404) {
         try {
-          const res = await api.post("users/", { displayName, email });
+          const res = await api.post("users/", googleinfo);
 
           if (res.data) {
-            localStorage.setItem('user_id',res_search.data._id);
+            localStorage.setItem('user_id',res.data._id);
             // setUser(displayName, email, data._id);
             
             

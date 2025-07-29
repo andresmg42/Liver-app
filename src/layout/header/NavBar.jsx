@@ -115,7 +115,7 @@ const NabBar = () => {
               onClick={handleLogout}
               className="hover:text-[#797777] block md:inline-block py-2 md:py-0"
             >
-              Sign Up
+              Log Out
             </button>
           </li>
         )}
