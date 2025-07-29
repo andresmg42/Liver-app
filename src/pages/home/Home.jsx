@@ -1,7 +1,6 @@
-import useAuthStore from "../../stores/use-auth-store";
-import { useEffect } from "react";
+
 import WindowLiverHome from "./WindowLiverHome";
-import { NavLink } from "react-router";
+
 import Header from "../../layout/header/Header";
 import ModelCard from "../../models-3d/liver_cancer/common/ModelCard";
 import { LiverCancerFinal } from "../../models-3d/liver_cancer/desease/cancer/LiverCancerFinal";
@@ -10,6 +9,7 @@ import { Fever } from "../../models-3d/liver_cancer/simptoms/cancer/Fever";
 import {Xrays} from "../../models-3d/liver_cancer/treatment/Xrays"
 import {Alcohol} from "../../models-3d/liver_cancer/recomendations/Alcohol"
 import VideoSection from "./VideoSection";
+
 const Home = () => {
   
 
@@ -51,7 +51,7 @@ const Home = () => {
         
         {/*itroductory text */}
         <div className="md:w-[153vh]  w-[45vh] h-[50vh] md:h-[32vh]  max-h-[75vh]  flex flex-col mx-auto bg-white/15   p-5">
-          <h1 className="md:text-2xl text-xl">Welcome!</h1>
+          <h1 className="md:text-2xl text-xl text-center">Welcome!</h1>
           <p className="md:text-xl text-sm mt-5">
             Welcome to our interactive 3D educational page on liver cancer — a cutting-edge 
             resource designed to help you understand the structure, function, and pathology of 
@@ -182,7 +182,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+      </>
+    
   );
 };
 
