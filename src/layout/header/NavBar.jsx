@@ -12,6 +12,7 @@ const NabBar = () => {
   const handleLogout = useCallback(async () => {
     try {
       await logout();
+      // localStorage.removeItem('user_id')
       navigate('/login')
 
     } catch (error) {

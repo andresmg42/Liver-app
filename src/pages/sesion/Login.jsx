@@ -5,7 +5,8 @@ import api from "../../api/user.api.js";
 
 const Login = () => {
   const [email, setEmail] = useState({ email: null });
-  const [googleinfo, setGoogleInfo]= useState({displayName:null,email:null})
+  const [googleInfo, setGoogleInfo] = useState(null);
+  const [shouldCreateUser, setShouldCreateUser] = useState(false);
 
   const {
     loginGoogleWithPopUp,
@@ -18,48 +19,55 @@ const Login = () => {
   } = useAuthStore();
   const navigate = useNavigate();
 
-  const handleGoogleLogin = async () => {
-    try {
-      const data = await loginGoogleWithPopUp();
+  
 
-
-      const { displayName, email } = data?.user;
-
-      console.log('este es el displayname:',displayName)
-
-      setGoogleInfo({displayName:displayName,email:email})
-
-      const res_search = await api.get(`users/email/?email=${email}`);
-
-
-      if (res_search.data) {
-        // setUser(displayName, email, res_search.data._id);
-        localStorage.setItem('user_id',res_search.data._id);
-      }
-
-      
-
-      navigate("/");
-    } catch (error) {
-      if (error.response.status === 404) {
-        try {
-          const res = await api.post("users/", googleinfo);
-
-          if (res.data) {
-            localStorage.setItem('user_id',res.data._id);
-            // setUser(displayName, email, data._id);
-            
-            
-          }
+// useEffect separado para manejar la creación del usuario
+useEffect(() => {
+  const createUser = async () => {
+    if (shouldCreateUser && googleInfo) {
+      try {
+        const res = await api.post("users/", googleInfo);
+        
+        if (res) {
+          localStorage.setItem('user_id', res.data._id);
           navigate("/");
-        } catch (error) {
-          console.error("Error in handleGoogleLogin", error);
         }
-      } else {
-        console.error("Error in handleGoogleLogin:", error);
+      } catch (error) {
+        console.error("Error creating user:", error);
+      } finally {
+        setShouldCreateUser(false);
       }
     }
   };
+
+  createUser();
+}, [shouldCreateUser, googleInfo]);
+
+const handleGoogleLogin = async () => {
+  try {
+    const data = await loginGoogleWithPopUp();
+    const { displayName, email } = data?.user;
+
+    console.log('este es el displayname:', displayName);
+
+    const userInfo = { displayName, email };
+    setGoogleInfo(userInfo);
+
+    const res_search = await api.get(`users/email/?email=${email}`);
+
+    if (res_search.data) {
+      localStorage.setItem('user_id', res_search.data._id);
+      navigate("/");
+    }
+  } catch (error) {
+    if (error.response?.status === 404) {
+      // Activar la creación del usuario
+      setShouldCreateUser(true);
+    } else {
+      console.error("Error in handleGoogleLogin:", error);
+    }
+  }
+};
 
   const handleFacebookLogin = async () => {
     try {
